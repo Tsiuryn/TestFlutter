@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:test_flutter/checkbox_widget/checkbox_widget.dart';
 
 class CalculatorPage extends StatefulWidget {
   static const String id = 'calculator_page';
@@ -133,7 +134,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 ),
               ),
             ],
-          )
+          ),
+          CheckboxWidget(),
         ],
       ),
     );
