@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/calculator/calculator_page.dart';
 import 'package:test_flutter/constraint/constraint_page.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class Start extends StatelessWidget {
       routes: {
         MyHomePage.id: (context) => MyHomePage(),
         ConstraintPage.id: (context) => ConstraintPage(),
+        CalculatorPage.id: (context) => CalculatorPage()
 
       },
     );
@@ -48,6 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: (){
                   Navigator.pushNamed(context, ConstraintPage.id);
             }),
+
+          ),
+          Center(
+            child: MaterialButton(
+                child: Text("Calculator layout"),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
+                onPressed: (){
+                  Navigator.pushNamed(context, CalculatorPage.id);
+                }),
+
           )
         ],
       )
