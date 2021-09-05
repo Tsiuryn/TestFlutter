@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/calculator/calculator_page.dart';
 import 'package:test_flutter/constraint/constraint_page.dart';
+import 'package:test_flutter/routes.dart';
 
 void main() {
   runApp(Start());
@@ -12,12 +13,7 @@ class Start extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: MyHomePage.id,
-      routes: {
-        MyHomePage.id: (context) => MyHomePage(),
-        ConstraintPage.id: (context) => ConstraintPage(),
-        CalculatorPage.id: (context) => CalculatorPage()
-
-      },
+      routes: Routes(context).appRoutes
     );
   }
 }
