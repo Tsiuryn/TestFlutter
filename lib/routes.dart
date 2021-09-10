@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:test_flutter/localization/localization_page.dart';
 import 'calculator/calculator_page.dart';
 import 'constraint/constraint_page.dart';
 import 'main.dart';
@@ -12,6 +13,7 @@ class Routes {
   final Map<String, WidgetBuilder> appRoutes = {
     MyHomePage.id: (context) => MyHomePage(),
     ConstraintPage.id: (context) => ConstraintPage(),
-    CalculatorPage.id: (context) => CalculatorPage()
+    CalculatorPage.id: (context) => CalculatorPage(),
+    LocalizationPage.id: (context)=> LocalizationPage(),
   };
 }

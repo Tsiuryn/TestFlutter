@@ -1,0 +1,26 @@
+{
+  "title": "Localization page",
+  "@title": {
+    "description": "Localization page"
+  },
+
+  "language": "English",
+  "@language": {
+    "description": "The current language"
+  },
+
+  "hello": "Hello world",
+  "@hello": {
+    "description": "Hello world"
+  },
+
+  "with_parameters": "Parameters {count}",
+  "@with_parameters": {
+    "description": "ID parameter",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  }
+}
