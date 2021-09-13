@@ -7,6 +7,7 @@ import 'package:test_flutter/calculator/calculator_page.dart';
 import 'package:test_flutter/constraint/constraint_page.dart';
 import 'package:test_flutter/localization/localization_page.dart';
 import 'package:test_flutter/routes.dart';
+import 'package:test_flutter/share_app/share_app_page.dart';
 
 import 'app/l10n/I10n.dart';
 import 'localization/provider/locale_provider.dart';
@@ -80,6 +81,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.pushNamed(context, LocalizationPage.id);
                   }),
             ),
+          Center(
+            child: MaterialButton(
+                child: Text("Shared app "),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, ShareAppPage.id);
+                }),
+          ),
           ],
       )
     );
