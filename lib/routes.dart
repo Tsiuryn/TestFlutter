@@ -1,9 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
-import 'package:test_flutter/localization/localization_page.dart';
-import 'package:test_flutter/share_app/share_app_page.dart';
-import 'calculator/calculator_page.dart';
-import 'constraint/constraint_page.dart';
+import 'package:test_flutter/screens/calculator/calculator_page.dart';
+import 'package:test_flutter/screens/constraint/constraint_page.dart';
+import 'package:test_flutter/screens/localization/localization_page.dart';
+import 'package:test_flutter/screens/progress/progress_page.dart';
+import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'main.dart';
 
 class Routes {
@@ -17,5 +18,6 @@ class Routes {
     CalculatorPage.id: (context) => CalculatorPage(),
     LocalizationPage.id: (context)=> LocalizationPage(),
     ShareAppPage.id: (context) => ShareAppPage(),
+    ProgressPage.id: (context) => ProgressPage(),
   };
 }

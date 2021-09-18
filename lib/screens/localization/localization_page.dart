@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:test_flutter/localization/language_picker_widget.dart';
+
+import 'language_picker_widget.dart';
 
 class LocalizationPage extends StatefulWidget {
   const LocalizationPage({Key key}) : super(key: key);
@@ -72,7 +73,7 @@ class _LocalizationPageState extends State<LocalizationPage> {
 1. Create file <app.l10n.yaml> (little "l") and add to the file:
 < arb-dir: lib/app.l10n
 template-arb-file: app_en.arb
-output-localization-file: app_localizations.dart>
+output-screens.localization-file: app_localizations.dart>
 2. Add the package <app.l10n>
 3. Create class <app.l10n.dart> and input there:
 <class L10n{

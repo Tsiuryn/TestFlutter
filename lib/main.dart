@@ -3,14 +3,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:test_flutter/calculator/calculator_page.dart';
-import 'package:test_flutter/constraint/constraint_page.dart';
-import 'package:test_flutter/localization/localization_page.dart';
 import 'package:test_flutter/routes.dart';
-import 'package:test_flutter/share_app/share_app_page.dart';
+import 'package:test_flutter/screens/calculator/calculator_page.dart';
+import 'package:test_flutter/screens/constraint/constraint_page.dart';
+import 'package:test_flutter/screens/localization/localization_page.dart';
+import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
+import 'package:test_flutter/screens/progress/progress_page.dart';
+import 'package:test_flutter/screens/share_app/share_app_page.dart';
 
 import 'app/l10n/I10n.dart';
-import 'localization/provider/locale_provider.dart';
 
 void main() {
   runApp(Start());
@@ -49,11 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Main screen'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: MaterialButton(
+      body: Padding(
+        padding: const EdgeInsets.only(left: 24.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MaterialButton(
                 child: Text("Constraint layout "),
                 color: Colors.blue,
                 shape: RoundedRectangleBorder(
@@ -61,36 +64,36 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: (){
                   Navigator.pushNamed(context, ConstraintPage.id);
             }),
-
-          ),
-            Center(
-              child: MaterialButton(
+              MaterialButton(
                   child: Text("Calculator layout"),
                   color: Colors.blue,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                   onPressed: () {
                     Navigator.pushNamed(context, CalculatorPage.id);
                   }),
-            ),
-            Center(
-              child: MaterialButton(
+              MaterialButton(
                   child: Text("Localization screen"),
                   color: Colors.blue,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                   onPressed: () {
                     Navigator.pushNamed(context, LocalizationPage.id);
                   }),
-            ),
-          Center(
-            child: MaterialButton(
+            MaterialButton(
                 child: Text("Shared app "),
                 color: Colors.blue,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   Navigator.pushNamed(context, ShareAppPage.id);
                 }),
-          ),
-          ],
+            MaterialButton(
+                child: Text("Progress page "),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, ProgressPage.id);
+                }),
+            ],
+        ),
       )
     );
   }

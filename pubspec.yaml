@@ -33,7 +33,7 @@ dependencies:
 
 
   # state management
-  provider: ^4.3.3
+  provider: ^6.0.0
 
 
 

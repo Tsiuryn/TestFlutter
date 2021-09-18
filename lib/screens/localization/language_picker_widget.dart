@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/app/l10n/I10n.dart';
-import 'package:test_flutter/localization/provider/locale_provider.dart';
+import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
 
 class LanguageWidget extends StatelessWidget {
   @override
