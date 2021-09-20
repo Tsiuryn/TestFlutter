@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:test_flutter/screens/calculator/before/calc_screen.dart';
 import 'package:test_flutter/screens/calculator/calculator_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
@@ -19,5 +20,6 @@ class Routes {
     LocalizationPage.id: (context)=> LocalizationPage(),
     ShareAppPage.id: (context) => ShareAppPage(),
     ProgressPage.id: (context) => ProgressPage(),
+    CalcScreen.id: (context) => CalcScreen(),
   };
 }
