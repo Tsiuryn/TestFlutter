@@ -1,30 +1,24 @@
 import 'dart:math';
 
 void main() {
-  // "Mama".runes.forEach((element) {
-  //   print(String.fromCharCode(element));
-  // });
-
-  print(Calculator.decide('2+3^4'));
-
+  print(Calculator.decide('2+3*4'));
 }
 
 class Calculator {
-
-  static double decide(String expr){
+  static double decide(String expr) {
     String prepared = _preparedExpression(expr);
-    return _calculateRPN(_expressionToRPN(prepared));
+    List<String> listRPN = _expressionToRPN(prepared);
+    return _calculateRPN(listRPN);
   }
 
-  static String _preparedExpression(String expr){
+  static String _preparedExpression(String expr) {
     String prepared = '';
-    var runes = expr.runes.toList(growable: false);
-    for(int i = 0; i<runes.length; i++){
-      var symbol = String.fromCharCode(runes[i]);
-      if(symbol == '-'){
-        if(i == 0){
+    for (int i = 0; i < expr.length; i++) {
+      var symbol = expr[i];
+      if (symbol == '-') {
+        if (i == 0) {
           prepared += '0';
-        }else if((String.fromCharCode(runes[i-1])) == '('){
+        } else if ((expr[i - 1]) == '(') {
           prepared += '0';
         }
       }
@@ -90,7 +84,7 @@ class Calculator {
         if (rpn[i] == '-') stack.push(a - b);
         if (rpn[i] == '*') stack.push(a * b);
         if (rpn[i] == '/') stack.push(a / b);
-        if (rpn[i] == '^') stack.push(pow(a, b) );
+        if (rpn[i] == '^') stack.push(pow(a, b));
       }
     }
     return stack.pop();
