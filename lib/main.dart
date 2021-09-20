@@ -4,7 +4,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/routes.dart';
-import 'package:test_flutter/screens/calculator/calculator_page.dart';
+import 'package:test_flutter/screens/calculator/calc_screen.dart';
+import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
@@ -71,6 +72,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.pushNamed(context, CalculatorPage.id);
                   }),
+            MaterialButton(
+                child: Text("Calculator screen"),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, CalcScreen.id);
+                }),
               MaterialButton(
                   child: Text("Localization screen"),
                   color: Colors.blue,
