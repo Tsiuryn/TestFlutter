@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/screens/calculator/utils/component.dart';
 import 'package:test_flutter/screens/calculator/utils/constants.dart';
+import 'package:test_flutter/screens/calculator/utils/number_manipulation.dart';
 
 class CalcScreen extends StatefulWidget {
   static const String id = 'CalcScreen';
@@ -15,24 +16,27 @@ class CalcScreen extends StatefulWidget {
 class _CalcScreenState extends State<CalcScreen> {
 
   TextEditingController _controller = TextEditingController();
+  int _currentCursorPosition = -1;
   String _text = '';
   String _result = '0';
   FocusNode _focusNode;
 
   void _addSymbol(String text) {
     setState(() {
-      int currentCursorPosition = _controller.value.selection.base.offset;
-      if(currentCursorPosition != -1){
-        String before = _text.substring(0, currentCursorPosition );
-        String after = _text.substring(currentCursorPosition, _text.length);
+      _currentCursorPosition = _controller.value.selection.base.offset;
+      if(_currentCursorPosition != -1){
+        String before = _text.substring(0, _currentCursorPosition );
+        String after = _text.substring(_currentCursorPosition, _text.length);
         print('$before $after');
-        _text = '$before$text$after';
+        var updatedText = '$before$text$after';
+        _text = composeEquation(updatedText);
       }else{
-        _text = '$_text$text';
+        var updatedText = '$_text$text';
+        _text = composeEquation(updatedText);
       }
       _controller.text = _text;
-      _controller.selection = TextSelection.fromPosition(TextPosition(offset: currentCursorPosition + 1));
-      _result = _text;
+      _controller.selection = TextSelection.fromPosition(TextPosition(offset: _currentCursorPosition + 1));
+      _result = getResult(_text).toString();
     });
   }
 
