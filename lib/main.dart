@@ -12,6 +12,7 @@ import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
+import 'package:test_flutter/screens/test/test_page.dart';
 
 import 'app/l10n/I10n.dart';
 
@@ -58,6 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            MaterialButton(
+                child: Text("Test page"),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
+                onPressed: (){
+                  Navigator.pushNamed(context, TestPage.id);
+                }),
             MaterialButton(
                 child: Text("Constraint layout "),
                 color: Colors.blue,
