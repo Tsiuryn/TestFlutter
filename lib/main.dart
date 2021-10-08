@@ -7,6 +7,7 @@ import 'package:test_flutter/routes.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
+import 'package:test_flutter/screens/custom/custom_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
@@ -99,6 +100,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   Navigator.pushNamed(context, ProgressPage.id);
+                }),
+            MaterialButton(
+                child: Text("Custom page "),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, CustomPage.id);
                 }),
             ],
         ),

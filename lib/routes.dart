@@ -3,6 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
+import 'package:test_flutter/screens/custom/circle.dart';
+import 'package:test_flutter/screens/custom/custom_page.dart';
+import 'package:test_flutter/screens/custom/lines.dart';
+import 'package:test_flutter/screens/custom/polygon.dart';
+import 'package:test_flutter/screens/custom/visualize_polygon.dart';
+import 'package:test_flutter/screens/custom/visualizer.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
@@ -21,5 +27,11 @@ class Routes {
     ShareAppPage.id: (context) => ShareAppPage(),
     ProgressPage.id: (context) => ProgressPage(),
     CalcScreen.id: (context) => CalcScreen(),
+    CustomPage.id: (context) => CustomPage(),
+    Lines.id: (context) => Lines(),
+    Circle.id: (context) => Circle(),
+    Polygon.id: (context) => Polygon(),
+    Visualizer.id: (context) => Visualizer(),
+    VisualizePolygon.id: (context) => VisualizePolygon(),
   };
 }
