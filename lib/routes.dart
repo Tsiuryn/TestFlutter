@@ -6,6 +6,7 @@ import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
+import 'package:test_flutter/screens/test/test_page.dart';
 import 'main.dart';
 
 class Routes {
@@ -21,5 +22,6 @@ class Routes {
     ShareAppPage.id: (context) => ShareAppPage(),
     ProgressPage.id: (context) => ProgressPage(),
     CalcScreen.id: (context) => CalcScreen(),
+    TestPage.id: (context) => TestPage(),
   };
 }
