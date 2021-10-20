@@ -9,6 +9,7 @@ import 'package:test_flutter/screens/custom/lines.dart';
 import 'package:test_flutter/screens/custom/polygon.dart';
 import 'package:test_flutter/screens/custom/visualize_polygon.dart';
 import 'package:test_flutter/screens/custom/visualizer.dart';
+import 'package:test_flutter/screens/list/search_list.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
@@ -39,6 +40,7 @@ class Routes {
     Visualizer.id: (context) => Visualizer(),
     VisualizePolygon.id: (context) => VisualizePolygon(),
     TestPage.id: (context) => TestPage(),
+    ListSearch.id: (context) => ListSearch(),
     WebSocketChannelPage.id: (context) => WebSocketChannelPage(),
     WebSocketPage.id: (context) => WebSocketPage(),
     StompClientPage.id: (context) => StompClientPage(),
