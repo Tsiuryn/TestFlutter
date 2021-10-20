@@ -11,8 +11,12 @@ import 'package:test_flutter/screens/custom/visualize_polygon.dart';
 import 'package:test_flutter/screens/custom/visualizer.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
+import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
+import 'package:test_flutter/screens/websocket/pages/stomp_client_page.dart';
+import 'package:test_flutter/screens/websocket/pages/web_socket_channel_page.dart';
+import 'package:test_flutter/screens/websocket/web_socket_page.dart';
 import 'main.dart';
 
 class Routes {
@@ -35,5 +39,9 @@ class Routes {
     Visualizer.id: (context) => Visualizer(),
     VisualizePolygon.id: (context) => VisualizePolygon(),
     TestPage.id: (context) => TestPage(),
+    WebSocketChannelPage.id: (context) => WebSocketChannelPage(),
+    WebSocketPage.id: (context) => WebSocketPage(),
+    StompClientPage.id: (context) => StompClientPage(),
+    SearchListPage.id: (context) => SearchListPage(),
   };
 }

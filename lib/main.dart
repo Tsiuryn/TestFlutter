@@ -11,8 +11,10 @@ import 'package:test_flutter/screens/custom/custom_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
+import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
+import 'package:test_flutter/screens/websocket/web_socket_page.dart';
 
 import 'app/l10n/I10n.dart';
 
@@ -116,6 +118,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   Navigator.pushNamed(context, CustomPage.id);
+                }),
+            MaterialButton(
+                child: Text("Web Socket page"),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, WebSocketPage.id);
+                }),
+            MaterialButton(
+                child: Text("Search list page"),
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, SearchListPage.id);
                 }),
             ],
         ),
