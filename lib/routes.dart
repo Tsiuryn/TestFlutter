@@ -10,6 +10,7 @@ import 'package:test_flutter/screens/custom/polygon.dart';
 import 'package:test_flutter/screens/custom/visualize_polygon.dart';
 import 'package:test_flutter/screens/custom/visualizer.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
+import 'package:test_flutter/screens/download_file/list_directories.dart';
 import 'package:test_flutter/screens/list/search_list.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
@@ -51,5 +52,6 @@ class Routes {
     ScrollViewPage.id: (context) => ScrollViewPage(),
     ReduxSimplePage.id: (context) => ReduxSimplePage(),
     DownloadFilePage.id: (context) => DownloadFilePage(),
+    ListFiles.id: (context) => ListFiles(),
   };
 }
