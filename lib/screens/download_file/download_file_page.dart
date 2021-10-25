@@ -3,8 +3,10 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:permission_handler/permission_handler.dart';
+import 'package:share/share.dart';
 import 'package:test_flutter/screens/download_file/list_directories.dart';
 
 class DownloadFilePage extends StatefulWidget {
@@ -17,15 +19,15 @@ class DownloadFilePage extends StatefulWidget {
 }
 
 class _DownloadFilePageState extends State<DownloadFilePage> {
-  int _counter = 0;
+
   final imgUrl =
       "https://www.businessstudio.ru/publication/proizv_predpr_abc/download.php?lang=ru-ru&oguid=a6fe90cc-11a2-41d0-b03c-c5aff5c5abb3&rguid=b7566ce6-b51d-4f2b-b9da-e208118e8e0e&ext=pdf";
   var dio = Dio();
+  List <String> filePath = [];
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  String _getName(){
+    var now = DateTime.now();
+    return DateFormat('dd_MM_yy HH_mm_ss').format(now);
   }
 
   Future download2(Dio dio, String url, String savePath) async {
@@ -44,7 +46,6 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
       print(response.headers);
       File file = File(savePath);
       var raf = file.openSync(mode: FileMode.write);
-      // response.data is List<int> type
       raf.writeFromSync(response.data);
       await raf.close();
     } catch (e) {
@@ -77,10 +78,13 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                     }else{
                       tempDir = await path_provider.getExternalStorageDirectory();
                     }
-                    String fullPath = tempDir.path + "/boot.pdf";
-                    print('full path ${fullPath}');
+                    setState(() {
+                      filePath.add(tempDir.path + "/${_getName()}.pdf");
+                    });
 
-                    download2(dio, imgUrl, fullPath);
+                    print('full path ${filePath}');
+
+                    download2(dio, imgUrl, filePath[0]);
                   }
 
                 },
@@ -94,21 +98,29 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
             TextButton(child: Text('to List Files'),onPressed: (){
               Navigator.pushNamed(context, ListFiles.id);
             }),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-            ),
+            IconButton(onPressed: filePath.isEmpty? null : () async{
+              await _onShare(context);
+            }, icon: Icon(Icons.share)),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+
     );
+  }
+  _onShare(BuildContext context) async {
+    // A builder is used to retrieve the context immediately
+    // surrounding the ElevatedButton.
+    //
+
+    // The context's `findRenderObject` returns the first
+    // RenderObject in its descendent tree when it's not
+    // a RenderObjectWidget. The ElevatedButton's RenderObject
+    // has its position and size after it's built.
+    final RenderBox box = context.findRenderObject() as RenderBox;
+     await Share.shareFiles(
+         filePath,
+          subject: 'Share',
+          sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
   }
 
   Future<bool> _checkPermission(BuildContext context) async {
@@ -152,6 +164,4 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
               ],
             ));
   }
-
-
 }
