@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:permission_handler/permission_handler.dart';
+import 'package:share/share.dart';
+import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dart';
 import 'package:test_flutter/screens/download_file/list_directories.dart';
 
 class DownloadFilePage extends StatefulWidget {
@@ -22,12 +24,6 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
       "https://www.businessstudio.ru/publication/proizv_predpr_abc/download.php?lang=ru-ru&oguid=a6fe90cc-11a2-41d0-b03c-c5aff5c5abb3&rguid=b7566ce6-b51d-4f2b-b9da-e208118e8e0e&ext=pdf";
   var dio = Dio();
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   Future download2(Dio dio, String url, String savePath) async {
     try {
       Response response = await dio.get(
@@ -41,11 +37,12 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
               return status < 500;
             }),
       );
-      print(response.headers);
+      print('Headers ------------------------${response.headers}');
       File file = File(savePath);
       var raf = file.openSync(mode: FileMode.write);
       // response.data is List<int> type
       raf.writeFromSync(response.data);
+      var fileHeaders = response.headers.map;
       await raf.close();
     } catch (e) {
       print(e);
@@ -57,6 +54,8 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
       print((received / total * 100).toStringAsFixed(0) + "%");
     }
   }
+
+  List<String> fullPath = [];
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +76,14 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                     }else{
                       tempDir = await path_provider.getExternalStorageDirectory();
                     }
-                    String fullPath = tempDir.path + "/boot.pdf";
+                    setState(() {
+                      fullPath.clear();
+                      fullPath.add(tempDir.path + "/boot.pdf");
+                    });
+
                     print('full path ${fullPath}');
 
-                    download2(dio, imgUrl, fullPath);
+                    download2(dio, imgUrl, fullPath[0]);
                   }
 
                 },
@@ -91,23 +94,26 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                 color: Colors.green,
                 textColor: Colors.white,
                 label: Text('Dowload Invoice')),
+            IconButton(onPressed: fullPath.isEmpty ? null :() async  {
+              final RenderBox box = context.findRenderObject() as RenderBox;
+              await Share.shareFiles( fullPath,
+                  text: 'Share file',
+                  sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
+              fullPath.clear();
+            }, icon: Icon(Icons.share)),
             TextButton(child: Text('to List Files'),onPressed: (){
               Navigator.pushNamed(context, ListFiles.id);
             }),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-            ),
+            TextButton(
+                onPressed: () async {
+                  Navigator.pushNamed(context, DownloadFileByLibPage.id);
+                },
+                child: Text('Ok')),
+
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+
     );
   }
 
@@ -149,6 +155,7 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                       }
                     },
                     child: Text('Ok')),
+
               ],
             ));
   }

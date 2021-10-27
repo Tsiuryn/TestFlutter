@@ -55,7 +55,10 @@ dependencies:
 
   permission_handler: ^8.1.2
   path_provider: ^2.0.5
+  flutter_downloader: ^1.7.1
   dio: ^4.0.1
+
+  flutter_local_notifications: ^9.0.1
 
 
   # https://gitlab+deploy-token-12:29Fs87Xp17Kxab29h7jU@gitlab.st.by:Tsiuryn_AV/generator_lib.git

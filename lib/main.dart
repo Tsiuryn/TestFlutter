@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -12,6 +13,8 @@ import 'package:test_flutter/screens/download_file/download_file_page.dart';
 import 'package:test_flutter/screens/list/search_list.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
+import 'package:test_flutter/screens/notification/notification_api.dart';
+import 'package:test_flutter/screens/notification/notification_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/redux/redux_simple_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
@@ -23,6 +26,8 @@ import 'package:test_flutter/screens/websocket/web_socket_page.dart';
 import 'app/l10n/I10n.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  NotificationApi().initNotification();
   runApp(Start());
 }
 
@@ -166,6 +171,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                     onPressed: () {
                       Navigator.pushNamed(context, DownloadFilePage.id);
+                    }),
+                MaterialButton(
+                    child: Text("Notification page"),
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, NotificationPage.id);
                     }),
                 ],
             ),
