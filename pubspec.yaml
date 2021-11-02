@@ -58,6 +58,8 @@ dependencies:
   flutter_downloader: ^1.7.1
   dio: ^4.0.1
 
+  flowder: ^0.2.0
+
   flutter_local_notifications: ^9.0.1
 
 
