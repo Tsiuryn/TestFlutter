@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -25,9 +26,12 @@ import 'package:test_flutter/screens/websocket/web_socket_page.dart';
 
 import 'app/l10n/I10n.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   NotificationApi().initNotification();
+  await FlutterDownloader.initialize(
+      debug: true // optional: set false to disable printing logs to console
+  );
   runApp(Start());
 }
 
