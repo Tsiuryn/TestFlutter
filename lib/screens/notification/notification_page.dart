@@ -8,7 +8,7 @@ import '../../main.dart';
 class NotificationPage extends StatefulWidget {
   static const id = 'NotificationPage';
 
-  NotificationPage({Key key});
+  NotificationPage({Key? key});
 
   @override
   State<NotificationPage> createState() => _NotificationPageState();

@@ -8,7 +8,7 @@ import 'package:test_flutter/screens/redux/rdx/app_state.dart';
 class ReduxSimplePage extends StatelessWidget {
   static const id = 'ReduxSimplePage';
 
-  ReduxSimplePage({Key key}) : super(key: key);
+  ReduxSimplePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

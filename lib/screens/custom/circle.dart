@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Circle extends StatefulWidget {
   static final String id = 'CustomPage_Circle';
-  const Circle({Key key}) : super(key: key);
+  const Circle({Key? key}) : super(key: key);
 
   @override
   _CircleState createState() => _CircleState();

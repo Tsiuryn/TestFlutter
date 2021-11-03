@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ScrollViewPage extends StatelessWidget {
   static final id = 'ScrollViewPage';
 
-  const ScrollViewPage({Key key}) : super(key: key);
+  const ScrollViewPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

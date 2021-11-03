@@ -10,7 +10,7 @@ import 'package:test_flutter/screens/websocket/pages/constants.dart';
 
 class StompClientPage extends StatefulWidget {
   static const id = 'StompClientPage';
-  const StompClientPage({Key key}) : super(key: key);
+  const StompClientPage({Key? key}) : super(key: key);
 
   @override
   _StompClientPageState createState() => _StompClientPageState();
@@ -32,7 +32,7 @@ void onConnect(StompFrame frame) {
   stompClient.subscribe(
     destination: '/topic/test/subscription',
     callback: (frame) {
-      List<dynamic> result = json.decode(frame.body);
+      List<dynamic> result = json.decode(frame.body ?? '');
       print(result);
     },
   );

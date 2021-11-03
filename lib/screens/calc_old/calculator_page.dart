@@ -6,7 +6,7 @@ import 'package:test_flutter/checkbox_widget/checkbox_widget.dart';
 class CalculatorPage extends StatefulWidget {
   static const String id = 'calculator_page';
 
-  const CalculatorPage({Key key}) : super(key: key);
+  const CalculatorPage({Key? key}) : super(key: key);
 
   @override
   _CalculatorPageState createState() => _CalculatorPageState();
@@ -15,7 +15,7 @@ class CalculatorPage extends StatefulWidget {
 class _CalculatorPageState extends State<CalculatorPage> {
   TextEditingController _controller = TextEditingController();
   String _text = '';
-  FocusNode _focusNode;
+  late FocusNode _focusNode;
 
   void setText(String text) {
     setState(() {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Lines extends StatefulWidget {
   static final String id = 'CustomPage_Lines';
-  const Lines({Key key}) : super(key: key);
+  const Lines({Key? key}) : super(key: key);
 
   @override
   _LinesState createState() => _LinesState();

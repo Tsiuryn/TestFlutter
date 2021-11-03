@@ -7,7 +7,7 @@ import 'package:test_flutter/screens/calculator/utils/number_manipulation.dart';
 class CalcScreen extends StatefulWidget {
   static const String id = 'CalcScreen';
 
-  const CalcScreen({Key key}) : super(key: key);
+  const CalcScreen({Key? key}) : super(key: key);
 
   @override
   _CalcScreenState createState() => _CalcScreenState();
@@ -19,7 +19,7 @@ class _CalcScreenState extends State<CalcScreen> {
   int _currentCursorPosition = -1;
   String _text = '';
   String _result = '0';
-  FocusNode _focusNode;
+  late FocusNode _focusNode;
 
   void _addSymbol(String text) {
     setState(() {

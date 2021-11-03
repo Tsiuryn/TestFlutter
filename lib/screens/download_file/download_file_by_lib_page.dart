@@ -11,7 +11,7 @@ import 'package:permission_handler/permission_handler.dart';
 class DownloadFileByLibPage extends StatefulWidget {
   static const id = 'DownloadFileByLibPage';
 
-  const DownloadFileByLibPage({Key key}) : super(key: key);
+  const DownloadFileByLibPage({Key? key}) : super(key: key);
 
   @override
   _DownloadFileByLibPageState createState() => _DownloadFileByLibPageState();
@@ -41,7 +41,7 @@ class _DownloadFileByLibPageState extends State<DownloadFileByLibPage> {
                           print('Downloading: $progress');
                         },
                         client: Dio(),
-                        file: File('${directory.path}/200MB.zip'),
+                        file: File('${directory?.path}/200MB.zip'),
                         progress: ProgressImplementation(),
                         onDone: () => print('Download done'),
                         deleteOnCancel: true,
@@ -60,7 +60,7 @@ class _DownloadFileByLibPageState extends State<DownloadFileByLibPage> {
                       var id = await FlutterDownloader.enqueue(
                           url:
                               "https://www.businessstudio.ru/publication/proizv_predpr_abc/download.php?lang=ru-ru&oguid=a6fe90cc-11a2-41d0-b03c-c5aff5c5abb3&rguid=b7566ce6-b51d-4f2b-b9da-e208118e8e0e&ext=pdf",
-                          savedDir: directory.path,
+                          savedDir: directory!.path,
                           fileName: 'File.pdf',
                           showNotification: true,
                           openFileFromNotification: false);
@@ -75,13 +75,4 @@ class _DownloadFileByLibPageState extends State<DownloadFileByLibPage> {
         ));
   }
 
-  Future<String> _downloadFile(Directory directory) async {
-    return FlutterDownloader.enqueue(
-        url:
-            "https://www.businessstudio.ru/publication/proizv_predpr_abc/download.php?lang=ru-ru&oguid=a6fe90cc-11a2-41d0-b03c-c5aff5c5abb3&rguid=b7566ce6-b51d-4f2b-b9da-e208118e8e0e&ext=pdf",
-        savedDir: directory.path,
-        fileName: 'File.pdf',
-        showNotification: true,
-        openFileFromNotification: true);
-  }
 }

@@ -17,7 +17,7 @@ void main(){
 int getNumber() => 15;
 
 
-void setData([int age, String name]){
+void setData([int? age, String? name]){
   print('I\'m $age. My name is $name');
 }
 

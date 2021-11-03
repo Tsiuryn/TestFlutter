@@ -140,7 +140,7 @@ class MyButton extends StatelessWidget {
   final Function onPressed;
   final String title;
 
-  MyButton({this.onPressed, this.title});
+  MyButton({required this.onPressed, required this.title});
 
   @override
   Widget build(BuildContext context) {

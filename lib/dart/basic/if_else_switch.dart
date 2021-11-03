@@ -4,7 +4,7 @@ void main(){
   ternarOperation();
 }
 
-void printSwitch([int num]){
+void printSwitch([int? num]){
   int output = 0;
   switch(num){
 

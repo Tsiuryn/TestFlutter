@@ -7,13 +7,14 @@ class CalcBtn extends StatelessWidget {
   final String mainText;
   final String secondText;
   final Function onPress;
-  final Function onLongPress;
+  final Function? onLongPress;
   final CalcBtnStyle btnStyle;
   final int flex;
 
-  CalcBtn(this.mainText, {Function onPress, String secondText, this.onLongPress, int flex, CalcBtnStyle btnStyle})
+  CalcBtn(this.mainText, {required Function onPress, String? secondText,  Function? onLongPress,  int? flex, CalcBtnStyle? btnStyle})
       : this.btnStyle = btnStyle ?? CalcBtnStyle(),
         this.secondText = secondText ?? '',
+  this.onLongPress = onLongPress,
         this.flex = flex ?? 1,
         this.onPress = onPress;
 

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CheckboxWidget extends StatefulWidget {
-  const CheckboxWidget({Key key}) : super(key: key);
+  const CheckboxWidget({Key? key}) : super(key: key);
 
   @override
   _CheckboxWidgetState createState() => _CheckboxWidgetState();
@@ -17,7 +17,7 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
       child: Row(
         children: [
           Checkbox(
-            onChanged: (bool value) {
+            onChanged: (bool? value) {
               setState(() {
                 if (value != null) {
                   this._checkboxVal = value;

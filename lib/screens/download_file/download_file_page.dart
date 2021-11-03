@@ -11,7 +11,7 @@ import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dar
 class DownloadFilePage extends StatefulWidget {
   static const id = 'DownloadFilePage';
 
-  const DownloadFilePage({Key key}) : super(key: key);
+  const DownloadFilePage({Key? key}) : super(key: key);
 
   @override
   _DownloadFilePageState createState() => _DownloadFilePageState();
@@ -33,7 +33,7 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
             responseType: ResponseType.bytes,
             followRedirects: false,
             validateStatus: (status) {
-              return status < 500;
+              return status! < 500;
             }),
       );
       print('Headers ------------------------${response.headers}');
@@ -118,7 +118,7 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
     if (firstStatus.isDenied) {
       var status = await Permission.storage.request();
       if (status.isDenied) {
-        await showAlarmDialog(context);
+        showAlarmDialog(context);
       }
       return false;
 
@@ -144,7 +144,7 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                       Navigator.of(context).pop();
                       if(await _checkPermission(context)){
                         var tempDir = await path_provider.getExternalStorageDirectory();
-                        String fullPath = tempDir.path + "/boo2.pdf";
+                        String fullPath = tempDir!.path + "/boo2.pdf";
                         print('full path ${fullPath}');
 
                         download2(dio, imgUrl, fullPath);

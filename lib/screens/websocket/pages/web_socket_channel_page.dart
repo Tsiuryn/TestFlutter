@@ -6,7 +6,7 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 
 class WebSocketChannelPage extends StatefulWidget {
   static const id = 'WebSocketChannelPage';
-  const WebSocketChannelPage({Key key}) : super(key: key);
+  const WebSocketChannelPage({Key? key}) : super(key: key);
 
   @override
   _WebSocketChannelPageState createState() => _WebSocketChannelPageState();
@@ -42,7 +42,7 @@ class _WebSocketDemoState extends State<WebSocketDemo> {
   final inputController = TextEditingController();
   List<String> messageList = [];
 
-  _WebSocketDemoState({this.channel}) {
+  _WebSocketDemoState({required this.channel}) {
     channel.stream.listen((data) {
       setState(() {
         messageList.add(data);

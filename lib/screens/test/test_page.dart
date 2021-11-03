@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class TestPage extends StatefulWidget {
   static const id = 'TestPage';
 
-  const TestPage({Key key}) : super(key: key);
+  const TestPage({Key? key}) : super(key: key);
 
   @override
   _TestPageState createState() => _TestPageState();
@@ -15,7 +15,7 @@ class TestPage extends StatefulWidget {
 class _TestPageState extends State<TestPage> {
 
   var _time = 10;
-  Timer _timer;
+  late Timer _timer;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

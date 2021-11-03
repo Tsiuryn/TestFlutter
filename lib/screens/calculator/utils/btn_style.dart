@@ -13,13 +13,13 @@ class CalcBtnStyle {
   TextStyle secondTextStyle;
 
   CalcBtnStyle(
-      {Color backgroundColor,
-        Color strokeColor,
-        double strokeWidth,
-        double cornerRadius,
-        TextStyle mainTextStyle,
-        TextStyle secondTextStyle,
-        Color rippleColor})
+      {Color? backgroundColor,
+         Color? strokeColor,
+         double? strokeWidth,
+         double? cornerRadius,
+         TextStyle? mainTextStyle,
+         TextStyle? secondTextStyle,
+         Color? rippleColor})
       : this.backgroundColor = backgroundColor ?? Colors.black45,
         this.strokeColor = strokeColor ?? Colors.black,
         this.strokeWidth = strokeWidth ?? 1,

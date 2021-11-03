@@ -5,7 +5,7 @@ import 'package:test_flutter/screens/websocket/pages/web_socket_channel_page.dar
 
 class WebSocketPage extends StatelessWidget {
   static const id = 'WebSocketPage';
-  const WebSocketPage({Key key}) : super(key: key);
+  const WebSocketPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

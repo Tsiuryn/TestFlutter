@@ -2,12 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class ProgressPage extends StatefulWidget {
   static const String id = 'progress_page';
 
-  const ProgressPage({Key key}) : super(key: key);
+  const ProgressPage({Key? key}) : super(key: key);
 
   @override
   _ProgressPageState createState() => _ProgressPageState();
@@ -46,7 +45,7 @@ class _ProgressPageState extends State<ProgressPage> {
                   });
                 }),
             MaterialButton(
-                child: Text("Show/Hide persent indicator "),
+                child: Text("Show/Hide percent indicator "),
                 color: Colors.blue,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
@@ -82,25 +81,7 @@ class _ProgressPageState extends State<ProgressPage> {
             ),
           ) : null,
         ),
-        Center(
-          child: _visiblePercent
-              ? CircularPercentIndicator(
-                  radius: 100.0,
-                  lineWidth: 10.0,
-                  percent: 1,
-                  animation: true,
-                  animationDuration: 5000,
-                  header: new Text("Icon header"),
-                  center: new Icon(
-                    Icons.person_pin,
-                    size: 50.0,
-                    color: Colors.blue,
-                  ),
-                  backgroundColor: Colors.grey,
-                  progressColor: Colors.blue,
-                )
-              : null,
-        )
+
       ],
     ));
   }

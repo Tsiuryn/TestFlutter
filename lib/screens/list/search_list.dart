@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ListSearch extends StatefulWidget {
   static String id = 'ListSearch';
 
-  const ListSearch({Key key}) : super(key: key);
+  const ListSearch({Key? key}) : super(key: key);
 
   @override
   _ListSearchState createState() => _ListSearchState();
@@ -56,7 +56,7 @@ class DataSearch extends SearchDelegate<String> {
           progress: transitionAnimation,
         ),
         onPressed: () {
-          close(context, null);
+          close(context, '');
         });
   }
 

@@ -5,7 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'language_picker_widget.dart';
 
 class LocalizationPage extends StatefulWidget {
-  const LocalizationPage({Key key}) : super(key: key);
+  const LocalizationPage({Key? key}) : super(key: key);
 
   static const String id = 'localization_page';
 
@@ -35,7 +35,7 @@ class _LocalizationPageState extends State<LocalizationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).title,
+          AppLocalizations.of(context)!.title,
         ),
         actions: [LanguagePickerWidget()],
       ),
@@ -43,7 +43,7 @@ class _LocalizationPageState extends State<LocalizationPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text(AppLocalizations.of(context).with_parameters(_id.toString()))),
+          Center(child: Text(AppLocalizations.of(context)!.with_parameters(_id.toString()))),
           SizedBox(
             height: 150.0,
           ),

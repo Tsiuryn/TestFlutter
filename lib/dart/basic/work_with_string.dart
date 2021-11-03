@@ -17,7 +17,7 @@ bool isPhoneNumber(String number){
   final newNumber = number.replaceAll(' ', '');
   final regExpMatch =  regExp.firstMatch(newNumber);
   if(regExpMatch != null){
-    return regExpMatch.group(1).length == number.length -1 ;
+    return regExpMatch.group(1)?.length == number.length -1 ;
   }else return false;
 
 }

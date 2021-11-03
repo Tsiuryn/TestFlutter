@@ -22,6 +22,7 @@ import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
+import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/web_socket_page.dart';
 
 import 'app/l10n/I10n.dart';
@@ -182,6 +183,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                     onPressed: () {
                       Navigator.pushNamed(context, NotificationPage.id);
+                    }),
+
+                MaterialButton(
+                    child: Text("Text field page"),
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, TextFieldPage.id);
                     }),
                 ],
             ),

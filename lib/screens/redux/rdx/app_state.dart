@@ -5,5 +5,5 @@ class AppState {
   final String text;
   final Widget widget;
 
-  const AppState({@required this.counter,@required this.text,@required this.widget});
+  const AppState({required this.counter,required this.text,required this.widget});
 }

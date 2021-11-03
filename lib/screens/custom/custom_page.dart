@@ -7,7 +7,7 @@ import 'lines.dart';
 
 class CustomPage extends StatefulWidget {
   static final String id = 'CustomPage';
-  const CustomPage({Key key}) : super(key: key);
+  const CustomPage({Key? key}) : super(key: key);
 
   @override
   _CustomPageState createState() => _CustomPageState();

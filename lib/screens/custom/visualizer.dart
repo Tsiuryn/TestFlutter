@@ -15,8 +15,8 @@ class _VisualizerState extends State<Visualizer>
   var _radius = 100.0;
   var _radians = 0.0;
 
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {

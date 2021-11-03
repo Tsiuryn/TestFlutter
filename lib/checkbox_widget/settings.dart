@@ -4,7 +4,7 @@ class Settings {
   CheckboxSettings checkboxSettings;
   ChecklistSettings checklistSettings;
 
-  Settings({CheckboxSettings checkboxSettings , ChecklistSettings checklistSettings }):
+  Settings({CheckboxSettings? checkboxSettings , ChecklistSettings? checklistSettings }):
       checkboxSettings = checkboxSettings ?? CheckboxSettings(),
       checklistSettings = checklistSettings ?? ChecklistSettings();
 
@@ -15,8 +15,8 @@ class CheckboxSettings {
   int textColor;
 
   CheckboxSettings({
-    int squareColor,
-    int textColor,
+    int? squareColor,
+    int? textColor,
   }): squareColor = squareColor ?? 7,
         textColor = textColor ??  8;
 
@@ -28,8 +28,8 @@ class ChecklistSettings {
   int textColor;
 
   ChecklistSettings({
-    int squareColor,
-    int textColor,
+    int? squareColor,
+    int? textColor,
   }): squareColor = squareColor ?? 4,
         textColor = textColor ??  5;
 }

@@ -34,7 +34,7 @@ class NotificationApi {
   }
 
   Future<void> showNotification(int id, String title, String body, int seconds) async {
-    final bool result = await flutterLocalNotificationsPlugin
+    final bool? result = await flutterLocalNotificationsPlugin
         .resolvePlatformSpecificImplementation<
         IOSFlutterLocalNotificationsPlugin>()
         ?.requestPermissions(

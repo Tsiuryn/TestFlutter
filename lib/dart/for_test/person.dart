@@ -4,11 +4,11 @@ class Person11 {
   int _age;
   String _id;
 
-  Person11({String name = 'Alex', int age = 33, String id}) {
-    this._name = name;
-    this._age = age;
+  Person11({String? name , int? age , required String id}):
+    this._name = name ?? 'Alex',
+    this._age = age ??  33,
     this._id = id;
-  }
+
 
   String get id => _id;
 
