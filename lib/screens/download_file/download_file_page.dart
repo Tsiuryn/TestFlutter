@@ -7,7 +7,6 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:share/share.dart';
 import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dart';
-import 'package:test_flutter/screens/download_file/list_directories.dart';
 
 class DownloadFilePage extends StatefulWidget {
   static const id = 'DownloadFilePage';
@@ -101,14 +100,11 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                   sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
               fullPath.clear();
             }, icon: Icon(Icons.share)),
-            TextButton(child: Text('to List Files'),onPressed: (){
-              Navigator.pushNamed(context, ListFiles.id);
-            }),
-            TextButton(
+            OutlinedButton(
                 onPressed: () async {
                   Navigator.pushNamed(context, DownloadFileByLibPage.id);
                 },
-                child: Text('Ok')),
+                child: Text('Download by lib')),
 
           ],
         ),
