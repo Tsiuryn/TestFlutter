@@ -1,4 +1,6 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
@@ -8,6 +10,8 @@ import 'package:provider/provider.dart';
 import 'package:test_flutter/routes.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
+import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
+import 'package:test_flutter/screens/change_theme/themes.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/custom/custom_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
@@ -26,6 +30,8 @@ import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/web_socket_page.dart';
 
 import 'app/l10n/I10n.dart';
+
+StreamController<bool> isLightTheme = StreamController();
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +52,8 @@ class Start extends StatelessWidget {
         return MaterialApp(
             debugShowCheckedModeBanner: false,
             initialRoute: MyHomePage.id,
+            theme: lightTheme,
+            darkTheme: darkTheme,
             locale: provider.locale,
             supportedLocales: L10n.all,
             localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalCupertinoLocalizations.delegate],
@@ -191,6 +199,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
                     onPressed: () {
                       Navigator.pushNamed(context, TextFieldPage.id);
+                    }),
+
+                MaterialButton(
+                    child: Text("Change theme page"),
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, ChangeThemePage.id);
                     }),
                 ],
             ),

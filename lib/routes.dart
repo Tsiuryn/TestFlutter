@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
+import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/custom/circle.dart';
 import 'package:test_flutter/screens/custom/custom_page.dart';
@@ -57,5 +58,6 @@ class Routes {
     DownloadFileByLibPage.id: (context) => DownloadFileByLibPage(),
     NotificationPage.id: (context) => NotificationPage(),
     TextFieldPage.id: (context) => TextFieldPage(),
+    ChangeThemePage.id: (context) => ChangeThemePage(),
   };
 }
