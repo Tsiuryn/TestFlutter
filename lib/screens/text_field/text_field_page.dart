@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
 import 'package:test_flutter/screens/text_field/text_field_widget.dart';
 
 class TextFieldPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _TextFieldPageState extends State<TextFieldPage> {
   var _secondValue = '';
 
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,23 +44,22 @@ class _TextFieldPageState extends State<TextFieldPage> {
                   //   LengthLimitingTextInputFormatter(29),
                   // ],
                   validator: (value) {
-                    if(value != null){
-                      if (value.isEmpty){
+                    if (value != null) {
+                      if (value.isEmpty) {
                         return 'Field cannot be blank';
                       }
-                      if(value.length > 10){
+                      if (value.length > 10) {
                         return 'Max symbols';
                       }
                     }
 
                     return null;
                   },
-                  onFocusChangeListener: (hasFocus){
-                    if(!hasFocus){
-                      if(_firstValue.isEmpty){
+                  onFocusChangeListener: (hasFocus) {
+                    if (!hasFocus) {
+                      if (_firstValue.isEmpty) {
                         return 'Empty';
                       }
-
                     }
                   },
                 ),
@@ -66,11 +67,19 @@ class _TextFieldPageState extends State<TextFieldPage> {
                   height: 24,
                 ),
                 TextFieldWidget('Add some text'),
-
-                OutlinedButton(onPressed: (){
-                  globalKey.currentState!.validate();
-                }, child: Text('check'))
-
+                OutlinedButton(
+                    onPressed: () {
+                      globalKey.currentState!.validate();
+                    },
+                    child: Text('check')),
+                SizedBox(
+                  height: 24,
+                ),
+                OutlinedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, TextFieldWithPopUp.id);
+                    },
+                    child: Text('to PopUp Page'))
               ],
             ),
           ),

@@ -14,6 +14,7 @@ import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dar
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
 import 'package:test_flutter/screens/list/search_list.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
+import 'package:test_flutter/screens/menu/dropdown_menu.dart';
 import 'package:test_flutter/screens/notification/notification_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/redux/redux_simple_page.dart';
@@ -21,6 +22,7 @@ import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
+import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
 import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/pages/stomp_client_page.dart';
 import 'package:test_flutter/screens/websocket/pages/web_socket_channel_page.dart';
@@ -59,5 +61,7 @@ class Routes {
     NotificationPage.id: (context) => NotificationPage(),
     TextFieldPage.id: (context) => TextFieldPage(),
     ChangeThemePage.id: (context) => ChangeThemePage(),
+    TextFieldWithPopUp.id: (context) => TextFieldWithPopUp(),
+    DropdownButtonExample.id: (context) => DropdownButtonExample(),
   };
 }
