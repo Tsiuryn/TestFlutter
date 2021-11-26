@@ -93,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 _btn('Localization screen', LocalizationPage.id),
                 _btn('Shared app', ShareAppPage.id, toRight: true),
                 _btn('Progress page', ProgressPage.id),
+                _btn('DropDown menu', DropdownButtonExample.id),
                 _btn('Custom page', CustomPage.id, toRight: true),
                 _btn('List search', ListSearch.id),
                 _btn('Web Socket page', WebSocketPage.id, toRight: true),
