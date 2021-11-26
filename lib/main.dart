@@ -8,8 +8,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/routes.dart';
-import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
+import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
 import 'package:test_flutter/screens/change_theme/themes.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
@@ -78,141 +78,60 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Main screen'),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 24.0),
-        child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 24),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
               children: [
-                MaterialButton(
-                    child: Text("Test page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: (){
-                      Navigator.pushNamed(context, TestPage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Constraint layout "),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: (){
-                      Navigator.pushNamed(context, ConstraintPage.id);
-                }),
-                  MaterialButton(
-                      child: Text("Calculator layout"),
-                      color: Colors.blue,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                      onPressed: () {
-                        Navigator.pushNamed(context, CalculatorPage.id);
-                      }),
-                MaterialButton(
-                    child: Text("Calculator screen"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, CalcScreen.id);
-                    }),
-                  MaterialButton(
-                      child: Text("Localization screen"),
-                      color: Colors.blue,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                      onPressed: () {
-                        Navigator.pushNamed(context, LocalizationPage.id);
-                      }),
-                MaterialButton(
-                    child: Text("Shared app "),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, ShareAppPage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Progress page "),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, ProgressPage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Custom page "),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, CustomPage.id);
-                    }),
-                MaterialButton(
-                    child: Text("List search "),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, ListSearch.id);
-                    }),
-                MaterialButton(
-                    child: Text("Web Socket page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, WebSocketPage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Search list page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, SearchListPage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Scroll view page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, ScrollViewPage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Redux simple page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, ReduxSimplePage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Download file page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, DownloadFilePage.id);
-                    }),
-                MaterialButton(
-                    child: Text("Notification page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, NotificationPage.id);
-                    }),
-
-                MaterialButton(
-                    child: Text("Text field page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, TextFieldPage.id);
-                    }),
-
-                MaterialButton(
-                    child: Text("Change theme page"),
-                    color: Colors.blue,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
-                    onPressed: () {
-                      Navigator.pushNamed(context, ChangeThemePage.id);
-                    }),
-                ],
+                _btn('Test page', TestPage.id),
+                _btn('Constraint layout', ConstraintPage.id, toRight: true),
+                _btn('Calculator layout', CalculatorPage.id),
+                _btn('Calculator screen', CalcScreen.id, toRight: true),
+                _btn('Localization screen', LocalizationPage.id),
+                _btn('Shared app', ShareAppPage.id, toRight: true),
+                _btn('Progress page', ProgressPage.id),
+                _btn('Custom page', CustomPage.id, toRight: true),
+                _btn('List search', ListSearch.id),
+                _btn('Web Socket page', WebSocketPage.id, toRight: true),
+                _btn('Search list page', SearchListPage.id),
+                _btn('Scroll view page', ScrollViewPage.id, toRight: true),
+                _btn('Redux simple page', ReduxSimplePage.id),
+                _btn('Download file page', DownloadFilePage.id, toRight: true),
+                _btn('Notification page', NotificationPage.id),
+                _btn('Text field page', TextFieldPage.id, toRight: true),
+                _btn('Change theme page', ChangeThemePage.id),
+              ],
             ),
           ),
+        ));
+  }
+
+  Widget _btn(String btnName, String pageId, {bool toRight = false}) {
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: toRight ? MainAxisAlignment.end: MainAxisAlignment.start,
+      children: [
+        // Visibility(
+        //   visible: toRight,
+        //   child: Expanded(child: Spacer()),
+        // ),
+        Container(
+          width: 200,
+          child: OutlinedButton(
+              child: Text(
+                btnName,
+                style: TextStyle(overflow: TextOverflow.ellipsis),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, pageId);
+              }),
         ),
-      )
+      ],
     );
   }
 }
