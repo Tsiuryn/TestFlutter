@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 class DocumentsTextField extends StatefulWidget {
   final TextEditingController controller;
+  final FocusNode focusNode;
   final String placeholder;
   final String? Function(String?)? validator;
   final String? Function(bool)? onFocusChangeListener;
@@ -15,6 +16,7 @@ class DocumentsTextField extends StatefulWidget {
   const DocumentsTextField(
       {Key? key,
         required this.controller,
+        required this.focusNode,
         this.placeholder = '',
         this.validator,
         this.onFocusChangeListener,
@@ -46,7 +48,7 @@ class _DocumentsTextFieldState extends State<DocumentsTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      focusNode: _focusNode,
+      focusNode: widget.focusNode,
       decoration: InputDecoration(
         labelText: widget.placeholder,
         enabled: widget.enabled,

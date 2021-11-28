@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/screens/text_field/pop_up/documents_text_field.dart';
+import 'package:test_flutter/screens/text_field/pop_up/widgets/dropdown_menu.dart';
 import 'package:test_flutter/screens/text_field/pop_up/widgets/textfield_search.dart';
 
 class TextFieldWithPopUp extends StatefulWidget {
@@ -14,6 +15,7 @@ class TextFieldWithPopUp extends StatefulWidget {
 
 class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
   var controller = TextEditingController();
+  GlobalKey<DropDownMenuState> key = GlobalKey<DropDownMenuState>();
 
   late String country_id;
   List<String> country = [
@@ -27,6 +29,23 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
     "Russia",
     "Germany"
   ];
+
+  List <Widget> get widCountry => country.map((e) => Text(e)).toList();
+
+  var focusNode = FocusNode();
+  bool isShow = false;
+
+  @override
+  void initState() {
+    super.initState();
+    focusNode.addListener(() {
+        // setState(() {
+        //   isShow = focusNode.hasFocus;
+          key.currentState!.showMenu(focusNode.hasFocus);
+        // });
+
+    });
+  }
 
 
   @override
@@ -51,14 +70,7 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                 children: [
 
                   SizedBox(
-                    height: 24,
-                  ),
-                  DocumentsTextField(
-                    controller: controller,
-                    placeholder: 'pop up menu',
-                  ),
-                  SizedBox(
-                    height: 24,
+                    height: 240,
                   ),
                   TextFieldSearch(
                     initialList: country,
@@ -66,22 +78,29 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                     controller: TextEditingController(),
                     decoration: InputDecoration(
                       label: Text('Simple List'),
-                      focusedBorder:
-                      _buildOutlineBorder(Theme.of(context).colorScheme.secondary),
+                      focusedBorder: _buildOutlineBorder(Theme.of(context).colorScheme.secondary),
                       errorBorder: _buildOutlineBorder(Theme.of(context).errorColor),
                       border: _buildOutlineBorder(Theme.of(context).unselectedWidgetColor),
                     ),
-                    getSelectedValue: (){
+                    getSelectedValue: () {},
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  DropDownMenu(
+                    key: key,
+                    textField: _buildTextField(context),
+                    boxWidgets: _buildListView(context),
+                    // showMenu: true,
+                  ),
+                  SizedBox(
+                    height: 280,
+                  ),
 
-                    },),
-                    SizedBox(
-                      height: 2400,
-                    ),
 
-
-
-
-
+                  SizedBox(
+                    height: 2400,
+                  ),
                 ],
               ),
             ),
@@ -91,6 +110,24 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
     );
   }
 
+  Widget _buildTextField(BuildContext context) {
+    return DocumentsTextField(
+      focusNode: focusNode,
+      controller: TextEditingController(),
+      placeholder: 'Drop down menu',
+    );
+  }
+
+  ListView _buildListView(BuildContext context) {
+    return ListView.builder(
+      itemCount: country.length,
+      itemBuilder: (context, position){
+        return ListTile(
+          title: Text(country[position]),
+        );
+      },
+    );
+  }
 
   InputBorder _buildOutlineBorder(Color color) {
     return OutlineInputBorder(
@@ -98,5 +135,4 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
       borderRadius: BorderRadius.circular(8.0),
     );
   }
-
 }

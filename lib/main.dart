@@ -8,6 +8,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/routes.dart';
+import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
@@ -86,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
+                _btn('Animation', AnimationPage.id, toRight: true),
                 _btn('Test page', TestPage.id),
                 _btn('Constraint layout', ConstraintPage.id, toRight: true),
                 _btn('Calculator layout', CalculatorPage.id),
@@ -93,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 _btn('Localization screen', LocalizationPage.id),
                 _btn('Shared app', ShareAppPage.id, toRight: true),
                 _btn('Progress page', ProgressPage.id),
-                _btn('DropDown menu', DropdownButtonExample.id),
                 _btn('Custom page', CustomPage.id, toRight: true),
                 _btn('List search', ListSearch.id),
                 _btn('Web Socket page', WebSocketPage.id, toRight: true),
@@ -104,6 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 _btn('Notification page', NotificationPage.id),
                 _btn('Text field page', TextFieldPage.id, toRight: true),
                 _btn('Change theme page', ChangeThemePage.id),
+                _btn('DropDown menu', DropdownButtonExample.id, toRight: true),
               ],
             ),
           ),

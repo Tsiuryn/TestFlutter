@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 
 // stuff for debouncing
 import 'package:flutter/foundation.dart';
-import 'dart:async';
-
 import 'package:visibility_detector/visibility_detector.dart';
 
 class TextFieldSearch extends StatefulWidget {
