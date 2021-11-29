@@ -91,16 +91,19 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                     key: key,
                     textField: _buildTextField(context),
                     boxWidgets: _buildListView(context),
+                    // boxWidgets: Text('jdslkjflksjldfjlksdjfkljalsjdflkjalsdjfajsdifj alsdjfkladjs lfjalsdkfj alsdjflkajsdlfkjadjsflajsdfjlasjdfljalsdjflkjalsdfjiejaijfodfoiajoijioajeofjioajeoijaiojeofij'),
                     // showMenu: true,
                   ),
                   SizedBox(
                     height: 280,
                   ),
 
+                  Container(
+                    height: 300,
+                    child: _buildListView(context),
+                  )
 
-                  SizedBox(
-                    height: 2400,
-                  ),
+
                 ],
               ),
             ),
@@ -118,14 +121,17 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
     );
   }
 
-  ListView _buildListView(BuildContext context) {
-    return ListView.builder(
-      itemCount: country.length,
-      itemBuilder: (context, position){
-        return ListTile(
-          title: Text(country[position]),
-        );
-      },
+  Widget _buildListView(BuildContext context) {
+    return Container(
+      child: ListView.builder(
+        padding: EdgeInsetsDirectional.zero,
+        itemCount: country.length,
+        itemBuilder: (context, position){
+          return ListTile(
+            title: Text(country[position]),
+          );
+        },
+      ),
     );
   }
 
