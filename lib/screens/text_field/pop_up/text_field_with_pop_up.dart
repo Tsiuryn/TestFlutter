@@ -95,13 +95,13 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                     // showMenu: true,
                   ),
                   SizedBox(
-                    height: 280,
+                    height: 2800,
                   ),
-
-                  Container(
-                    height: 300,
-                    child: _buildListView(context),
-                  )
+                  //
+                  // Container(
+                  //   height: 300,
+                  //   child: _buildListView(context),
+                  // )
 
 
                 ],
