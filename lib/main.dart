@@ -27,6 +27,7 @@ import 'package:test_flutter/screens/redux/redux_simple_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
+import 'package:test_flutter/screens/slidable/slidable_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/web_socket_page.dart';
@@ -106,6 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 _btn('Text field page', TextFieldPage.id, toRight: true),
                 _btn('Change theme page', ChangeThemePage.id),
                 _btn('DropDown menu', DropdownButtonExample.id, toRight: true),
+                _btn('Slidable page', SlidablePage.id, toRight: false),
               ],
             ),
           ),

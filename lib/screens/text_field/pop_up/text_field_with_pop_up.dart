@@ -91,8 +91,19 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                     key: key,
                     textField: _buildTextField(context),
                     boxWidgets: _buildListView(context),
-                    // boxWidgets: Text('jdslkjflksjldfjlksdjfkljalsjdflkjalsdjfajsdifj alsdjfkladjs lfjalsdkfj alsdjflkajsdlfkjadjsflajsdfjlasjdfljalsdjflkjalsdfjiejaijfodfoiajoijioajeofjioajeoijaiojeofij'),
                     // showMenu: true,
+                  ),
+                  SizedBox(
+                    height: 150,
+                  ),
+                  DropdownButton<String>(
+                    items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (_) {},
                   ),
                   SizedBox(
                     height: 2800,
