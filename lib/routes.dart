@@ -25,6 +25,7 @@ import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
+import 'package:test_flutter/screens/text_field/show_more/show_more_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/pages/stomp_client_page.dart';
 import 'package:test_flutter/screens/websocket/pages/web_socket_channel_page.dart';
@@ -67,5 +68,6 @@ class Routes {
     DropdownButtonExample.id: (context) => DropdownButtonExample(),
     AnimationPage.id: (context) => AnimationPage(),
     AnimatedContainerApp.id: (context) => AnimatedContainerApp(),
+    ShowMorePage.id: (context) => ShowMorePage(),
   };
 }

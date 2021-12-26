@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
+import 'package:test_flutter/screens/text_field/show_more/show_more_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_widget.dart';
 
 class TextFieldPage extends StatefulWidget {
@@ -79,7 +80,15 @@ class _TextFieldPageState extends State<TextFieldPage> {
                     onPressed: () {
                       Navigator.pushNamed(context, TextFieldWithPopUp.id);
                     },
-                    child: Text('to PopUp Page'))
+                    child: Text('to PopUp Page')),
+                SizedBox(
+                  height: 24,
+                ),
+                OutlinedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, ShowMorePage.id);
+                    },
+                    child: Text('Show more page'))
               ],
             ),
           ),
