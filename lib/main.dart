@@ -2,13 +2,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/routes.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
+import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
@@ -106,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 _btn('Text field page', TextFieldPage.id, toRight: true),
                 _btn('Change theme page', ChangeThemePage.id),
                 _btn('DropDown menu', DropdownButtonExample.id, toRight: true),
+                _btn('Bird Calc page', BirdCalcPage.id),
               ],
             ),
           ),

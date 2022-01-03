@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
+import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
@@ -69,5 +70,6 @@ class Routes {
     AnimationPage.id: (context) => AnimationPage(),
     AnimatedContainerApp.id: (context) => AnimatedContainerApp(),
     ShowMorePage.id: (context) => ShowMorePage(),
+    BirdCalcPage.id: (context) => BirdCalcPage(),
   };
 }
