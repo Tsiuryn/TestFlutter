@@ -1,13 +1,15 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test_flutter/screens/bird_calc/logic.dart';
 
-import 'mocks.dart';
+import 'bird_calc_test.mocks.dart';
 
+@GenerateMocks([Random])
 void main() {
-  late MockRandom random;
+  late Random random;
   setUp((){
     random = MockRandom();
   });

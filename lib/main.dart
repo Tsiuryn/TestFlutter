@@ -16,7 +16,6 @@ import 'package:test_flutter/screens/change_theme/themes.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/custom/custom_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
-import 'package:test_flutter/screens/list/search_list.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
 import 'package:test_flutter/screens/menu/dropdown_menu.dart';
@@ -71,72 +70,66 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late List<Widget> listBtn;
+
+  @override
+  void initState() {
+    listBtn = <Widget>[
+      _btn('Animation', AnimationPage.id),
+      _btn('Test page', TestPage.id),
+      _btn('Constraint layout', ConstraintPage.id),
+      _btn('Calculator layout', CalculatorPage.id),
+      _btn('Calculator screen', CalcScreen.id),
+      _btn('Localization screen', LocalizationPage.id),
+      _btn(
+        'Shared app',
+        ShareAppPage.id,
+      ),
+      _btn('Progress page', ProgressPage.id),
+      _btn('Custom page', CustomPage.id),
+      _btn('Web Socket page', WebSocketPage.id),
+      _btn('Search list page', SearchListPage.id),
+      _btn('Scroll view page', ScrollViewPage.id),
+      _btn('Redux simple page', ReduxSimplePage.id),
+      _btn('Download file page', DownloadFilePage.id),
+      _btn('Notification page', NotificationPage.id),
+      _btn('Text field page', TextFieldPage.id),
+      _btn('Change theme page', ChangeThemePage.id),
+      _btn('DropDown menu', DropdownButtonExample.id),
+      _btn('Bird Calc page', BirdCalcPage.id),
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Main screen'),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 24),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                _btn('Animation', AnimationPage.id, toRight: true),
-                _btn('Test page', TestPage.id),
-                _btn('Constraint layout', ConstraintPage.id, toRight: true),
-                _btn('Calculator layout', CalculatorPage.id),
-                _btn('Calculator screen', CalcScreen.id, toRight: true),
-                _btn('Localization screen', LocalizationPage.id),
-                _btn('Shared app', ShareAppPage.id, toRight: true),
-                _btn('Progress page', ProgressPage.id),
-                _btn('Custom page', CustomPage.id, toRight: true),
-                _btn('List search', ListSearch.id),
-                _btn('Web Socket page', WebSocketPage.id, toRight: true),
-                _btn('Search list page', SearchListPage.id),
-                _btn('Scroll view page', ScrollViewPage.id, toRight: true),
-                _btn('Redux simple page', ReduxSimplePage.id),
-                _btn('Download file page', DownloadFilePage.id, toRight: true),
-                _btn('Notification page', NotificationPage.id),
-                _btn('Text field page', TextFieldPage.id, toRight: true),
-                _btn('Change theme page', ChangeThemePage.id),
-                _btn('DropDown menu', DropdownButtonExample.id, toRight: true),
-                _btn('Bird Calc page', BirdCalcPage.id),
-              ],
-            ),
-          ),
-        ));
+        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+          children: listBtn,
+        ),
+      ),
+    );
   }
 
-  Widget _btn(String btnName, String pageId, {bool toRight = false}) {
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: toRight ? MainAxisAlignment.end: MainAxisAlignment.start,
-      children: [
-        // Visibility(
-        //   visible: toRight,
-        //   child: Expanded(child: Spacer()),
-        // ),
-        Container(
-          width: 200,
-          child: OutlinedButton(
-              child: Text(
-                btnName,
-                style: TextStyle(overflow: TextOverflow.ellipsis),
-              ),
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.blue),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, pageId);
-              }),
+  Widget _btn(String btnName, String pageId) {
+    return OutlinedButton(
+        child: Center(
+          child: Text(
+            btnName,
+            textAlign: TextAlign.center,
+          ),
         ),
-      ],
-    );
+        style: ButtonStyle(elevation: MaterialStateProperty.all(4)),
+        onPressed: () {
+          Navigator.pushNamed(context, pageId);
+        });
   }
 }

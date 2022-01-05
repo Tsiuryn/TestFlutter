@@ -33,11 +33,10 @@ class BirdCalc {
       case BirdType.constant:
         return 1;
       case BirdType.random:
-        return random.nextInt(_minRandomValue) + _maxRandomValue;
+        return random.nextInt(_maxRandomValue) + _minRandomValue;
       case BirdType.combo:
         return 5 * birds.where((bird) => bird.type == BirdType.combo).length;
     }
-    return 0;
   }
 }
 
@@ -46,9 +45,9 @@ class AppState {
     balance: 0,
     birds: [Bird(BirdType.constant)],
     items: [
-      BirdItem(type: BirdType.constant, price: 25),
+      BirdItem(type: BirdType.constant, price: 50),
       BirdItem(type: BirdType.random, price: 100),
-      BirdItem(type: BirdType.combo, price: 250),
+      BirdItem(type: BirdType.combo, price: 150),
     ],
   );
 

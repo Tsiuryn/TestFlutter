@@ -161,7 +161,7 @@ class BirdStoreView extends StatelessWidget {
                       type: item.type,
                       onTap: () {
                         item.price <= state.balance
-                            ? () => store.buyBird(item)
+                            ? store.buyBird(item)
                             : null;
                       }
                     ),
