@@ -21,6 +21,7 @@ import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/redux/redux_simple_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
+import 'package:test_flutter/screens/secure/secure_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
@@ -67,5 +68,6 @@ class Routes {
     AnimatedContainerApp.id: (context) => AnimatedContainerApp(),
     ShowMorePage.id: (context) => ShowMorePage(),
     BirdCalcPage.id: (context) => BirdCalcPage(),
+    SecurePage.id: (context) => SecurePage(),
   };
 }
