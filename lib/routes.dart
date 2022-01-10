@@ -2,9 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
+import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
-import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/custom/circle.dart';
 import 'package:test_flutter/screens/custom/custom_page.dart';
@@ -14,7 +14,6 @@ import 'package:test_flutter/screens/custom/visualize_polygon.dart';
 import 'package:test_flutter/screens/custom/visualizer.dart';
 import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
-import 'package:test_flutter/screens/list/search_list.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/menu/dropdown_menu.dart';
 import 'package:test_flutter/screens/notification/notification_page.dart';
@@ -22,6 +21,7 @@ import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/redux/redux_simple_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
+import 'package:test_flutter/screens/secure/secure_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
@@ -52,7 +52,6 @@ class Routes {
     Visualizer.id: (context) => Visualizer(),
     VisualizePolygon.id: (context) => VisualizePolygon(),
     TestPage.id: (context) => TestPage(),
-    ListSearch.id: (context) => ListSearch(),
     WebSocketChannelPage.id: (context) => WebSocketChannelPage(),
     WebSocketPage.id: (context) => WebSocketPage(),
     StompClientPage.id: (context) => StompClientPage(),
@@ -63,11 +62,12 @@ class Routes {
     DownloadFileByLibPage.id: (context) => DownloadFileByLibPage(),
     NotificationPage.id: (context) => NotificationPage(),
     TextFieldPage.id: (context) => TextFieldPage(),
-    ChangeThemePage.id: (context) => ChangeThemePage(),
     TextFieldWithPopUp.id: (context) => TextFieldWithPopUp(),
     DropdownButtonExample.id: (context) => DropdownButtonExample(),
     AnimationPage.id: (context) => AnimationPage(),
     AnimatedContainerApp.id: (context) => AnimatedContainerApp(),
     ShowMorePage.id: (context) => ShowMorePage(),
+    BirdCalcPage.id: (context) => BirdCalcPage(),
+    SecurePage.id: (context) => SecurePage(),
   };
 }
