@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:test_flutter/routes.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
+import 'package:test_flutter/screens/bloc/bloc_main_page.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
@@ -93,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _btn('Web Socket page', WebSocketPage.id),
       _btn('Search list page', SearchListPage.id),
       _btn('Scroll view page', ScrollViewPage.id),
+      _btn('Bloc simple page', BlocMainPage.id),
       _btn('Redux simple page', ReduxSimplePage.id),
       _btn('Download file page', DownloadFilePage.id),
       _btn('Notification page', NotificationPage.id),
