@@ -3,6 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
 import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
+import 'package:test_flutter/screens/bloc/bloc_main_page.dart';
+import 'package:test_flutter/screens/bloc/bloc_provider/my_bloc_provider.dart';
+import 'package:test_flutter/screens/bloc/multibloc_provider/multi_bloc_provider.dart';
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
@@ -69,5 +72,8 @@ class Routes {
     ShowMorePage.id: (context) => ShowMorePage(),
     BirdCalcPage.id: (context) => BirdCalcPage(),
     SecurePage.id: (context) => SecurePage(),
+    BlocMainPage.id: (context) => BlocMainPage(),
+    MultiblocProvider.id: (context) => MultiblocProvider(),
+    MyBlocProvider.id: (context) => MyBlocProvider(),
   };
 }
