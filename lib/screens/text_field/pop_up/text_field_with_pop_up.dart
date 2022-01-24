@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/screens/text_field/pop_up/documents_text_field.dart';
 import 'package:test_flutter/screens/text_field/pop_up/widgets/dropdown_menu.dart';
+import 'package:test_flutter/screens/text_field/pop_up/widgets/my_overlay_widget.dart';
 import 'package:test_flutter/screens/text_field/pop_up/widgets/textfield_search.dart';
 
 class TextFieldWithPopUp extends StatefulWidget {
@@ -16,49 +17,51 @@ class TextFieldWithPopUp extends StatefulWidget {
 class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
   var controller = TextEditingController();
   GlobalKey<DropDownMenuState> key = GlobalKey<DropDownMenuState>();
+  final myOverlayKey = GlobalKey<MyOverlayWidgetState>();
 
   late String country_id;
-  List<String> country = [
-    "America",
-    "Brazil",
-    "Canada",
-    "India",
-    "Mongalia",
-    "USA",
-    "China",
-    "Russia",
-    "Germany"
-  ];
+  List<String> country = ["America", "Brazil", "Canada", "India", "Mongalia", "USA", "China", "Russia", "Germany"];
 
-  List <Widget> get widCountry => country.map((e) => Text(e)).toList();
+  List<Widget> get widCountry => country.map((e) => Text(e)).toList();
 
   var focusNode = FocusNode();
+
+  var myFocus = FocusNode();
   bool isShow = false;
 
   @override
   void initState() {
     super.initState();
     focusNode.addListener(() {
-        // setState(() {
-        //   isShow = focusNode.hasFocus;
-          key.currentState!.showMenu(focusNode.hasFocus);
-        // });
+      // setState(() {
+      //   isShow = focusNode.hasFocus;
+      key.currentState!.showMenu(focusNode.hasFocus);
+      // });
+    });
 
+    myFocus.addListener(() {
+      if (myFocus.hasFocus) {
+        myOverlayKey.currentState?.showOverlay();
+      } else {
+        myOverlayKey.currentState?.hideOverlay();
+      }
     });
   }
 
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: GestureDetector(
-        onTap: (){
-          FocusScopeNode currentFocus = FocusScope.of(context);
-          if (!currentFocus.hasPrimaryFocus &&
-              currentFocus.focusedChild != null) {
-            FocusManager.instance.primaryFocus!.unfocus();
-          }
-        },
+    return GestureDetector(
+
+    onTap: (){
+      FocusScopeNode currentFocus = FocusScope.of(context);
+      if (!currentFocus.hasPrimaryFocus &&
+          currentFocus.focusedChild != null) {
+        FocusManager.instance.primaryFocus!.unfocus();
+      }
+    },
+
+    child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
             title: Text('TextFieldWithPopUp'),
@@ -68,7 +71,6 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-
                   SizedBox(
                     height: 240,
                   ),
@@ -87,23 +89,21 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                   SizedBox(
                     height: 24,
                   ),
-                  DropDownMenu(
-                    key: key,
-                    textField: _buildTextField(context),
-                    boxWidgets: _buildListView(context),
+                  // DropDownMenu(
+                  //   key: key,
+                  //   textField: _buildTextField(context),
+                  //   boxWidgets: _buildListView(context),
+                    // boxWidgets: Text('jdslkjflksjldfjlksdjfkljalsjdflkjalsdjfajsdifj alsdjfkladjs lfjalsdkfj alsdjflkajsdlfkjadjsflajsdfjlasjdfljalsdjflkjalsdfjiejaijfodfoiajoijioajeofjioajeoijaiojeofij'),
                     // showMenu: true,
-                  ),
+                  // ),
                   SizedBox(
-                    height: 150,
+                    height: 100,
                   ),
-                  DropdownButton<String>(
-                    items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (_) {},
+
+                  MyOverlayWidget(
+                    key: myOverlayKey,
+                    contentBox: _buildListView(context),
+                    parent: _buildTextField1(context),
                   ),
                   SizedBox(
                     height: 2800,
@@ -113,8 +113,6 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                   //   height: 300,
                   //   child: _buildListView(context),
                   // )
-
-
                 ],
               ),
             ),
@@ -132,12 +130,21 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
     );
   }
 
+  Widget _buildTextField1(BuildContext context) {
+    return DocumentsTextField(
+      focusNode: myFocus,
+      controller: TextEditingController(),
+      placeholder: 'New drop down menu',
+    );
+  }
+
   Widget _buildListView(BuildContext context) {
     return Container(
+      height: 200,
       child: ListView.builder(
         padding: EdgeInsetsDirectional.zero,
         itemCount: country.length,
-        itemBuilder: (context, position){
+        itemBuilder: (context, position) {
           return ListTile(
             title: Text(country[position]),
           );

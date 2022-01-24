@@ -30,19 +30,12 @@ class DocumentsTextField extends StatefulWidget {
 }
 
 class _DocumentsTextFieldState extends State<DocumentsTextField> {
-  final FocusNode _focusNode = FocusNode();
   String? _errorText;
 
   @override
   void initState() {
     super.initState();
-    _focusNode.addListener(() {
-      if (widget.onFocusChangeListener != null) {
-        setState(() {
-          _errorText = widget.onFocusChangeListener!(_focusNode.hasFocus);
-        });
-      }
-    });
+
   }
 
   @override
