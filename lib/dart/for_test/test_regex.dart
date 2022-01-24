@@ -8,7 +8,16 @@ void main(){
   // print(ibanPattern.allMatches('AA12345'));
   // print(ibanPattern.hasAllMatch('AB1235'));
   print(namePattern.hasAllMatch('1'));
+  var value = 'BOFAUS6S789';
+  print(_getmatch(value));
 }
+
+
+bool _getmatch(String value){
+  return swiftRegExp.hasMatch(value);
+}
+
+final swiftRegExp = RegExp('^[A-Za-z0-9]{8,11}\$');  // весь текст должен соответствовать регулярке
 
 extension RegExpExt on RegExp{
   bool hasAllMatch(String value){
