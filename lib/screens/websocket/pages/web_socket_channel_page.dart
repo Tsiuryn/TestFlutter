@@ -71,7 +71,7 @@ class _WebSocketDemoState extends State<WebSocketDemo> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: RaisedButton(
+                  child: ElevatedButton(
                     child: Text(
                       'Send',
                       style: TextStyle(fontSize: 20),
