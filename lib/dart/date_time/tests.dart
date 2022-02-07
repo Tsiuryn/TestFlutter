@@ -14,11 +14,15 @@ var activeDates = [
 
 void main() {
 
-  print(getBlackoutList(
-    startDate: start,
-    endDate: end,
-    activeDates: activeDates,
-  ));
+  // print(getBlackoutList(
+  //   startDate: start,
+  //   endDate: end,
+  //   activeDates: activeDates,
+  // ));
+
+  print(now);
+  print(start);
+  print(isEqualDates(now, start));
 }
 
 List<DateTime> getBlackoutList({
@@ -38,5 +42,13 @@ List<DateTime> getBlackoutList({
     blackoutDates.add(date);
   }
   return blackoutDates;
+}
+
+
+bool isEqualDates (DateTime start, DateTime end){
+  if(end.difference(start).inDays < 1){
+    return true;
+  }
+  return false;
 }
 
