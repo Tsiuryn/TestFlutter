@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_flutter/screens/custom/pages/indicator_widget.dart';
 
 class Circle extends StatefulWidget {
   static final String id = 'CustomPage_Circle';

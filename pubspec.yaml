@@ -71,6 +71,7 @@ dependencies:
 
 
   flutter_local_notifications: ^9.0.1
+  flutter_svg: 0.22.0
 
   #mockito tests
 
@@ -107,6 +108,7 @@ flutter:
   assets:
     - assets/constraint/
     - assets/bird_calc/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

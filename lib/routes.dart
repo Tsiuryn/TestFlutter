@@ -9,12 +9,14 @@ import 'package:test_flutter/screens/bloc/multibloc_provider/multi_bloc_provider
 import 'package:test_flutter/screens/calculator/calc_screen.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
-import 'package:test_flutter/screens/custom/circle.dart';
+import 'package:test_flutter/screens/custom/pages/circle.dart';
 import 'package:test_flutter/screens/custom/custom_page.dart';
-import 'package:test_flutter/screens/custom/lines.dart';
-import 'package:test_flutter/screens/custom/polygon.dart';
-import 'package:test_flutter/screens/custom/visualize_polygon.dart';
-import 'package:test_flutter/screens/custom/visualizer.dart';
+import 'package:test_flutter/screens/custom/pages/indicator_widget.dart';
+import 'package:test_flutter/screens/custom/pages/lines.dart';
+import 'package:test_flutter/screens/custom/pages/my_overlay_widget.dart';
+import 'package:test_flutter/screens/custom/pages/polygon.dart';
+import 'package:test_flutter/screens/custom/pages/visualize_polygon.dart';
+import 'package:test_flutter/screens/custom/pages/visualizer.dart';
 import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
@@ -75,5 +77,7 @@ class Routes {
     BlocMainPage.id: (context) => BlocMainPage(),
     MultiblocProvider.id: (context) => MultiblocProvider(),
     MyBlocProvider.id: (context) => MyBlocProvider(),
+    MyIndicatorPage.id: (context) => MyIndicatorPage(),
+    MyOverlayWidget.id: (context) => MyOverlayWidget(),
   };
 }
