@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
+import 'package:test_flutter/screens/animation/screen/anim_controller_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
 import 'package:test_flutter/screens/big_screen/big_screen_page.dart';
 import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
@@ -83,5 +84,6 @@ class Routes {
     MyOverlayWidget.id: (context) => MyOverlayWidget(),
     TestCubitPage.id: (context) => TestCubitPage(),
     BigScreenPage.id: (context) => BigScreenPage(),
+    AnimControllerPage.id: (context) => AnimControllerPage(),
   };
 }

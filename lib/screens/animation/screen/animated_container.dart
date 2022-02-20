@@ -21,8 +21,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('AnimatedContainer Demo'),
         ),
@@ -42,6 +41,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.blue,
           // When the user taps the button
           onPressed: () {
             // Use setState to rebuild the widget with new values.
@@ -68,7 +68,6 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
           },
           child: const Icon(Icons.play_arrow),
         ),
-      ),
     );
   }
 }
