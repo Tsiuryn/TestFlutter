@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/app_widgets/main_button.dart';
+import 'package:test_flutter/app_widgets/main_list_widget.dart';
 import 'package:test_flutter/screens/custom/pages/indicator_widget.dart';
 import 'package:test_flutter/screens/custom/pages/my_overlay_widget.dart';
 import 'package:test_flutter/screens/custom/pages/polygon.dart';
@@ -16,61 +18,28 @@ class CustomPage extends StatefulWidget {
 }
 
 class _CustomPageState extends State<CustomPage> {
+
+  List<Widget> _createListBtn(BuildContext context){
+    return <Widget>[
+      btn(context, 'Lines', Lines.id),
+      btn(context, 'Polygon', Polygon.id),
+      btn(context, 'Visualize Polygon', VisualizePolygon.id),
+      btn(context, 'Widget with indicator', MyIndicatorPage.id),
+      btn(context, 'Circle', Circle.id),
+      btn(context, 'Overlay widget', MyOverlayWidget.id),
+    ];
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(CustomPage.id),
       ),
-      body: Row (
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Expanded(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  MaterialButton(
-                      child: Text('Lines'),
-                      onPressed: () => Navigator.pushNamed(context, Lines.id)),
-                  MaterialButton(
-                      child: Text('Polygon'),
-                      onPressed: () => Navigator.pushNamed(context, Polygon.id)),
-                  MaterialButton(
-                      child: Text('Visualize Polygon'),
-                      onPressed: () => Navigator.pushNamed(context, VisualizePolygon.id)),
-                  MaterialButton(
-                      child: Text('Widget with indicator'),
-                      onPressed: () => Navigator.pushNamed(context, MyIndicatorPage.id)),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  MaterialButton(
-                      child: Text('Circle'),
-                      onPressed: () => Navigator.pushNamed(context, Circle.id)),
-                  MaterialButton(
-                      child: Text('Visualizer'),
-                      onPressed: () => Navigator.pushNamed(context, Visualizer.id)),
-                  MaterialButton(
-                      child: Text('Overlay widget'),
-                      onPressed: () => Navigator.pushNamed(context, MyOverlayWidget.id)),
-
-                ],
-              ),
-            ),
-          )
-        ],
-
-      ),
+      body: MainListWidget(
+        listWidget: _createListBtn(context),
+      )
     );
   }
 }

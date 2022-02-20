@@ -6,8 +6,10 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:test_flutter/app_widgets/main_list_widget.dart';
 import 'package:test_flutter/routes.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
+import 'package:test_flutter/screens/big_screen/big_screen_page.dart';
 import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
 import 'package:test_flutter/screens/bloc/bloc_main_page.dart';
 import 'package:test_flutter/screens/calc_old/calculator_page.dart';
@@ -33,6 +35,7 @@ import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/web_socket_page.dart';
 
 import 'app/l10n/I10n.dart';
+import 'app_widgets/main_button.dart';
 
 StreamController<bool> isLightTheme = StreamController();
 
@@ -78,30 +81,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     listBtn = <Widget>[
-      _btn('Animation', AnimationPage.id),
-      _btn('Test page', TestPage.id),
-      _btn('Constraint layout', ConstraintPage.id),
-      _btn('Calculator layout', CalculatorPage.id),
-      _btn('Calculator screen', CalcScreen.id),
-      _btn('Localization screen', LocalizationPage.id),
-      _btn(
+      btn(context, 'Animation', AnimationPage.id),
+      btn(context, 'Test page', TestPage.id),
+      btn(context, 'Constraint layout', ConstraintPage.id),
+      btn(context, 'Calculator layout', CalculatorPage.id),
+      btn(context, 'Calculator screen', CalcScreen.id),
+      btn(context, 'Localization screen', LocalizationPage.id),
+      btn(context,
         'Shared app',
         ShareAppPage.id,
       ),
-      _btn('Progress page', ProgressPage.id),
-      _btn('Secure page', SecurePage.id),
-      _btn('Custom page', CustomPage.id),
-      _btn('Web Socket page', WebSocketPage.id),
-      _btn('Search list page', SearchListPage.id),
-      _btn('Scroll view page', ScrollViewPage.id),
-      _btn('Bloc simple page', BlocMainPage.id),
-      _btn('Redux simple page', ReduxSimplePage.id),
-      _btn('Download file page', DownloadFilePage.id),
-      _btn('Notification page', NotificationPage.id),
-      _btn('Text field page', TextFieldPage.id),
-      _btn('Change theme page', ChangeThemePage.id),
-      _btn('DropDown menu', DropdownButtonExample.id),
-      _btn('Bird Calc page', BirdCalcPage.id),
+      btn(context, 'Progress page', ProgressPage.id),
+      btn(context, 'Secure page', SecurePage.id),
+      btn(context, 'Custom page', CustomPage.id),
+      btn(context, 'Web Socket page', WebSocketPage.id),
+      btn(context, 'Search list page', SearchListPage.id),
+      btn(context, 'Scroll view page', ScrollViewPage.id),
+      btn(context, 'Bloc simple page', BlocMainPage.id),
+      btn(context, 'Redux simple page', ReduxSimplePage.id),
+      btn(context, 'Download file page', DownloadFilePage.id),
+      btn(context, 'Notification page', NotificationPage.id),
+      btn(context, 'Text field page', TextFieldPage.id),
+      btn(context, 'Change theme page', ChangeThemePage.id),
+      btn(context, 'DropDown menu', DropdownButtonExample.id),
+      btn(context, 'Bird Calc page', BirdCalcPage.id),
+      btn(context, 'Big Screen page', BigScreenPage.id),
     ];
     super.initState();
   }
@@ -112,29 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Main screen'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-        child: GridView.count(
-          crossAxisCount: 2,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          children: listBtn,
-        ),
+      body: MainListWidget(
+        listWidget: listBtn,
       ),
     );
   }
 
-  Widget _btn(String btnName, String pageId) {
-    return OutlinedButton(
-        child: Center(
-          child: Text(
-            btnName,
-            textAlign: TextAlign.center,
-          ),
-        ),
-        style: ButtonStyle(elevation: MaterialStateProperty.all(4)),
-        onPressed: () {
-          Navigator.pushNamed(context, pageId);
-        });
-  }
 }

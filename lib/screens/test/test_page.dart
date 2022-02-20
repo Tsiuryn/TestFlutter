@@ -15,7 +15,7 @@ class TestPage extends StatefulWidget {
 class _TestPageState extends State<TestPage> {
 
   var _time = 10;
-  late Timer _timer;
+  Timer? _timer;
   @override
   Widget build(BuildContext context) {
     double c_width = MediaQuery.of(context).size.width*0.8;
@@ -30,11 +30,11 @@ class _TestPageState extends State<TestPage> {
               color: Colors.blue,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
               onPressed: () {
-                  // _startTimer((){
-                  //   setState(() {
-                  //
-                  //   });
-                  // });
+                  _startTimer((){
+                    setState(() {
+
+                    });
+                  });
               }),
 
           MaterialButton(
@@ -113,13 +113,13 @@ class _TestPageState extends State<TestPage> {
     _timer = Timer.periodic(sec, (Timer timer){
       _time --;
       callback();
-      if(_time <= 1) _timer.cancel();
+      if(_time < 1) _timer?.cancel();
     });
   }
 
   @override
   void dispose() {
-    _timer.cancel();
+    _timer?.cancel();
     super.dispose();
   }
 

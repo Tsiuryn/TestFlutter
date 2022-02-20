@@ -2,7 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
+import 'package:test_flutter/screens/big_screen/big_screen_page.dart';
 import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
+import 'package:test_flutter/screens/bloc/bloc_cubit/test_cubit_page.dart';
 import 'package:test_flutter/screens/bloc/bloc_main_page.dart';
 import 'package:test_flutter/screens/bloc/bloc_provider/my_bloc_provider.dart';
 import 'package:test_flutter/screens/bloc/multibloc_provider/multi_bloc_provider.dart';
@@ -79,5 +81,7 @@ class Routes {
     MyBlocProvider.id: (context) => MyBlocProvider(),
     MyIndicatorPage.id: (context) => MyIndicatorPage(),
     MyOverlayWidget.id: (context) => MyOverlayWidget(),
+    TestCubitPage.id: (context) => TestCubitPage(),
+    BigScreenPage.id: (context) => BigScreenPage(),
   };
 }
