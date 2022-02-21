@@ -30,6 +30,7 @@ import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/secure/secure_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
+import 'package:test_flutter/screens/stream/first_stream_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/web_socket_page.dart';
@@ -106,6 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'DropDown menu', DropdownButtonExample.id),
       btn(context, 'Bird Calc page', BirdCalcPage.id),
       btn(context, 'Big Screen page', BigScreenPage.id),
+      btn(context, 'Stream example', FirstStreamPage.id),
     ];
     super.initState();
   }

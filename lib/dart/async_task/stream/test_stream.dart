@@ -13,16 +13,23 @@ class NumberCreator {
   Stream<int> get stream => _controller.stream;
 }
 
-class StreamTest11 <T>{
+class MyStreamTest {
+  static final MyStreamTest _singleton = MyStreamTest._internal();
+
+  factory MyStreamTest() {
+    return _singleton;
+  }
+
+  MyStreamTest._internal();
 
 
-  void sendData (T data) async{
+  void sendData (String data) async{
     await Future.delayed(Duration(seconds: 2));
     _controller.sink.add(data);
   }
 
-  final _controller = StreamController<T>();
-  Stream<T> get stream => _controller.stream;
+  final _controller = StreamController<String>.broadcast();
+  Stream<String> get stream => _controller.stream;
 }
 
 late StreamSubscription  subscription;
@@ -36,7 +43,7 @@ void main(){
   //     cancelListen();
   //   }
   // });
-  final sumStream = StreamTest11<String>();
+  final sumStream = MyStreamTest();
   subscription = sumStream.stream.listen((event) {
     print(event);
     print(DateTime.now());

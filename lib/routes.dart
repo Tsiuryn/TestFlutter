@@ -31,6 +31,8 @@ import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/secure/secure_page.dart';
 import 'package:test_flutter/screens/share_app/share_app_page.dart';
+import 'package:test_flutter/screens/stream/first_stream_page.dart';
+import 'package:test_flutter/screens/stream/second_stream_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
 import 'package:test_flutter/screens/text_field/show_more/show_more_page.dart';
@@ -85,5 +87,7 @@ class Routes {
     TestCubitPage.id: (context) => TestCubitPage(),
     BigScreenPage.id: (context) => BigScreenPage(),
     AnimControllerPage.id: (context) => AnimControllerPage(),
+    FirstStreamPage.id: (context) => FirstStreamPage(),
+    SecondStreamPage.id: (context) => SecondStreamPage(),
   };
 }
