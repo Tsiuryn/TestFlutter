@@ -1,6 +1,9 @@
+import 'package:intl/intl.dart';
+
 var now = DateTime.now();
 var start = DateTime(now.year, now.month, now.day);
 var end = start.add(const Duration(days: 10));
+
 
 var activeDates = [
   start.add(const Duration(days: 0)),
@@ -19,10 +22,15 @@ void main() {
   //   endDate: end,
   //   activeDates: activeDates,
   // ));
+  //
+  // print(now);
+  // print(start);
+  // print(isEqualDates(now, start));
 
-  print(now);
-  print(start);
-  print(isEqualDates(now, start));
+  print(DateFormat('yyyy_MM_dd').format(now));
+  print(DateFormat().format(now));
+  print(now.toIso8601String());
+  print(now.toUtc());
 }
 
 List<DateTime> getBlackoutList({

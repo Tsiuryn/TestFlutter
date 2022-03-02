@@ -4,7 +4,8 @@ void main() {
   // var person = Person11(name: 'Marcus', age: 25, id: '00');
   // print('name - ${person.name}, age - ${person.age}, id - ${person.id}');
   var value = 'BOFAUS6S789';
-  print(_getmatch(value));
+  // print(_getmatch(value));
+  print('${Own.kotlin.name.toUpperCase()}');
 }
 
 
@@ -13,3 +14,8 @@ bool _getmatch(String value){
 }
 
 final swiftRegExp = RegExp('^[A-Za-z0-9]{8,11}\$'); // Полное выражение должно соответствовать регулярке
+
+
+enum Own{
+  dart, kotlin, swift
+}
