@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/animation/screen/anim_controller_page.dart';
+import 'package:test_flutter/screens/animation/screen/animate_by_stream_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
 import 'package:test_flutter/screens/animation/screen/animator_page.dart';
 import 'package:test_flutter/screens/big_screen/big_screen_page.dart';
@@ -91,5 +92,6 @@ class Routes {
     FirstStreamPage.id: (context) => FirstStreamPage(),
     SecondStreamPage.id: (context) => SecondStreamPage(),
     AnimatorPage.id: (context) => AnimatorPage(),
+    AnimateByStreamPage.id: (context) => AnimateByStreamPage(),
   };
 }

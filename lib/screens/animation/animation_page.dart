@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:test_flutter/app_widgets/main_button.dart';
 import 'package:test_flutter/app_widgets/main_list_widget.dart';
 import 'package:test_flutter/screens/animation/screen/anim_controller_page.dart';
+import 'package:test_flutter/screens/animation/screen/animate_by_stream_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
 import 'package:test_flutter/screens/animation/screen/animator_page.dart';
 
@@ -21,6 +22,7 @@ class _AnimationPageState extends State<AnimationPage> {
     btn(context, 'Animated container page', AnimatedContainerApp.id),
     btn(context, 'Animated controller page', AnimControllerPage.id),
     btn(context, 'Animator package', AnimatorPage.id),
+    btn(context, 'Animate by stream', AnimateByStreamPage.id),
   ];
 
   @override

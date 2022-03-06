@@ -51,6 +51,10 @@ dependencies:
   #animations
   animator: 3.1.0
 
+  #crypto and encrypt
+  crypto: ^3.0.1
+  encrypt: ^5.0.1
+
   #websocket_page
   stomp_dart_client: ^0.4.3
   web_socket_channel: ^2.1.0
