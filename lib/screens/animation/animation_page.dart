@@ -6,6 +6,10 @@ import 'package:test_flutter/screens/animation/screen/anim_controller_page.dart'
 import 'package:test_flutter/screens/animation/screen/animate_by_stream_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
 import 'package:test_flutter/screens/animation/screen/animator_page.dart';
+import 'package:test_flutter/screens/animation/screen/my_slide_transition.dart';
+import 'package:test_flutter/screens/animation/screen/rotate_widget_page.dart';
+
+import 'screen/my_positioned_transition.dart';
 
 class AnimationPage extends StatefulWidget {
   static final id = 'Animation';
@@ -23,6 +27,9 @@ class _AnimationPageState extends State<AnimationPage> {
     btn(context, 'Animated controller page', AnimControllerPage.id),
     btn(context, 'Animator package', AnimatorPage.id),
     btn(context, 'Animate by stream', AnimateByStreamPage.id),
+    btn(context, 'Rotate Widget Page', RotateWidgetPage.id),
+    btn(context, 'My Positioned Transition', MyPositionedTransition.id),
+    btn(context, 'My Slide Transition', MySlideTransition.id),
   ];
 
   @override
