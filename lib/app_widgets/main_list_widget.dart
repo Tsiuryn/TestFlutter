@@ -9,6 +9,7 @@ class MainListWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GridView.count(
+        key: const Key('mainPageList'),
         crossAxisCount: 3,
         mainAxisSpacing: 8,
         crossAxisSpacing: 8,

@@ -15,6 +15,13 @@ void main() {
       await driver.close();
   });
 
+  test('open bird calculator', () async {
+    final gridView = find.byValueKey('mainPageList');
+    final btnBird = find.byValueKey('birdCalcPage');
+
+    await driver.scrollUntilVisible(gridView, btnBird);
+  });
+
   test('when init then 0 balance', () async {
     final actualBalance = await driver.getText(balanceFinder);
     expect(actualBalance, '\$0');

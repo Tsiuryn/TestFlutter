@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget btn(BuildContext context, String btnName, String pageId) {
+Widget btn(BuildContext context, String btnName, String pageId, {Key? key}) {
   return OutlinedButton(
+      key: key,
       child: Center(
         child: Text(
           btnName,

@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Text field page', TextFieldPage.id),
       btn(context, 'Change theme page', ChangeThemePage.id),
       btn(context, 'DropDown menu', DropdownButtonExample.id),
-      btn(context, 'Bird Calc page', BirdCalcPage.id),
+      btn(context, 'Bird Calc page', BirdCalcPage.id, key: const Key('birdCalcPage')),
       btn(context, 'Big Screen page', BigScreenPage.id),
       btn(context, 'Stream example', FirstStreamPage.id),
     ];
@@ -119,6 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Main screen'),
       ),
       body: MainListWidget(
+
         listWidget: listBtn,
       ),
     );
