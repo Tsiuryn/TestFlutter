@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 var now = DateTime.now();
 var start = DateTime(now.year, now.month, now.day);
 var end = start.add(const Duration(days: 10));
+var ownFormatter = DateFormat("yyyy-MM-ddTHH:mm:ss.SSS'Z'");
 
 
 var activeDates = [
@@ -31,6 +32,8 @@ void main() {
   print(DateFormat().format(now));
   print(now.toIso8601String());
   print(now.toUtc());
+
+  print(ownFormatter.format(now));
 }
 
 List<DateTime> getBlackoutList({
