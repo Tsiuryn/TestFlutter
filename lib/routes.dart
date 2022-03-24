@@ -37,6 +37,7 @@ import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/stream/first_stream_page.dart';
 import 'package:test_flutter/screens/stream/second_stream_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
+import 'package:test_flutter/screens/text_field/input_formatters/money_format_page.dart';
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
 import 'package:test_flutter/screens/text_field/show_more/show_more_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_page.dart';
@@ -101,5 +102,6 @@ class Routes {
     RotateWidgetPage.id: (context) => RotateWidgetPage(),
     MyPositionedTransition.id: (context) => MyPositionedTransition(),
     MySlideTransition.id: (context) => MySlideTransition(),
+    MoneyFormatPage.id: (context) => MoneyFormatPage(),
   };
 }

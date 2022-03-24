@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:test_flutter/app_widgets/main_button.dart';
+import 'package:test_flutter/screens/text_field/input_formatters/money_format_page.dart';
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
 import 'package:test_flutter/screens/text_field/show_more/show_more_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_widget.dart';
-
+// TODO: Need refactor
 class TextFieldPage extends StatefulWidget {
   static const id = 'TextFieldPage';
 
@@ -88,7 +90,12 @@ class _TextFieldPageState extends State<TextFieldPage> {
                     onPressed: () {
                       Navigator.pushNamed(context, ShowMorePage.id);
                     },
-                    child: Text('Show more page'))
+                    child: Text('Show more page')),
+
+                SizedBox(
+                  height: 24,
+                ),
+                btn(context, 'Money Format page', MoneyFormatPage.id),
               ],
             ),
           ),
