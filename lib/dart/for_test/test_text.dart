@@ -1,10 +1,16 @@
 import 'dart:convert';
 
+const String text2 = '1212 121212 12121 1212';
+const String text3 = '1212.121212.12121.1212,00';
+
 void main(){
   // print(changeText(text));
   var dksjfl = text1.replaceAll('\\', '');
   Map <String, dynamic>  myMap = json.decode(dksjfl);
   print(myMap);
+
+  print(text2.replaceAll(' ', ''));
+  print(text3.replaceAll('.', ''));
 }
 
 String changeText (String text){
