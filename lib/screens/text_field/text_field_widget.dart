@@ -6,13 +6,14 @@ class TextFieldWidget extends StatefulWidget {
   final String placeHolder;
   final String? defaultValue;
   final bool enabled;
+  final TextEditingController? controller;
   final String? Function(String?)? validator;
   final String? Function(bool)? onFocusChangeListener;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatter;
 
   const TextFieldWidget(this.placeHolder,
-      {Key? key, this.defaultValue, bool? enable, this.validator, this.onFocusChangeListener, this.keyboardType, this.inputFormatter})
+      {Key? key, this.defaultValue, bool? enable, this.validator, this.onFocusChangeListener, this.keyboardType, this.inputFormatter, this.controller})
       : this.enabled = enable ?? true,
         super(key: key);
 
@@ -43,10 +44,11 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: _controller,
+      controller: widget.controller,
       focusNode: _focusNode,
       maxLines: 1,
-      decoration: InputDecoration(labelText: widget.placeHolder, border: OutlineInputBorder(), errorText: _errorText,),
+
+      decoration: InputDecoration(labelText: widget.placeHolder, border: OutlineInputBorder(), errorText: _errorText, focusedBorder: OutlineInputBorder()),
       keyboardType: widget.keyboardType ?? TextInputType.number,
       inputFormatters: widget.inputFormatter,
       enabled: widget.enabled,

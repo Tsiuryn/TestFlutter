@@ -1,3 +1,4 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,6 +22,14 @@ class _TextFieldPageState extends State<TextFieldPage> {
   var _secondValue = '';
 
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
+  final CurrencyTextInputFormatter formatter = CurrencyTextInputFormatter(
+    locale: 'ru',
+    decimalDigits: 2,
+    symbol: '',
+  );
+
+  // var controller = new MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ' ');
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +75,30 @@ class _TextFieldPageState extends State<TextFieldPage> {
                     }
                   },
                 ),
+                SizedBox(
+                  height: 24,
+                ),
+                TextFieldWidget(
+                  'Amount',
+                  keyboardType: TextInputType.number,
+
+                  inputFormatter: [
+                  formatter,
+
+                  ],
+                ),
+
+                SizedBox(
+                  height: 24,
+                ),
+                // TextFieldWidget(
+                //   'Amount_2',
+                //   controller: controller,
+                //
+                //   keyboardType: TextInputType.number,
+                //
+                // ),
+
                 SizedBox(
                   height: 24,
                 ),

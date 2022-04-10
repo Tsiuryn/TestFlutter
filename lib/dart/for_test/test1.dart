@@ -5,7 +5,7 @@ void main() {
   // print('name - ${person.name}, age - ${person.age}, id - ${person.id}');
   var value = 'BOFAUS6S789';
   // print(_getmatch(value));
-  print('${Own.kotlin.name.toUpperCase()}');
+  print('${Own.kotlin.toString().toUpperCase()}');
 }
 
 
