@@ -27,6 +27,9 @@ dependencies:
 
   progress_bars: ^0.0.3
 
+  my_generator:
+    path: ./my_generator
+
   # Architecture
   bloc: ^7.2.1
   flutter_bloc: ^7.3.1
