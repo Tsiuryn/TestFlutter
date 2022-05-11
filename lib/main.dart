@@ -18,6 +18,7 @@ import 'package:test_flutter/screens/change_theme/change_theme_page.dart';
 import 'package:test_flutter/screens/change_theme/themes.dart';
 import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/custom/custom_page.dart';
+import 'package:test_flutter/screens/dificult_ui/dificult_ui_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
@@ -108,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Bird Calc page', BirdCalcPage.id, key: const Key('birdCalcPage')),
       btn(context, 'Big Screen page', BigScreenPage.id),
       btn(context, 'Stream example', FirstStreamPage.id),
+      btn(context, 'Difficult UI page', DifficultUIPage.id),
     ];
     super.initState();
   }
