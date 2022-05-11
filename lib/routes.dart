@@ -23,6 +23,9 @@ import 'package:test_flutter/screens/custom/pages/my_overlay_widget.dart';
 import 'package:test_flutter/screens/custom/pages/polygon.dart';
 import 'package:test_flutter/screens/custom/pages/visualize_polygon.dart';
 import 'package:test_flutter/screens/custom/pages/visualizer.dart';
+import 'package:test_flutter/screens/dificult_ui/dificult_ui_page.dart';
+import 'package:test_flutter/screens/dificult_ui/screens/divider_example_page.dart';
+import 'package:test_flutter/screens/dificult_ui/screens/sticky_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
@@ -103,5 +106,8 @@ class Routes {
     MyPositionedTransition.id: (context) => MyPositionedTransition(),
     MySlideTransition.id: (context) => MySlideTransition(),
     MoneyFormatPage.id: (context) => MoneyFormatPage(),
+    DifficultUIPage.id: (context) => DifficultUIPage(),
+    DividerExamplePage.id: (context) => DividerExamplePage(),
+    MyStickyPage.id: (context) => MyStickyPage(),
   };
 }
