@@ -46,7 +46,7 @@ class ShowNotificationIcon {
   OverlayEntry? overlayEntry;
 
   void show(BuildContext context) async {
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       var screenSize = MediaQuery.of(context).size;
       OverlayState? overlayState = Overlay.of(context);
       overlayEntry = OverlayEntry(builder: (context) {
