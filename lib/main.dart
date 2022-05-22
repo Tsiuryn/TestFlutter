@@ -20,6 +20,7 @@ import 'package:test_flutter/screens/constraint/constraint_page.dart';
 import 'package:test_flutter/screens/custom/custom_page.dart';
 import 'package:test_flutter/screens/dificult_ui/dificult_ui_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
+import 'package:test_flutter/screens/hive/hive_example.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/localization/provider/locale_provider.dart';
 import 'package:test_flutter/screens/menu/dropdown_menu.dart';
@@ -100,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Search list page', SearchListPage.id),
       btn(context, 'Scroll view page', ScrollViewPage.id),
       btn(context, 'Bloc simple page', BlocMainPage.id),
+      btn(context, 'Hive data base example', HiveExample.id),
       btn(context, 'Redux simple page', ReduxSimplePage.id),
       btn(context, 'Download file page', DownloadFilePage.id),
       btn(context, 'Notification page', NotificationPage.id),

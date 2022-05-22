@@ -28,6 +28,7 @@ import 'package:test_flutter/screens/dificult_ui/screens/divider_example_page.da
 import 'package:test_flutter/screens/dificult_ui/screens/sticky_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
+import 'package:test_flutter/screens/hive/hive_example.dart';
 import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/menu/dropdown_menu.dart';
 import 'package:test_flutter/screens/notification/notification_page.dart';
@@ -109,5 +110,6 @@ class Routes {
     DifficultUIPage.id: (context) => DifficultUIPage(),
     DividerExamplePage.id: (context) => DividerExamplePage(),
     MyStickyPage.id: (context) => MyStickyPage(),
+    HiveExample.id: (context) => HiveExample(),
   };
 }
