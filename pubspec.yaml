@@ -59,7 +59,7 @@ dependencies:
 
 
 
-  visibility_detector: ^0.2.2
+  visibility_detector: ^0.3.3
 
   flutter_typeahead: ^3.2.3
 
@@ -80,11 +80,6 @@ dependencies:
   flutter_slidable: ^1.1.0
 
   uuid_type: ^2.0.0
-
-  #redux
-  redux: ^5.0.0
-  flutter_redux: ^0.8.2
-  redux_thunk: ^0.4.0
 
   permission_handler: ^8.1.2
   path_provider: ^2.0.5

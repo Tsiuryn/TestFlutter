@@ -33,7 +33,6 @@ import 'package:test_flutter/screens/localization/localization_page.dart';
 import 'package:test_flutter/screens/menu/dropdown_menu.dart';
 import 'package:test_flutter/screens/notification/notification_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
-import 'package:test_flutter/screens/redux/redux_simple_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/secure/secure_page.dart';
@@ -78,7 +77,6 @@ class Routes {
     StompClientPage.id: (context) => StompClientPage(),
     SearchListPage.id: (context) => SearchListPage(),
     ScrollViewPage.id: (context) => ScrollViewPage(),
-    ReduxSimplePage.id: (context) => ReduxSimplePage(),
     DownloadFilePage.id: (context) => DownloadFilePage(),
     DownloadFileByLibPage.id: (context) => DownloadFileByLibPage(),
     NotificationPage.id: (context) => NotificationPage(),

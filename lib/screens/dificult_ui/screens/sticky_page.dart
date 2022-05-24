@@ -23,7 +23,7 @@ class _MyStickyPageState extends State<MyStickyPage> {
       builder: (context) => stickyBuilder(context),
     );
 
-    SchedulerBinding.instance?.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       if (sticky != null) {
         Overlay.of(context)?.insert(sticky!);
       }

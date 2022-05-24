@@ -42,7 +42,7 @@ class DropDownMenuState extends State<DropDownMenu> {
         _overlayEntry.markNeedsBuild();
         return;
       }
-      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
         isShow = true;
         _overlayEntry = _createOverlayEntry();
         Overlay.of(context)!.insert(this._overlayEntry);

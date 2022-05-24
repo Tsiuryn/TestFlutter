@@ -25,7 +25,7 @@ class _MyWidgetSizeState extends State<MyWidgetSize> {
       builder: (context) => stickyBuilder(context),
     );
 
-    SchedulerBinding.instance?.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       Overlay.of(context)?.insert(sticky!);
     });
 

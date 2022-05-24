@@ -32,7 +32,7 @@ class MyOverlayWidgetState extends State<MyOverlayWidget> {
   }
 
   void showOverlay() {
-    WidgetsBinding.instance!.addPostFrameCallback((_){
+    WidgetsBinding.instance.addPostFrameCallback((_){
     final overlay = Overlay.of(context)!;
     final renderBox = context.findRenderObject() as RenderBox;
     final size = renderBox.size;

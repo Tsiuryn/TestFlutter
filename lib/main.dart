@@ -27,7 +27,6 @@ import 'package:test_flutter/screens/menu/dropdown_menu.dart';
 import 'package:test_flutter/screens/notification/notification_api.dart';
 import 'package:test_flutter/screens/notification/notification_page.dart';
 import 'package:test_flutter/screens/progress/progress_page.dart';
-import 'package:test_flutter/screens/redux/redux_simple_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/secure/secure_page.dart';
@@ -102,7 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Scroll view page', ScrollViewPage.id),
       btn(context, 'Bloc simple page', BlocMainPage.id),
       btn(context, 'Hive data base example', HiveExample.id),
-      btn(context, 'Redux simple page', ReduxSimplePage.id),
       btn(context, 'Download file page', DownloadFilePage.id),
       btn(context, 'Notification page', NotificationPage.id),
       btn(context, 'Text field page', TextFieldPage.id),
