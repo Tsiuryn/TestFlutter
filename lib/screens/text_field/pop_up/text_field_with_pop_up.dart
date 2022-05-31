@@ -35,7 +35,11 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
     focusNode.addListener(() {
       // setState(() {
       //   isShow = focusNode.hasFocus;
-      key.currentState!.showMenu(focusNode.hasFocus);
+      if(focusNode.hasFocus){
+      key.currentState?.showMenu();
+      }else{
+        key.currentState?.closeMenu();
+      }
       // });
     });
 
@@ -87,15 +91,14 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                     getSelectedValue: () {},
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 240,
                   ),
-                  // DropDownMenu(
-                  //   key: key,
-                  //   textField: _buildTextField(context),
-                  //   boxWidgets: _buildListView(context),
-                    // boxWidgets: Text('jdslkjflksjldfjlksdjfkljalsjdflkjalsdjfajsdifj alsdjfkladjs lfjalsdkfj alsdjflkajsdlfkjadjsflajsdfjlasjdfljalsdjflkjalsdfjiejaijfodfoiajoijioajeofjioajeoijaiojeofij'),
-                    // showMenu: true,
-                  // ),
+                  DropDownMenu(
+                    key: key,
+                    textField: _buildTextField(context),
+                    boxWidgets: _buildListView(context),
+                    boxHeight: 300,
+                  ),
                   SizedBox(
                     height: 100,
                   ),
