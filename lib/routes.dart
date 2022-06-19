@@ -1,7 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/animation/screen/anim_controller_page.dart';
+import 'package:test_flutter/screens/animation/screen/anim_size_page.dart';
 import 'package:test_flutter/screens/animation/screen/animate_by_stream_page.dart';
 import 'package:test_flutter/screens/animation/screen/animated_container.dart';
 import 'package:test_flutter/screens/animation/screen/animator_page.dart';
@@ -62,7 +62,7 @@ class Routes {
     MyHomePage.id: (context) => MyHomePage(),
     ConstraintPage.id: (context) => ConstraintPage(),
     CalculatorPage.id: (context) => CalculatorPage(),
-    LocalizationPage.id: (context)=> LocalizationPage(),
+    LocalizationPage.id: (context) => LocalizationPage(),
     ShareAppPage.id: (context) => ShareAppPage(),
     ProgressPage.id: (context) => ProgressPage(),
     CalcScreen.id: (context) => CalcScreen(),
@@ -101,7 +101,9 @@ class Routes {
     SecondStreamPage.id: (context) => SecondStreamPage(),
     AnimatorPage.id: (context) => AnimatorPage(),
     AnimateByStreamPage.id: (context) => AnimateByStreamPage(),
-    MyWidgetSize.id: (context) => MyWidgetSize(title: '',),
+    MyWidgetSize.id: (context) => MyWidgetSize(
+          title: '',
+        ),
     RotateWidgetPage.id: (context) => RotateWidgetPage(),
     MyPositionedTransition.id: (context) => MyPositionedTransition(),
     MySlideTransition.id: (context) => MySlideTransition(),
@@ -111,5 +113,6 @@ class Routes {
     MyStickyPage.id: (context) => MyStickyPage(),
     HiveExample.id: (context) => HiveExample(),
     SizeTransitionPage.id: (context) => SizeTransitionPage(),
+    AnimSizePage.id: (context) => AnimSizePage(),
   };
 }

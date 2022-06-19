@@ -21,7 +21,9 @@ class _AnimatorPageState extends State<AnimatorPage> {
         ),
       ),
       body: Center(
-        child: ChangesIndicator(width: 50,),
+        child: ChangesIndicator(
+          width: 50,
+        ),
       ),
     );
   }

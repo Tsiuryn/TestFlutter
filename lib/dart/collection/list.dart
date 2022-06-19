@@ -1,7 +1,6 @@
-void main(){
-
-  List<int> list = [1,4,5,6,5,4,4];
-  List<int> list2 = [1,4,5,6,5,4,4];
+void main() {
+  List<int> list = [1, 4, 5, 6, 5, 4, 4];
+  List<int> list2 = [1, 4, 5, 6, 5, 4, 4];
   List<int> list3 = <int>[]; // empty list, but can added to list
   List list4 = List.empty(); //immutable empty list
 
@@ -10,8 +9,8 @@ void main(){
   print(list);
 }
 
-void printAllValue(List list){
-  for(int n in list){
+void printAllValue(List list) {
+  for (int n in list) {
     print(n);
   }
 }
@@ -63,4 +62,3 @@ take(int count): возвращает коллекцию, которая сод�
 
 where(bool test(E element)): возвращает коллекцию, элементы которой соответствуют некоторому условию, которое передается в виде функции
  */
-

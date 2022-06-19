@@ -28,7 +28,8 @@ class PageB extends StatelessWidget {
                 OutlinedButton(
                     onPressed: () {
                       // context.read<BlocA>().add(TapAEvent());
-                      context.read<BlocA>().add(ReceiveTextFromPageBEvent('Hello from PageB - ${getRandom()}'));
+                      context.read<BlocA>().add(ReceiveTextFromPageBEvent(
+                          'Hello from PageB - ${getRandom()}'));
                     },
                     child: Text('Send text to Page A')),
                 SizedBox(
@@ -56,7 +57,8 @@ class BlocB extends Bloc<BlocBEvent, BlocBState> {
     on<ReceiveTextFromPageAEvent>(_onReceiveTextFromPageAEvent);
   }
 
-  void _onReceiveTextFromPageAEvent(ReceiveTextFromPageAEvent event, Emitter<BlocBState> emit) {
+  void _onReceiveTextFromPageAEvent(
+      ReceiveTextFromPageAEvent event, Emitter<BlocBState> emit) {
     emit(ReceiveTextFromPageAState(event.text));
   }
 }

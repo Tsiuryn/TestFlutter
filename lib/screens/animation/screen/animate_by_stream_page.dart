@@ -24,7 +24,7 @@ class _AnimateByStreamPageState extends State<AnimateByStreamPage> {
     _streamSubscription = _animationStream.stream.listen((event) {
       print(event);
       setState(() {
-        width ++;
+        width++;
       });
     });
     super.initState();
@@ -48,8 +48,8 @@ class _AnimateByStreamPageState extends State<AnimateByStreamPage> {
             ),
           ),
           ElevatedButton(
-            onPressed: () async{
-              for(int i = 0; i < 100; i++){
+            onPressed: () async {
+              for (int i = 0; i < 100; i++) {
                 _animationStream.sendData(i);
                 await Future.delayed(const Duration(milliseconds: 100));
               }

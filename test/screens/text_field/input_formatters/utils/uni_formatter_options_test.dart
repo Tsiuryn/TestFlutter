@@ -18,7 +18,8 @@ void main() {
       const newText = '12';
       const cursor = 2;
 
-      var result = formatterOptions.addValue(newText: newText, oldText: oldText, cursor: cursor);
+      var result = formatterOptions.addValue(
+          newText: newText, oldText: oldText, cursor: cursor);
 
       expect(result, FormattedTextInput(newText, cursor));
     });
@@ -28,7 +29,8 @@ void main() {
       const newText = '1,';
       const cursor = 2;
 
-      var result = formatterOptions.addValue(newText: newText, oldText: oldText, cursor: cursor);
+      var result = formatterOptions.addValue(
+          newText: newText, oldText: oldText, cursor: cursor);
 
       expect(result, FormattedTextInput(newText, cursor));
     });
@@ -38,7 +40,8 @@ void main() {
       const newText = '1,0';
       const cursor = 3;
 
-      var result = formatterOptions.addValue(newText: newText, oldText: oldText, cursor: cursor);
+      var result = formatterOptions.addValue(
+          newText: newText, oldText: oldText, cursor: cursor);
 
       expect(result, FormattedTextInput(newText, cursor));
     });
@@ -48,7 +51,8 @@ void main() {
       const newText = '1 000';
       const cursor = 5;
 
-      var result = formatterOptions.addValue(newText: newText, oldText: oldText, cursor: cursor);
+      var result = formatterOptions.addValue(
+          newText: newText, oldText: oldText, cursor: cursor);
 
       expect(result, FormattedTextInput(newText, cursor));
     });
@@ -58,7 +62,8 @@ void main() {
       const newText = '1 245,235';
       const cursor = 9;
 
-      var result = formatterOptions.addValue(newText: newText, oldText: oldText, cursor: cursor);
+      var result = formatterOptions.addValue(
+          newText: newText, oldText: oldText, cursor: cursor);
 
       expect(result, FormattedTextInput('1 245,23', 8));
     });
@@ -68,7 +73,8 @@ void main() {
       const newText = '1 245,2345';
       const cursor = 10;
 
-      var result = formatterOptions.addValue(newText: newText, oldText: oldText, cursor: cursor);
+      var result = formatterOptions.addValue(
+          newText: newText, oldText: oldText, cursor: cursor);
 
       expect(result, FormattedTextInput('1 245,23', 8));
     });

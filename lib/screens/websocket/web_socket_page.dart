@@ -19,14 +19,16 @@ class WebSocketPage extends StatelessWidget {
             MaterialButton(
                 child: Text("web socket channel"),
                 color: Colors.blue,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   Navigator.pushNamed(context, WebSocketChannelPage.id);
                 }),
             MaterialButton(
                 child: Text("stomp client"),
                 color: Colors.blue,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   Navigator.pushNamed(context, StompClientPage.id);
                 }),

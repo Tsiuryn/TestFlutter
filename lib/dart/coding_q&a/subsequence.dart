@@ -14,7 +14,8 @@ class Subsequence {
 void main() {
   String s = "ertf";
   Subsequence.findSubsequences(s, "");
-  print(Subsequence.al); // {ertf, ert, erf, er, etf, et, ef, e, rtf, rt, rf, r, tf, t, f, }
+  print(Subsequence
+      .al); // {ertf, ert, erf, er, etf, et, ef, e, rtf, rt, rf, r, tf, t, f, }
   Subsequence.al = Set();
   s = "abc";
   Subsequence.findSubsequences(s, "");

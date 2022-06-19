@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/screens/bloc/bloc_provider/page_a.dart';
@@ -24,9 +23,15 @@ class MyBlocProvider extends StatelessWidget {
               Expanded(child: PageB()),
             ],
           ),
-          RotatedBox(quarterTurns: -45,child: Text('BlocProvider', style: TextStyle(fontSize: 55, color: Colors.black,),)),
-
-
+          RotatedBox(
+              quarterTurns: -45,
+              child: Text(
+                'BlocProvider',
+                style: TextStyle(
+                  fontSize: 55,
+                  color: Colors.black,
+                ),
+              )),
         ],
       ),
     );

@@ -18,8 +18,7 @@ class CustomPage extends StatefulWidget {
 }
 
 class _CustomPageState extends State<CustomPage> {
-
-  List<Widget> _createListBtn(BuildContext context){
+  List<Widget> _createListBtn(BuildContext context) {
     return <Widget>[
       btn(context, 'Lines', Lines.id),
       btn(context, 'Polygon', Polygon.id),
@@ -30,16 +29,14 @@ class _CustomPageState extends State<CustomPage> {
     ];
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(CustomPage.id),
-      ),
-      body: MainListWidget(
-        listWidget: _createListBtn(context),
-      )
-    );
+        appBar: AppBar(
+          title: Text(CustomPage.id),
+        ),
+        body: MainListWidget(
+          listWidget: _createListBtn(context),
+        ));
   }
 }

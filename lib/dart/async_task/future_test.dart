@@ -1,17 +1,22 @@
-void main() async{
-_taskYandex();
+void main() async {
+  _taskYandex();
 }
 
 //записать порядок выполнения кода
-void _taskYandex()async{
+void _taskYandex() async {
   print('A');
-  await Future((){
+  await Future(() {
     print('B');
-    Future((){print('C');});
-    Future.microtask((){print('D');});
-    Future((){print('E');});
+    Future(() {
+      print('C');
+    });
+    Future.microtask(() {
+      print('D');
+    });
+    Future(() {
+      print('E');
+    });
     print('F');
   });
   print('G');
 }
-

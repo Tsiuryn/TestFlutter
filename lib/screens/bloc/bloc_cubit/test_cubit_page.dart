@@ -44,19 +44,18 @@ class _TestCubitPageState extends State<TestCubitPage> {
               heroTag: 'First',
               child: Icon(Icons.add),
               backgroundColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 _bloc.increment();
-
-          }),
-
-          SizedBox(height: 16,),
-
+              }),
+          SizedBox(
+            height: 16,
+          ),
           FloatingActionButton(
               heroTag: 'Second',
               child: Icon(Icons.remove),
               backgroundColor: Colors.blue,
-              onPressed: (){
-                  _bloc.decrement();
+              onPressed: () {
+                _bloc.decrement();
               }),
         ],
       ),

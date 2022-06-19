@@ -19,7 +19,9 @@ class _SeeMorePageState extends State<SeeMorePage> {
         appBar: AppBar(
           title: Text('SeeMorePage'),
         ),
-        body: DescriptionTextWidget(text: 'SDFSDFSDFSDFDSDFSDFSDFADFADF DSFASDFASDFASDFASFSFDFSDFDSFDFDfdFdFDfSDf  d fdf d fs df a sdf s df sdf a dsf asd f   s dfa  ds fa sd f '),
+        body: DescriptionTextWidget(
+            text:
+                'SDFSDFSDFSDFDSDFSDFSDFADFADF DSFASDFASDFASDFASFSFDFSDFDSFDFDfdFdFDfSDf  d fdf d fs df a sdf s df sdf a dsf asd f   s dfa  ds fa sd f '),
       ),
     );
   }

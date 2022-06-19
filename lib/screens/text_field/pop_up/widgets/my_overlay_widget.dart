@@ -5,7 +5,9 @@ class MyOverlayWidget extends StatefulWidget {
   final Widget parent;
   final Widget contentBox;
 
-  const MyOverlayWidget({required this.contentBox, required this.parent, Key? key}) : super(key: key);
+  const MyOverlayWidget(
+      {required this.contentBox, required this.parent, Key? key})
+      : super(key: key);
 
   @override
   MyOverlayWidgetState createState() => MyOverlayWidgetState();
@@ -19,7 +21,7 @@ class MyOverlayWidgetState extends State<MyOverlayWidget> {
   @override
   void initState() {
     super.initState();
-    box =  widget.contentBox;
+    box = widget.contentBox;
     // TODO: implement initState
   }
 
@@ -32,23 +34,23 @@ class MyOverlayWidgetState extends State<MyOverlayWidget> {
   }
 
   void showOverlay() {
-    WidgetsBinding.instance.addPostFrameCallback((_){
-    final overlay = Overlay.of(context)!;
-    final renderBox = context.findRenderObject() as RenderBox;
-    final size = renderBox.size;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final overlay = Overlay.of(context)!;
+      final renderBox = context.findRenderObject() as RenderBox;
+      final size = renderBox.size;
 
-    entry = OverlayEntry(
-        builder: (context) => Positioned(
-              width: size.width,
-              child: CompositedTransformFollower(
-                link: layerLink,
-                showWhenUnlinked: false,
-                offset: Offset(0, size.height + 8),
-                child: buildOverlay(),
-              ),
-            ));
-    overlay.insert(entry!);
-  });
+      entry = OverlayEntry(
+          builder: (context) => Positioned(
+                width: size.width,
+                child: CompositedTransformFollower(
+                  link: layerLink,
+                  showWhenUnlinked: false,
+                  offset: Offset(0, size.height + 8),
+                  child: buildOverlay(),
+                ),
+              ));
+      overlay.insert(entry!);
+    });
   }
 
   Widget buildOverlay() {
@@ -84,7 +86,7 @@ class MyOverlayWidgetState extends State<MyOverlayWidget> {
     );
   }
 
-  void hideOverlay (){
+  void hideOverlay() {
     entry?.remove();
     entry = null;
   }

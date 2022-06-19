@@ -25,12 +25,14 @@ const TextStyle kSecondTS = TextStyle(
   fontSize: 15,
 );
 
+final CalcBtnStyle kStyleBtnFunction = CalcBtnStyle(
+    mainTextStyle: kMainTS.copyWith(color: Colors.blueAccent),
+    cornerRadius: 20);
 
-final CalcBtnStyle kStyleBtnFunction = CalcBtnStyle(mainTextStyle: kMainTS.copyWith(color: Colors.blueAccent), cornerRadius: 20);
-
-final CalcBtnStyle kStyleBtnSecondFunction = CalcBtnStyle( cornerRadius: 20);
+final CalcBtnStyle kStyleBtnSecondFunction = CalcBtnStyle(cornerRadius: 20);
 
 final CalcBtnStyle kStyleBtnNumb = CalcBtnStyle();
 
-final CalcBtnStyle kStyleBtnDel = CalcBtnStyle(mainTextStyle: kMainTS.copyWith(color: Colors.red, fontSize: 40, fontWeight: FontWeight.bold));
-
+final CalcBtnStyle kStyleBtnDel = CalcBtnStyle(
+    mainTextStyle: kMainTS.copyWith(
+        color: Colors.red, fontSize: 40, fontWeight: FontWeight.bold));

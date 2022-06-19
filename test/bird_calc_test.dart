@@ -10,7 +10,7 @@ import 'bird_calc_test.mocks.dart';
 @GenerateMocks([Random])
 void main() {
   late Random random;
-  setUp((){
+  setUp(() {
     random = MockRandom();
   });
   test('when const bird type then transaction is constant', () {
@@ -27,7 +27,6 @@ void main() {
   });
 
   test('when random bird type then transaction is dependant on random', () {
-
     final minRandomValue = 1;
     final maxRandomValue = 50;
     var time = 0;

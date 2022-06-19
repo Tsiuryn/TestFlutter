@@ -5,13 +5,14 @@ void main() {
   print(composeEquation('5488√68884-68884+688884×648888'));
 }
 
-String composeEquation(String equation){
+String composeEquation(String equation) {
   var updatedEquation = equation.replaceAll(' ', '');
   var listNumbers = _getListNumbers(updatedEquation);
-  for(int i = 0; i < listNumbers.length; i++){
-    if(listNumbers[i].isNotEmpty){
+  for (int i = 0; i < listNumbers.length; i++) {
+    if (listNumbers[i].isNotEmpty) {
       var replacement = _addSpaces(listNumbers[i]);
-      updatedEquation = updatedEquation.replaceFirst(listNumbers[i], replacement);
+      updatedEquation =
+          updatedEquation.replaceFirst(listNumbers[i], replacement);
     }
   }
   return updatedEquation;
@@ -37,21 +38,24 @@ String _addSpaces(String number) {
   return numberWithSpaces.reverse();
 }
 
-List<String> _getListNumbers (String equation){
+List<String> _getListNumbers(String equation) {
   var regExp = RegExp(r"[+ \- × ÷ ( ) √ ^ %]", caseSensitive: false);
   return equation.split(regExp);
 }
 
-double getResult(String equation){
+double getResult(String equation) {
   var result = 0.0;
-  try{
+  try {
     result = Calculator.decide(_prepareTextToCalculate(equation));
-  } catch (e){
-
-  }
+  } catch (e) {}
   return result;
 }
 
-String _prepareTextToCalculate(String equation){
-  return equation.replaceAll(' ', '').replaceAll('cos', 'c').replaceAll('sin', 's').replaceAll('tan', 't').replaceAll(',', '.');
+String _prepareTextToCalculate(String equation) {
+  return equation
+      .replaceAll(' ', '')
+      .replaceAll('cos', 'c')
+      .replaceAll('sin', 's')
+      .replaceAll('tan', 't')
+      .replaceAll(',', '.');
 }

@@ -22,7 +22,6 @@ class _SizeTransitionPageState extends State<SizeTransitionPage> {
         title: Text('SizeTransitionPage'),
       ),
       body: _buildBody(),
-
     );
   }
 
@@ -31,13 +30,10 @@ class _SizeTransitionPageState extends State<SizeTransitionPage> {
   }
 }
 
-enum AnimationDirection {
-  fromUpToDown, fromDownToUp
-}
+enum AnimationDirection { fromUpToDown, fromDownToUp }
 
 class Test1 extends StatefulWidget {
   final AnimationDirection animationDirection;
-
 
   Test1(this.animationDirection);
 
@@ -52,16 +48,16 @@ class _Test1State extends State<Test1> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    final tween = widget.animationDirection == AnimationDirection.fromUpToDown ?
-    Tween(begin: 0.0, end: 1.0) : Tween(begin: 1.0, end: 0.0);
+    final tween = widget.animationDirection == AnimationDirection.fromUpToDown
+        ? Tween(begin: 0.0, end: 1.0)
+        : Tween(begin: 1.0, end: 0.0);
 
-    _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 300));
-    _expandAnimation =
-        tween.animate(_animationController);
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+    _expandAnimation = tween.animate(_animationController);
   }
 
-  void _update (){
+  void _update() {
     setState(() {
       showFlag = !showFlag;
     });
@@ -77,7 +73,8 @@ class _Test1State extends State<Test1> with TickerProviderStateMixin {
         child: Stack(
           children: [
             Visibility(
-              visible: showFlag && widget.animationDirection == AnimationDirection.fromDownToUp,
+              visible: showFlag &&
+                  widget.animationDirection == AnimationDirection.fromDownToUp,
               child: Container(
                 width: 200,
                 height: 200,
@@ -93,7 +90,10 @@ class _Test1State extends State<Test1> with TickerProviderStateMixin {
                 child: Container(
                   width: 200,
                   height: 200,
-                  color: widget.animationDirection == AnimationDirection.fromDownToUp ? Colors.white : Colors.blue,
+                  color: widget.animationDirection ==
+                          AnimationDirection.fromDownToUp
+                      ? Colors.white
+                      : Colors.blue,
                 ),
               ),
             )
@@ -102,12 +102,10 @@ class _Test1State extends State<Test1> with TickerProviderStateMixin {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          if(showFlag){
-
-
+          if (showFlag) {
             await _animationController.reverse();
             _update();
-          }else{
+          } else {
             _update();
             await _animationController.forward();
           }

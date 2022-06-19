@@ -14,7 +14,6 @@ class CalcScreen extends StatefulWidget {
 }
 
 class _CalcScreenState extends State<CalcScreen> {
-
   TextEditingController _controller = TextEditingController();
   int _currentCursorPosition = -1;
   String _text = '';
@@ -24,41 +23,44 @@ class _CalcScreenState extends State<CalcScreen> {
   void _addSymbol(String text) {
     setState(() {
       _currentCursorPosition = _controller.value.selection.base.offset;
-      if(_currentCursorPosition != -1){
-        String before = _text.substring(0, _currentCursorPosition );
+      if (_currentCursorPosition != -1) {
+        String before = _text.substring(0, _currentCursorPosition);
         String after = _text.substring(_currentCursorPosition, _text.length);
         print('$before $after');
         var updatedText = '$before$text$after';
         _text = composeEquation(updatedText);
-      }else{
+      } else {
         var updatedText = '$_text$text';
         _text = composeEquation(updatedText);
       }
       _controller.text = _text;
-      _controller.selection = TextSelection.fromPosition(TextPosition(offset: _currentCursorPosition + 1));
+      _controller.selection = TextSelection.fromPosition(
+          TextPosition(offset: _currentCursorPosition + 1));
       _result = getResult(_text).toString();
     });
   }
 
-  void _deleteSymbol(){
+  void _deleteSymbol() {
     setState(() {
       int currentCursorPosition = _controller.value.selection.base.offset;
-      if(currentCursorPosition != -1) {
+      if (currentCursorPosition != -1) {
         String before = _text.substring(0, currentCursorPosition - 1);
         String after = _text.substring(currentCursorPosition, _text.length);
         _text = '$before$after';
         _controller.text = _text;
-        _controller.selection = TextSelection.fromPosition(TextPosition(offset: currentCursorPosition - 1));
+        _controller.selection = TextSelection.fromPosition(
+            TextPosition(offset: currentCursorPosition - 1));
         _result = _text;
       }
     });
   }
 
-  void _clearText(){
+  void _clearText() {
     setState(() {
       _text = '';
       _controller.text = _text;
-      _controller.selection = TextSelection.fromPosition(TextPosition(offset: 0));
+      _controller.selection =
+          TextSelection.fromPosition(TextPosition(offset: 0));
     });
   }
 
@@ -90,10 +92,7 @@ class _CalcScreenState extends State<CalcScreen> {
                   child: Card(
                     color: Colors.black45,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Colors.black,
-                            width: 2.0
-                        ),
+                        side: BorderSide(color: Colors.black, width: 2.0),
                         borderRadius: BorderRadius.all(Radius.circular(4))),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -104,16 +103,14 @@ class _CalcScreenState extends State<CalcScreen> {
                         autofocus: true,
                         controller: _controller,
                         focusNode: _focusNode,
-                        onChanged: (value){
+                        onChanged: (value) {
                           _text = value;
                         },
                         style: TextStyle(fontSize: 40, color: Colors.white),
                         decoration: InputDecoration(
                           focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.transparent)
-                          ),
-
-
+                              borderSide:
+                                  BorderSide(color: Colors.transparent)),
                         ),
                       ),
                     ),
@@ -123,10 +120,7 @@ class _CalcScreenState extends State<CalcScreen> {
                   child: Card(
                     color: Colors.black45,
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        color: Colors.black,
-                        width: 2.0
-                      ),
+                        side: BorderSide(color: Colors.black, width: 2.0),
                         borderRadius: BorderRadius.all(Radius.circular(4))),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -135,7 +129,8 @@ class _CalcScreenState extends State<CalcScreen> {
                         fit: BoxFit.scaleDown,
                         child: Text(
                           _result,
-                            style: TextStyle(fontSize: 40, color: Colors.blueAccent),
+                          style:
+                              TextStyle(fontSize: 40, color: Colors.blueAccent),
                           textAlign: TextAlign.end,
                         ),
                       ),
@@ -171,7 +166,7 @@ class _CalcScreenState extends State<CalcScreen> {
                     CalcBtn(
                       '7',
                       onPress: (value) {
-                       _addSymbol(value);
+                        _addSymbol(value);
                       },
                       btnStyle: kStyleBtnNumb,
                     ),
@@ -351,6 +346,3 @@ class _CalcScreenState extends State<CalcScreen> {
     );
   }
 }
-
-
-

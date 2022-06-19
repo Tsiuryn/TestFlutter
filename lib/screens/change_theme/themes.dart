@@ -8,9 +8,10 @@ class OwnThemeFields {
       : this.errorShade = errorShade,
         this.textBaloon = textBaloon;
 
-  OwnThemeFields.light({this.errorShade = Colors.red, this.textBaloon = Colors.red});
-  OwnThemeFields.dark({this.errorShade = Colors.green, this.textBaloon = Colors.green});
-
+  OwnThemeFields.light(
+      {this.errorShade = Colors.red, this.textBaloon = Colors.red});
+  OwnThemeFields.dark(
+      {this.errorShade = Colors.green, this.textBaloon = Colors.green});
 
   factory OwnThemeFields.empty() {
     return OwnThemeFields(errorShade: Colors.black, textBaloon: Colors.black);
@@ -40,8 +41,8 @@ extension ThemeDataExtensions on ThemeData {
 OwnThemeFields ownTheme(BuildContext context) => Theme.of(context).own();
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
-  // cardColor: Color.fromARGB(255, 240, 242, 243),
-  // dialogBackgroundColor: Color.fromARGB(255, 240, 242, 243),
+    // cardColor: Color.fromARGB(255, 240, 242, 243),
+    // dialogBackgroundColor: Color.fromARGB(255, 240, 242, 243),
     backgroundColor: Color.fromARGB(255, 240, 242, 243),
     canvasColor: Color.fromARGB(255, 240, 242, 243),
     // scaffoldBackgroundColor: Color.fromARGB(255, 240, 242, 243),
@@ -55,7 +56,7 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
         labelStyle: TextStyle(
             fontSize: 18, fontFamily: 'Montserrat', color: Colors.red)),
     colorScheme:
-    ColorScheme.light().copyWith(secondary: Colors.grey.withAlpha(128)),
+        ColorScheme.light().copyWith(secondary: Colors.grey.withAlpha(128)),
     textTheme: TextTheme(
       button: TextStyle(
           fontSize: 18, fontFamily: 'Montserrat', color: Colors.black),
@@ -100,8 +101,7 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
       // OwnThemeFields(
       // errorShade: Color.fromARGB(240, 255, 200, 200),
       // textBaloon: Color.fromARGB(240, 255, 200, 200))
-    OwnThemeFields.light()
-  );
+      OwnThemeFields.light());
 
 final ThemeData darkTheme = ThemeData.dark().copyWith(
     cardColor: Color.fromARGB(255, 16, 17, 18),
@@ -112,7 +112,7 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
         style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white))),
     colorScheme:
-    ColorScheme.dark().copyWith(secondary: Colors.grey.withAlpha(128)),
+        ColorScheme.dark().copyWith(secondary: Colors.grey.withAlpha(128)),
     backgroundColor: Color.fromARGB(255, 32, 35, 36),
     textTheme: TextTheme(
       button: TextStyle(fontSize: 18, fontFamily: 'Montserrat'),
@@ -150,5 +150,4 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
       // OwnThemeFields(
       // errorShade: Color.fromARGB(240, 200, 0, 0),
       // textBaloon: Color.fromARGB(255, 200, 80, 80))
-      OwnThemeFields.dark()
-  );
+      OwnThemeFields.dark());

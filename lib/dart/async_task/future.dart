@@ -5,23 +5,21 @@ void main() {
   getName();
 
   print(foo);
-
-
 }
-
 
 Future getMessage() {
   // для эмуляции длительной операции делаем задержку в 3 секунды
-  return Future.delayed(Duration(seconds: 3), () => print("Пришло новое сообщение от Тома"));
+  return Future.delayed(
+      Duration(seconds: 3), () => print("Пришло новое сообщение от Тома"));
 }
 
-void getName() async{
+void getName() async {
   var name = await createName("Sasha");
   print(name);
 }
 
-Future<String> createName (String name){
-  return Future.delayed(Duration(seconds: 5), ()=> name);
+Future<String> createName(String name) {
+  return Future.delayed(Duration(seconds: 5), () => name);
 }
 
 Stream<int> foo() async* {

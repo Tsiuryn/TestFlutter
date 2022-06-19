@@ -1,4 +1,4 @@
-void main(){
+void main() {
   print(myMap['111']); // null
   print(myMap['125']); // Good
   var mindMap = <String, String>{};
@@ -7,7 +7,11 @@ void main(){
 
   mindMap.remove('111');
   print(mindMap);
-
 }
 
-const myMap = {'123': 'Hello','124': 'Bue','125': 'Good','126': 'Bad',};
+const myMap = {
+  '123': 'Hello',
+  '124': 'Bue',
+  '125': 'Good',
+  '126': 'Bad',
+};

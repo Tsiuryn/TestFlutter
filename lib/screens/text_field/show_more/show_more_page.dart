@@ -78,7 +78,7 @@ class _ShowMorePageState extends State<ShowMorePage> {
                 height: 24,
               ),
               OutlinedButton(
-                onPressed: (){
+                onPressed: () {
                   globalKey.currentState?.onTapLink();
                 },
                 child: Text('Show less'),

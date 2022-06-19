@@ -32,35 +32,33 @@ class _AnimControllerPageState extends State<AnimControllerPage> {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 16, bottom: 16),
+                padding: const EdgeInsets.only(
+                    left: 8.0, right: 8, top: 16, bottom: 16),
                 child: Column(
                   children: [
                     MyInputWidget(labelText: 'Name'),
                     MyInputWidget(labelText: 'Password'),
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        return AnimatedOpacity(
-                          duration: Duration(milliseconds: 400),
-                          opacity: _opacity,
-                          onEnd: (){
-                            if(_isVisible){
-                              setState(() {
-                                _isVisible = _opacity == 1;
-                              });
-                            }
-
-                          },
-                          child: Visibility(
-                            visible: _isVisible,
-                            child: MyInputWidget(labelText: 'Email'),
-                          ),
-                        );
-                      }
-                    ),
+                    LayoutBuilder(builder: (context, constraints) {
+                      return AnimatedOpacity(
+                        duration: Duration(milliseconds: 400),
+                        opacity: _opacity,
+                        onEnd: () {
+                          if (_isVisible) {
+                            setState(() {
+                              _isVisible = _opacity == 1;
+                            });
+                          }
+                        },
+                        child: Visibility(
+                          visible: _isVisible,
+                          child: MyInputWidget(labelText: 'Email'),
+                        ),
+                      );
+                    }),
                     OutlinedButton(
                         onPressed: () {
                           setState(() {
-                            if(!_isVisible){
+                            if (!_isVisible) {
                               _isVisible = _opacity == 0;
                             }
                             _opacity = _opacity == 1 ? 0 : 1;
@@ -77,8 +75,6 @@ class _AnimControllerPageState extends State<AnimControllerPage> {
       )),
     );
   }
-
-
 }
 
 class MyInputWidget extends StatelessWidget {

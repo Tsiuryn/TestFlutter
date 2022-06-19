@@ -16,7 +16,8 @@ class UniFormatter extends TextInputFormatter {
   late TextEditingValue newValue;
 
   @override
-  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
     if (oldValue.text == newValue.text) return newValue;
     this.oldValue = oldValue;
     this.newValue = newValue;
@@ -26,8 +27,13 @@ class UniFormatter extends TextInputFormatter {
     if (isBackSpace) {
       return options.removeValue(newValue);
     } else {
-      var result =  options.addValue(newText: newValue.text, oldText: oldValue.text, cursor: newValue.selection.start);
-      return newValue.copyWith(text: result.formattedText, selection: TextSelection.collapsed(offset: result.cursor));
+      var result = options.addValue(
+          newText: newValue.text,
+          oldText: oldValue.text,
+          cursor: newValue.selection.start);
+      return newValue.copyWith(
+          text: result.formattedText,
+          selection: TextSelection.collapsed(offset: result.cursor));
     }
   }
 }

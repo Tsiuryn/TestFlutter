@@ -9,8 +9,6 @@ class LocalizationPage extends StatefulWidget {
 
   static const String id = 'localization_page';
 
-
-
   @override
   _LocalizationPageState createState() => _LocalizationPageState();
 }
@@ -18,13 +16,13 @@ class LocalizationPage extends StatefulWidget {
 class _LocalizationPageState extends State<LocalizationPage> {
   int _id = 0;
 
-  void incrementId(){
+  void incrementId() {
     setState(() {
       _id += 1;
     });
   }
 
-  void nullableId(){
+  void nullableId() {
     setState(() {
       _id = 0;
     });
@@ -43,14 +41,18 @@ class _LocalizationPageState extends State<LocalizationPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text(AppLocalizations.of(context)!.with_parameters(_id.toString()))),
+          Center(
+              child: Text(AppLocalizations.of(context)!
+                  .with_parameters(_id.toString()))),
           SizedBox(
             height: 150.0,
           ),
           GestureDetector(
             onLongPress: () => nullableId(),
             child: FloatingActionButton(
-              onPressed: () {incrementId();},
+              onPressed: () {
+                incrementId();
+              },
               child: Icon(Icons.add),
             ),
           )

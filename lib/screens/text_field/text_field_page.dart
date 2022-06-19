@@ -7,6 +7,7 @@ import 'package:test_flutter/screens/text_field/input_formatters/money_format_pa
 import 'package:test_flutter/screens/text_field/pop_up/text_field_with_pop_up.dart';
 import 'package:test_flutter/screens/text_field/show_more/show_more_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_widget.dart';
+
 // TODO: Need refactor
 class TextFieldPage extends StatefulWidget {
   static const id = 'TextFieldPage';
@@ -81,10 +82,8 @@ class _TextFieldPageState extends State<TextFieldPage> {
                 TextFieldWidget(
                   'Amount',
                   keyboardType: TextInputType.number,
-
                   inputFormatter: [
-                  formatter,
-
+                    formatter,
                   ],
                 ),
 

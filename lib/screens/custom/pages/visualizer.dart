@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'dart:math' as math;
 
@@ -137,7 +136,7 @@ class PointPainter extends CustomPainter {
 
     final textSpan = TextSpan(
       text:
-      "(${(radius * math.cos(radians)).round()}, ${(radius * math.sin(radians)).round()})",
+          "(${(radius * math.cos(radians)).round()}, ${(radius * math.sin(radians)).round()})",
       style: TextStyle(color: Colors.black, fontSize: 16),
     );
     final textPainter = TextPainter(

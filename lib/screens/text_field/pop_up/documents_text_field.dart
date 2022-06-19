@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,14 +14,14 @@ class DocumentsTextField extends StatefulWidget {
 
   const DocumentsTextField(
       {Key? key,
-        required this.controller,
-        required this.focusNode,
-        this.placeholder = '',
-        this.validator,
-        this.onFocusChangeListener,
-        this.enabled = true,
-        this.keyboardType = TextInputType.text,
-        this.inputFormatter})
+      required this.controller,
+      required this.focusNode,
+      this.placeholder = '',
+      this.validator,
+      this.onFocusChangeListener,
+      this.enabled = true,
+      this.keyboardType = TextInputType.text,
+      this.inputFormatter})
       : super(key: key);
 
   @override
@@ -35,7 +34,6 @@ class _DocumentsTextFieldState extends State<DocumentsTextField> {
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
@@ -46,7 +44,7 @@ class _DocumentsTextFieldState extends State<DocumentsTextField> {
         labelText: widget.placeholder,
         enabled: widget.enabled,
         focusedBorder:
-        _buildOutlineBorder(Theme.of(context).colorScheme.secondary),
+            _buildOutlineBorder(Theme.of(context).colorScheme.secondary),
         errorBorder: _buildOutlineBorder(Theme.of(context).errorColor),
         errorText: _errorText,
         border: _buildOutlineBorder(Theme.of(context).unselectedWidgetColor),
@@ -80,5 +78,3 @@ class _DocumentsTextFieldState extends State<DocumentsTextField> {
     );
   }
 }
-
-

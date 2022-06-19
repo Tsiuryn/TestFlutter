@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:share/share.dart';
 
-
 class ShareAppPage extends StatefulWidget {
   static const String id = "SharedApp";
 

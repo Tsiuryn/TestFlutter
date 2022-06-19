@@ -1,26 +1,26 @@
-void main (){
-
+void main() {
   Figure rect = Rectangle(20, 30);
   rect
-  ..calculateArea()
-  ..calculateSquare();
+    ..calculateArea()
+    ..calculateSquare();
 
   getParameters(rect);
 }
+
 abstract class Figure {
-  void calculateArea(){
+  void calculateArea() {
     print("Not Implemented");
   }
 
   calculateSquare(); // abstract method
 }
-class Rectangle extends Figure{
 
+class Rectangle extends Figure {
   int width;
   int height;
   Rectangle(this.width, this.height);
 
-  void calculateArea(){
+  void calculateArea() {
     int area = width * height;
     print("area = $area");
   }
@@ -31,8 +31,7 @@ class Rectangle extends Figure{
   }
 }
 
-
 // Если мы наследуемся от абстрактного класса, мы можем на вход подавать его наследников
-void getParameters(Figure figure){
+void getParameters(Figure figure) {
   figure.calculateSquare();
 }

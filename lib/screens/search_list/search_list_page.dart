@@ -64,7 +64,7 @@ class _SearchListPageState extends State<SearchListPage> {
     } else {
       results = _allUsers
           .where((user) =>
-          user["name"].toLowerCase().contains(enteredKeyword.toLowerCase()))
+              user["name"].toLowerCase().contains(enteredKeyword.toLowerCase()))
           .toList();
       // we use the toLowerCase() method to make it case-insensitive
     }
@@ -99,28 +99,27 @@ class _SearchListPageState extends State<SearchListPage> {
             Expanded(
               child: _foundUsers.isNotEmpty
                   ? ListView.builder(
-                itemCount: _foundUsers.length,
-                itemBuilder: (context, index) =>
-                    Card(
-                      key: ValueKey(_foundUsers[index]["id"]),
-                      color: Colors.amberAccent,
-                      elevation: 4,
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: ListTile(
-                        leading: Text(
-                          _foundUsers[index]["id"].toString(),
-                          style: const TextStyle(fontSize: 24),
+                      itemCount: _foundUsers.length,
+                      itemBuilder: (context, index) => Card(
+                        key: ValueKey(_foundUsers[index]["id"]),
+                        color: Colors.amberAccent,
+                        elevation: 4,
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        child: ListTile(
+                          leading: Text(
+                            _foundUsers[index]["id"].toString(),
+                            style: const TextStyle(fontSize: 24),
+                          ),
+                          title: Text(_foundUsers[index]['name']),
+                          subtitle: Text(
+                              '${_foundUsers[index]["age"].toString()} years old'),
                         ),
-                        title: Text(_foundUsers[index]['name']),
-                        subtitle: Text(
-                            '${_foundUsers[index]["age"].toString()} years old'),
                       ),
-                    ),
-              )
+                    )
                   : const Text(
-                'No results found',
-                style: TextStyle(fontSize: 24),
-              ),
+                      'No results found',
+                      style: TextStyle(fontSize: 24),
+                    ),
             ),
           ],
         ),

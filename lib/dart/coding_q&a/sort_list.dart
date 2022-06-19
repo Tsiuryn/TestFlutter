@@ -1,8 +1,8 @@
 class Sort {
-  static List<int> sort(List<int> array){
+  static List<int> sort(List<int> array) {
     int temp;
-    for(int i =0; i < array.length; i++){
-      for(int j = i+1; j < array.length; j++){
+    for (int i = 0; i < array.length; i++) {
+      for (int j = i + 1; j < array.length; j++) {
         if (array[i] > array[j]) {
           temp = array[i];
           array[i] = array[j];
@@ -13,13 +13,13 @@ class Sort {
     return array;
   }
 
-  static List<int> sortByDefault(List<int> array){
+  static List<int> sortByDefault(List<int> array) {
     List<int> newList = array;
     newList.sort();
     return newList;
   }
 
-  static List<String> sortTextList(List<String> textList){
+  static List<String> sortTextList(List<String> textList) {
     List<String> newList = textList;
     newList.sort((a, b) => a.length.compareTo(b.length));
     return newList;

@@ -66,7 +66,7 @@ class _MyStickyPageState extends State<MyStickyPage> {
   Widget stickyBuilder(BuildContext context) {
     return AnimatedBuilder(
       animation: controller,
-      builder: (_,Widget? child) {
+      builder: (_, Widget? child) {
         final keyContext = stickyKey.currentContext;
         if (keyContext != null) {
           // widget is visible

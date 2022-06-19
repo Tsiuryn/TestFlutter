@@ -25,7 +25,7 @@ class ScrollViewPage extends StatelessWidget {
             childAspectRatio: 4.0,
           ),
           delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
+            (BuildContext context, int index) {
               return Container(
                 alignment: Alignment.center,
                 color: Colors.teal[100 * (index % 9)],
@@ -38,7 +38,7 @@ class ScrollViewPage extends StatelessWidget {
         SliverFixedExtentList(
           itemExtent: 50.0,
           delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
+            (BuildContext context, int index) {
               return Container(
                 alignment: Alignment.center,
                 color: Colors.lightBlue[100 * (index % 9)],

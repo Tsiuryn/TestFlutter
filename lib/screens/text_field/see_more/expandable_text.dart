@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class ExpandableText extends StatefulWidget {
   const ExpandableText(
-      this.text, {
-        Key? key,
-        this.trimLines = 2,
-      })  : assert(text != null),
+    this.text, {
+    Key? key,
+    this.trimLines = 2,
+  })  : assert(text != null),
         super(key: key);
 
   final String text;
@@ -33,8 +33,7 @@ class _ExpandableTextState extends State<ExpandableText> {
         style: TextStyle(
           color: colorClickableText,
         ),
-        recognizer: TapGestureRecognizer()..onTap = _onTapLink
-    );
+        recognizer: TapGestureRecognizer()..onTap = _onTapLink);
     Widget result = LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         assert(constraints.hasBoundedWidth);
@@ -46,7 +45,8 @@ class _ExpandableTextState extends State<ExpandableText> {
         // Layout and measure link
         TextPainter textPainter = TextPainter(
           text: link,
-          textDirection: TextDirection.rtl,//better to pass this from master widget if ltr and rtl both supported
+          textDirection: TextDirection
+              .rtl, //better to pass this from master widget if ltr and rtl both supported
           maxLines: widget.trimLines,
           ellipsis: '...',
         );
@@ -66,9 +66,7 @@ class _ExpandableTextState extends State<ExpandableText> {
         var textSpan;
         if (textPainter.didExceedMaxLines) {
           textSpan = TextSpan(
-            text: _readMore
-                ? widget.text.substring(0, endIndex)
-                : widget.text,
+            text: _readMore ? widget.text.substring(0, endIndex) : widget.text,
             style: TextStyle(
               color: widgetColor,
             ),

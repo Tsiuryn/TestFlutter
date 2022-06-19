@@ -22,10 +22,6 @@ class _StompClientPageState extends State<StompClientPage> {
     // TODO: implement build
     throw UnimplementedError();
   }
-
-
-
-
 }
 
 void onConnect(StompFrame frame) {
@@ -63,5 +59,3 @@ final stompClient = StompClient(
 void main() {
   stompClient.activate();
 }
-
-

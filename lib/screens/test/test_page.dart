@@ -17,14 +17,13 @@ class TestPage extends StatefulWidget {
 }
 
 class _TestPageState extends State<TestPage> {
-
   var _time = 10;
   Timer? _timer;
 
   final btnKey = GlobalKey(debugLabel: 'BtnGlobalKey');
   @override
   Widget build(BuildContext context) {
-    double c_width = MediaQuery.of(context).size.width*0.8;
+    double c_width = MediaQuery.of(context).size.width * 0.8;
     return Scaffold(
         appBar: AppBar(
           title: Text('Test page'),
@@ -35,7 +34,8 @@ class _TestPageState extends State<TestPage> {
             MaterialButton(
                 child: Text("Start timer"),
                 color: Colors.blue,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   _startTimer(() {
                     setState(() {});
@@ -45,18 +45,19 @@ class _TestPageState extends State<TestPage> {
                 key: btnKey,
                 child: Text("show dialog"),
                 color: Colors.blue,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   _showLogoutDialog(c_width);
                 }),
             LayoutBuilder(
-                builder: (BuildContext context, BoxConstraints constraints) => Container(
+                builder: (BuildContext context, BoxConstraints constraints) =>
+                    Container(
                       width: 60,
                       height: 60,
                       color: Colors.red,
                       child: Text('${constraints.minWidth}'),
                     )),
-
             btn(context, 'MyWidgetSize', MyWidgetSize.id),
           ]),
         ));
@@ -67,50 +68,46 @@ class _TestPageState extends State<TestPage> {
     showDialog<String>(
         context: context,
         builder: (BuildContext context) => SimpleDialog(
-          children: <Widget>[
-
-
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Stack(
-                alignment: AlignmentDirectional.topEnd,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 24.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 16.0),
-                            child: Icon(Icons.download, size: 50,),
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'Attention!',
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Stack(
+                    alignment: AlignmentDirectional.topEnd,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 24.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Center(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 16.0),
+                                child: Icon(
+                                  Icons.download,
+                                  size: 50,
+                                ),
                               ),
-                              Text(
-                                _dialogDescription(context),
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Attention!',
                                   ),
-                            ],
-                          ),
+                                  Text(
+                                    _dialogDescription(context),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-
-
-
-
-
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
                         child: Icon(Icons.close),
                       ),
                     ],
@@ -151,6 +148,4 @@ class _TestPageState extends State<TestPage> {
     _timer?.cancel();
     super.dispose();
   }
-
 }
-
