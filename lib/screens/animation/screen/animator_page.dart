@@ -1,4 +1,3 @@
-import 'package:animator/animator.dart';
 import 'package:flutter/material.dart';
 
 class AnimatorPage extends StatefulWidget {
@@ -29,7 +28,7 @@ class _AnimatorPageState extends State<AnimatorPage> {
   }
 }
 
-class ChangesIndicator extends StatelessWidget {
+class ChangesIndicator extends StatefulWidget {
   final double width;
   final Color color;
 
@@ -40,24 +39,54 @@ class ChangesIndicator extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<ChangesIndicator> createState() => _ChangesIndicatorState();
+}
+
+class _ChangesIndicatorState extends State<ChangesIndicator>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation _animation;
+  double animatedWidth = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 800), lowerBound: 0.5)
+          ..forward();
+
+    // _animation =
+    //     Tween<double>(begin: 0, end: 1.0).animate(_animationController);
+
+    _animation = CurvedAnimation(parent: _animationController, curve: Curves.easeIn, reverseCurve: Curves.bounceIn);
+
+    _animation.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _animationController.reverse();
+      } else if (status == AnimationStatus.dismissed) {
+        _animationController.forward();
+      }
+    });
+
+    _animationController.addListener(() {
+      setState(() {
+        animatedWidth = _animationController.value * widget.width;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    double begin = width;
-    double end = width + (width * 0.5);
-    return SizedBox(
-      width: end,
-      child: Animator<double>(
-        duration: const Duration(milliseconds: 700),
-        cycles: 0,
-        curve: Curves.easeInCubic,
-        tween: Tween<double>(begin: begin, end: end),
-        builder: (context, animatorState, child) {
-          return CustomPaint(
-            foregroundPainter: UniCircle(
-              indicatorColor: Colors.red,
-              width: animatorState.value,
-            ),
-          );
-        },
+    return CustomPaint(
+      foregroundPainter: UniCircle(
+        indicatorColor: Colors.red,
+        width: animatedWidth,
       ),
     );
   }
