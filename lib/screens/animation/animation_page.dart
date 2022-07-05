@@ -25,16 +25,56 @@ class AnimationPage extends StatefulWidget {
 
 class _AnimationPageState extends State<AnimationPage> {
   List<Widget> _buildList(BuildContext context) => [
-        btn(context, 'Animated container page', AnimatedContainerApp.id),
-        btn(context, 'Animated controller page', AnimControllerPage.id),
-        btn(context, 'Animator package', AnimatorPage.id),
-        btn(context, 'Animate by stream', AnimateByStreamPage.id),
-        btn(context, 'Rotate Widget Page', RotateWidgetPage.id),
-        btn(context, 'My Positioned Transition', MyPositionedTransition.id),
-        btn(context, 'My Slide Transition', MySlideTransition.id),
-        btn(context, 'Size transition page', SizeTransitionPage.id),
-        btn(context, 'Animated size page', AnimSizePage.id),
-        btn(context, 'AnimationGit', AnimationGit.id),
+        btn(
+          context,
+          'Animated container page',
+          AnimatedContainerApp.id,
+        ),
+        btn(
+          context,
+          'Animated controller page',
+          AnimControllerPage.id,
+        ),
+        btn(
+          context,
+          'Animator package',
+          AnimatorPage.id,
+        ),
+        btn(
+          context,
+          'Animate by stream',
+          AnimateByStreamPage.id,
+        ),
+        btn(
+          context,
+          'Rotate Widget Page',
+          RotateWidgetPage.id,
+        ),
+        btn(
+          context,
+          'My Positioned Transition',
+          MyPositionedTransition.id,
+        ),
+        btn(
+          context,
+          'My Slide Transition',
+          MySlideTransition.id,
+        ),
+        btn(
+          context,
+          'Size transition page',
+          SizeTransitionPage.id,
+        ),
+        btn(
+          context,
+          'Animated size page',
+          AnimSizePage.id,
+        ),
+        btn(
+          context,
+          'AnimationGit',
+          AnimationGit.id,
+        ),
       ];
 
   @override

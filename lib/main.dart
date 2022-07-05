@@ -6,7 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/app_widgets/main_list_widget.dart';
-import 'package:test_flutter/routes.dart';
+import 'package:test_flutter/app/routers/routes.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/big_screen/big_screen_page.dart';
 import 'package:test_flutter/screens/bird_calc/bird_calc_page.dart';
