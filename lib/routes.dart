@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:test_flutter/screens/animation/animation_git.dart';
 import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/animation/screen/anim_controller_page.dart';
 import 'package:test_flutter/screens/animation/screen/anim_size_page.dart';
@@ -114,5 +115,6 @@ class Routes {
     HiveExample.id: (context) => HiveExample(),
     SizeTransitionPage.id: (context) => SizeTransitionPage(),
     AnimSizePage.id: (context) => AnimSizePage(),
-  };
+    AnimationGit.id: (context) => AnimationGit(),
+  } ..addAll(allRoutes);
 }

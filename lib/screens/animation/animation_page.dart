@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/app_widgets/main_button.dart';
 import 'package:test_flutter/app_widgets/main_list_widget.dart';
+import 'package:test_flutter/screens/animation/animation_git.dart';
 import 'package:test_flutter/screens/animation/screen/anim_controller_page.dart';
 import 'package:test_flutter/screens/animation/screen/anim_size_page.dart';
 import 'package:test_flutter/screens/animation/screen/animate_by_stream_page.dart';
@@ -33,6 +34,7 @@ class _AnimationPageState extends State<AnimationPage> {
         btn(context, 'My Slide Transition', MySlideTransition.id),
         btn(context, 'Size transition page', SizeTransitionPage.id),
         btn(context, 'Animated size page', AnimSizePage.id),
+        btn(context, 'AnimationGit', AnimationGit.id),
       ];
 
   @override
