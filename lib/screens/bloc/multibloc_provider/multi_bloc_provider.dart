@@ -33,9 +33,15 @@ class MultiblocProvider extends StatelessWidget {
                   Expanded(child: PageB()),
                 ],
               ),
-              RotatedBox(quarterTurns: -45,child: Text('Multibloc provider', style: TextStyle(fontSize: 55, color: Colors.black,),)),
-
-
+              RotatedBox(
+                  quarterTurns: -45,
+                  child: Text(
+                    'Multibloc provider',
+                    style: TextStyle(
+                      fontSize: 55,
+                      color: Colors.black,
+                    ),
+                  )),
             ],
           ),
         ));

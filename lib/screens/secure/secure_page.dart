@@ -51,7 +51,9 @@ class _SecurePageState extends State<SecurePage> with WidgetsBindingObserver {
               child: Center(
                 child: Text(
                   '********************',
-                  style: TextStyle(fontSize: 30,),
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
                 ),
               ),
             ))
@@ -66,7 +68,7 @@ class _SecurePageState extends State<SecurePage> with WidgetsBindingObserver {
         isClosePage = true;
       });
     }
-    if(state == AppLifecycleState.resumed){
+    if (state == AppLifecycleState.resumed) {
       setState(() {
         isClosePage = false;
       });

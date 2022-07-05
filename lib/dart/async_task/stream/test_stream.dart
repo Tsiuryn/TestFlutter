@@ -22,8 +22,7 @@ class MyStreamTest {
 
   MyStreamTest._internal();
 
-
-  void sendData (String data) async{
+  void sendData(String data) async {
     await Future.delayed(Duration(seconds: 2));
     _controller.sink.add(data);
   }
@@ -32,9 +31,9 @@ class MyStreamTest {
   Stream<String> get stream => _controller.stream;
 }
 
-late StreamSubscription  subscription;
+late StreamSubscription subscription;
 
-void main(){
+void main() {
   var count = 1;
   // subscription = NumberCreator().stream.listen((event) {
   //   count = event;
@@ -51,10 +50,9 @@ void main(){
   });
 
   sumStream.sendData('Hello World ${DateTime.now()}');
-
 }
 
-void cancelListen(){
+void cancelListen() {
   subscription.cancel();
   print('Subscription cancel');
 }

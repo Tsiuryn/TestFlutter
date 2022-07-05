@@ -3,7 +3,7 @@ import 'package:flutter/scheduler.dart';
 
 class WidgetSize extends StatefulWidget {
   final Widget child;
-  final Function (Size? size) onChange;
+  final Function(Size? size) onChange;
 
   const WidgetSize({
     Key? key,

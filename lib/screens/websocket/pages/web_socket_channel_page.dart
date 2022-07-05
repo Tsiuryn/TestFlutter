@@ -27,11 +27,8 @@ class _WebSocketChannelPageState extends State<WebSocketChannelPage> {
 }
 
 class WebSocketDemo extends StatefulWidget {
-
   //For test https://www.piesocket.com/websocket-tester#
-  final WebSocketChannel channel =
-  IOWebSocketChannel.connect
-    (socket_url);
+  final WebSocketChannel channel = IOWebSocketChannel.connect(socket_url);
 
   @override
   _WebSocketDemoState createState() => _WebSocketDemoState(channel: channel);

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'logic.dart';
 
-
 final random = Random();
 final calc = BirdCalc(random);
 final store = Store(AppState.initState, calc);
@@ -24,7 +23,6 @@ class _BirdCalcPageState extends State<BirdCalcPage> {
     return MainPage(store: store);
   }
 }
-
 
 class Assets {
   static const dashBlueImage = 'assets/bird_calc/dash_blue.png';
@@ -71,12 +69,12 @@ class MainPage extends StatelessWidget {
                         children: state!.birds
                             .map(
                               (bird) => BirdView(
-                            key: ValueKey(
-                                '$MainPage${bird.type}${uniqueKey++}'),
-                            type: bird.type,
-                            onTap: () => store.earn(bird),
-                          ),
-                        )
+                                key: ValueKey(
+                                    '$MainPage${bird.type}${uniqueKey++}'),
+                                type: bird.type,
+                                onTap: () => store.earn(bird),
+                              ),
+                            )
                             .toList(),
                       ),
                     );
@@ -155,18 +153,17 @@ class BirdStoreView extends StatelessWidget {
                 children: state!.items
                     .map(
                       (item) => Opacity(
-                    opacity: item.price <= state.balance ? 1.0 : 0.2,
-                    child: BirdView(
-                      key: ValueKey('$BirdStoreView${item.type}'),
-                      type: item.type,
-                      onTap: () {
-                        item.price <= state.balance
-                            ? store.buyBird(item)
-                            : null;
-                      }
-                    ),
-                  ),
-                )
+                        opacity: item.price <= state.balance ? 1.0 : 0.2,
+                        child: BirdView(
+                            key: ValueKey('$BirdStoreView${item.type}'),
+                            type: item.type,
+                            onTap: () {
+                              item.price <= state.balance
+                                  ? store.buyBird(item)
+                                  : null;
+                            }),
+                      ),
+                    )
                     .toList(),
               );
             }),
@@ -218,4 +215,3 @@ class WalletView extends StatelessWidget {
     );
   }
 }
-

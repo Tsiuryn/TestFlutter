@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -66,7 +65,7 @@ class _MyWidgetSizeState extends State<MyWidgetSize> {
   Widget stickyBuilder(BuildContext context) {
     return AnimatedBuilder(
       animation: controller,
-      builder: (_,Widget? child) {
+      builder: (_, Widget? child) {
         final keyContext = stickyKey.currentContext;
         if (keyContext != null) {
           // widget is visible

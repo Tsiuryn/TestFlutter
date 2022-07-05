@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:touchable/touchable.dart';
@@ -27,11 +26,11 @@ class _PolygonState extends State<Polygon> {
           children: <Widget>[
             Expanded(
               child: MouseRegion(
-                onHover: (event){
+                onHover: (event) {
                   print('${event.position.dx}   ${event.position.dy}');
                 },
                 child: CustomPaint(
-                  painter: ShapePainter(_sides, _radius, _radians, context, (){
+                  painter: ShapePainter(_sides, _radius, _radians, context, () {
                     print('--------------------hidfl');
                   }),
                   child: Container(),
@@ -96,7 +95,8 @@ class ShapePainter extends CustomPainter {
   final double radians;
   final BuildContext _context;
   final Function callback;
-  ShapePainter(this.sides, this.radius, this.radians, this._context, this.callback);
+  ShapePainter(
+      this.sides, this.radius, this.radians, this._context, this.callback);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -113,7 +113,7 @@ class ShapePainter extends CustomPainter {
 
     Offset center = Offset(size.width / 2, size.height / 2);
     Offset startPoint =
-    Offset(radius * math.cos(radians), radius * math.sin(radians));
+        Offset(radius * math.cos(radians), radius * math.sin(radians));
 
     path.moveTo(startPoint.dx + center.dx, startPoint.dy + center.dy);
 

@@ -1,29 +1,24 @@
-void main(){
-
+void main() {
   var employee = Employee('name', 'company');
   employee.display();
-
 }
 
-
-class Person{
-
+class Person {
   String name = "";
   Person(this.name);
 
-  void display(){
+  void display() {
     print("Name: $name");
   }
 }
 
-class Employee extends Person{
-
+class Employee extends Person {
   String company = "";
 
   Employee(name, this.company) : super(name);
 
   @override
-  void display(){
+  void display() {
     print("Name: $name");
     print("Company: $company");
   }

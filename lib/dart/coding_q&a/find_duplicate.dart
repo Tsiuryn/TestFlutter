@@ -11,7 +11,7 @@ class DupNumbers {
     return -1;
   }
 }
+
 void main() {
   print(DupNumbers.findDuplicate([1, 2, 1, 3, 4, 4]));
-  
 }

@@ -17,13 +17,11 @@ class BlocMainPage extends StatefulWidget {
 }
 
 class _BlocMainPageState extends State<BlocMainPage> {
-
-  List<Widget> _createListBtn(BuildContext context){
+  List<Widget> _createListBtn(BuildContext context) {
     return <Widget>[
       btn(context, 'Bloc provider', MyBlocProvider.id),
       btn(context, 'Multi bloc Provider', MultiblocProvider.id),
       btn(context, 'Bloc cubit', TestCubitPage.id),
-
     ];
   }
 
@@ -34,10 +32,9 @@ class _BlocMainPageState extends State<BlocMainPage> {
         title: Text('BlocMainPage'),
       ),
       body: Center(
-        child: MainListWidget(
-          listWidget: _createListBtn(context),
-        )
-      ),
+          child: MainListWidget(
+        listWidget: _createListBtn(context),
+      )),
     );
   }
 }

@@ -51,9 +51,8 @@ class IconWithIndicator extends StatelessWidget {
     this.indicatorColor = Colors.red,
     this.isActive = true,
     Size? size,
-  }) : this.size = size ?? const Size(50, 50),
+  })  : this.size = size ?? const Size(50, 50),
         super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -63,15 +62,21 @@ class IconWithIndicator extends StatelessWidget {
       child: Stack(
         alignment: AlignmentDirectional.topEnd,
         children: [
-          iconPath == null ? Icon(Icons.access_alarm_rounded, color: iconColor, size: size.width,) : SvgPicture.asset(
-            iconPath!,
-            width: size.width,
-            color: iconColor,
-          ),
+          iconPath == null
+              ? Icon(
+                  Icons.access_alarm_rounded,
+                  color: iconColor,
+                  size: size.width,
+                )
+              : SvgPicture.asset(
+                  iconPath!,
+                  width: size.width,
+                  color: iconColor,
+                ),
           Visibility(
             visible: isActive,
             child: CustomPaint(
-              size: Size(size.width/2, size.height/2),
+              size: Size(size.width / 2, size.height / 2),
               painter: CircleIndicator._(indicatorColor),
             ),
           )
@@ -81,7 +86,7 @@ class IconWithIndicator extends StatelessWidget {
   }
 }
 
-class CircleIndicator extends CustomPainter{
+class CircleIndicator extends CustomPainter {
   final Color indicatorColor;
 
   CircleIndicator._(this.indicatorColor);
@@ -106,15 +111,13 @@ class CircleIndicator extends CustomPainter{
     ));
     paint.color = indicatorColor;
     canvas.drawPath(red_path, paint);
-
-
   }
 
-  double _getRadius(Size size){
-    return size.width < size.height ? size.width / 2: size.height / 2;
+  double _getRadius(Size size) {
+    return size.width < size.height ? size.width / 2 : size.height / 2;
   }
 
-  double _getRedCircleRadius(Size size){
+  double _getRedCircleRadius(Size size) {
     double radius = _getRadius(size);
     double quarter = radius / 4;
     return radius - quarter;
@@ -124,5 +127,4 @@ class CircleIndicator extends CustomPainter{
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return false;
   }
-
 }

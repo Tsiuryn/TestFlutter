@@ -1,5 +1,3 @@
-
-
 void main() {
   // var one = SingletonOne();
   // SingletonThree three = SingletonThree.instance;
@@ -22,7 +20,12 @@ class MyApp {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is MyApp && runtimeType == other.runtimeType && name == other.name && id == other.id && age == other.age;
+      identical(this, other) ||
+      other is MyApp &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          id == other.id &&
+          age == other.age;
 
   @override
   int get hashCode => name.hashCode ^ id.hashCode ^ age.hashCode;

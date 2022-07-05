@@ -39,8 +39,9 @@ class _SecondStreamPageState extends State<SecondStreamPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   controller: controller,
-                  decoration: InputDecoration(labelText: 'InputText',
-                  border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: 'InputText',
+                    border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(),
                   ),
                 ),
@@ -53,7 +54,9 @@ class _SecondStreamPageState extends State<SecondStreamPage> {
                     myStream.sendData(text);
                   },
                   child: Text('Send information to previous page')),
-              SizedBox(height: 100,),
+              SizedBox(
+                height: 100,
+              ),
               MyContainer(),
             ],
           ),

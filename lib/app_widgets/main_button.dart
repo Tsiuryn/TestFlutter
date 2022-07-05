@@ -14,9 +14,7 @@ Widget btn(BuildContext context, String btnName, String pageId, {Key? key}) {
           primary: Colors.blue,
           elevation: 4,
           minimumSize: Size.fromHeight(10),
-          maximumSize: Size.fromHeight(20)
-
-      ),
+          maximumSize: Size.fromHeight(20)),
       onPressed: () {
         Navigator.pushNamed(context, pageId);
       });

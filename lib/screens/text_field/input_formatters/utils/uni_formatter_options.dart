@@ -39,7 +39,8 @@ class UniFormatterOptions {
 
     final textFormattedItem = getFormattedText();
 
-    return FormattedTextInput(textFormattedItem.formattedText, textFormattedItem.cursor);
+    return FormattedTextInput(
+        textFormattedItem.formattedText, textFormattedItem.cursor);
   }
 
   TextEditingValue removeValue(TextEditingValue newValue) {
@@ -53,7 +54,8 @@ class UniFormatterOptions {
   bool _isCorrectAddedSymbol(String addedSymbol) {
     RegExp digitsPattern = RegExp(r'^[0-9]');
 
-    return digitsPattern.hasMatch(addedSymbol) || addedSymbol == decimalSeparator.value && !_isAddedDecimalSeparator;
+    return digitsPattern.hasMatch(addedSymbol) ||
+        addedSymbol == decimalSeparator.value && !_isAddedDecimalSeparator;
   }
 
   void _fillItemList() {
@@ -64,10 +66,12 @@ class UniFormatterOptions {
       if (_isCorrectAddedSymbol(addedSymbol)) {
         listItem.add(TextItem(char: addedSymbol, isSelected: i == _cursor - 1));
         if (addedSymbol == '0' && _cursor == 1) {
-          listItem.add(TextItem(char: decimalSeparator.value, isSelected: false));
+          listItem
+              .add(TextItem(char: decimalSeparator.value, isSelected: false));
           countDeletedSymbols--;
         }
-        if (addedSymbol == decimalSeparator.value) _isAddedDecimalSeparator = true;
+        if (addedSymbol == decimalSeparator.value)
+          _isAddedDecimalSeparator = true;
       } else if (i < _cursor) {
         countDeletedSymbols++;
       }
@@ -77,7 +81,8 @@ class UniFormatterOptions {
 
   FormattedTextInput getFormattedText() {
     var formattedText = '';
-    var indexSeparator = listItem.indexWhere((element) => element.char == decimalSeparator.value);
+    var indexSeparator = listItem
+        .indexWhere((element) => element.char == decimalSeparator.value);
 
     int countSymbols = 0;
     int countThousandSeparator = 0;
@@ -103,10 +108,14 @@ class UniFormatterOptions {
     formattedText = _reverseText(formattedText);
 
     if (indexSeparator != -1) {
-      final countSymbolFromSeparatorToLength = formattedText.length - formattedText.indexOf(decimalSeparator.value) - 1;
+      final countSymbolFromSeparatorToLength = formattedText.length -
+          formattedText.indexOf(decimalSeparator.value) -
+          1;
 
       if (countSymbolFromSeparatorToLength > digitCapacity) {
-        final newLength = formattedText.length - countSymbolFromSeparatorToLength + digitCapacity;
+        final newLength = formattedText.length -
+            countSymbolFromSeparatorToLength +
+            digitCapacity;
         _cursor = _cursor - formattedText.length + newLength;
         formattedText = formattedText.substring(0, newLength);
       }
@@ -134,7 +143,10 @@ class FormattedTextInput {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is FormattedTextInput && runtimeType == other.runtimeType && formattedText == other.formattedText && cursor == other.cursor;
+      other is FormattedTextInput &&
+          runtimeType == other.runtimeType &&
+          formattedText == other.formattedText &&
+          cursor == other.cursor;
 
   @override
   int get hashCode => formattedText.hashCode ^ cursor.hashCode;

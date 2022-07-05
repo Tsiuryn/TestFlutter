@@ -22,52 +22,52 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('AnimatedContainer Demo'),
-        ),
-        body: Center(
-          child: AnimatedContainer(
-            // Use the properties stored in the State class.
-            width: _width,
-            height: _height,
-            decoration: BoxDecoration(
-              color: _color,
-              borderRadius: _borderRadius,
-            ),
-            // Define how long the animation should take.
-            duration: const Duration(seconds: 1),
-            // Provide an optional curve to make the animation feel smoother.
-            curve: Curves.fastOutSlowIn,
+      appBar: AppBar(
+        title: const Text('AnimatedContainer Demo'),
+      ),
+      body: Center(
+        child: AnimatedContainer(
+          // Use the properties stored in the State class.
+          width: _width,
+          height: _height,
+          decoration: BoxDecoration(
+            color: _color,
+            borderRadius: _borderRadius,
           ),
+          // Define how long the animation should take.
+          duration: const Duration(seconds: 1),
+          // Provide an optional curve to make the animation feel smoother.
+          curve: Curves.fastOutSlowIn,
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.blue,
-          // When the user taps the button
-          onPressed: () {
-            // Use setState to rebuild the widget with new values.
-            setState(() {
-              // Create a random number generator.
-              final random = Random();
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        // When the user taps the button
+        onPressed: () {
+          // Use setState to rebuild the widget with new values.
+          setState(() {
+            // Create a random number generator.
+            final random = Random();
 
-              // Generate a random width and height.
-              _width = random.nextInt(300).toDouble();
-              _height = random.nextInt(300).toDouble();
+            // Generate a random width and height.
+            _width = random.nextInt(300).toDouble();
+            _height = random.nextInt(300).toDouble();
 
-              // Generate a random color.
-              _color = Color.fromRGBO(
-                random.nextInt(256),
-                random.nextInt(256),
-                random.nextInt(256),
-                1,
-              );
+            // Generate a random color.
+            _color = Color.fromRGBO(
+              random.nextInt(256),
+              random.nextInt(256),
+              random.nextInt(256),
+              1,
+            );
 
-              // Generate a random border radius.
-              _borderRadius =
-                  BorderRadius.circular(random.nextInt(100).toDouble());
-            });
-          },
-          child: const Icon(Icons.play_arrow),
-        ),
+            // Generate a random border radius.
+            _borderRadius =
+                BorderRadius.circular(random.nextInt(100).toDouble());
+          });
+        },
+        child: const Icon(Icons.play_arrow),
+      ),
     );
   }
 }

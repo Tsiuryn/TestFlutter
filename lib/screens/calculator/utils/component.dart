@@ -11,10 +11,15 @@ class CalcBtn extends StatelessWidget {
   final CalcBtnStyle btnStyle;
   final int flex;
 
-  CalcBtn(this.mainText, {required Function onPress, String? secondText,  Function? onLongPress,  int? flex, CalcBtnStyle? btnStyle})
+  CalcBtn(this.mainText,
+      {required Function onPress,
+      String? secondText,
+      Function? onLongPress,
+      int? flex,
+      CalcBtnStyle? btnStyle})
       : this.btnStyle = btnStyle ?? CalcBtnStyle(),
         this.secondText = secondText ?? '',
-  this.onLongPress = onLongPress,
+        this.onLongPress = onLongPress,
         this.flex = flex ?? 1,
         this.onPress = onPress;
 
@@ -25,10 +30,13 @@ class CalcBtn extends StatelessWidget {
       child: Card(
         color: btnStyle.backgroundColor,
         shape: RoundedRectangleBorder(
-            side: BorderSide(color: btnStyle.strokeColor, width: btnStyle.strokeWidth),
-            borderRadius: BorderRadius.all(Radius.circular(btnStyle.cornerRadius))),
+            side: BorderSide(
+                color: btnStyle.strokeColor, width: btnStyle.strokeWidth),
+            borderRadius:
+                BorderRadius.all(Radius.circular(btnStyle.cornerRadius))),
         child: InkWell(
-          borderRadius: BorderRadius.all(Radius.circular(btnStyle.cornerRadius)),
+          borderRadius:
+              BorderRadius.all(Radius.circular(btnStyle.cornerRadius)),
           onTap: () {
             onPress(mainText);
           },
@@ -48,9 +56,10 @@ class CalcBtn extends StatelessWidget {
                       mainText,
                       style: btnStyle.mainTextStyle,
                     ),
-                    if (secondText.isNotEmpty) SizedBox(
-                      height: 4.0,
-                    )
+                    if (secondText.isNotEmpty)
+                      SizedBox(
+                        height: 4.0,
+                      )
                   ],
                 ),
                 fit: BoxFit.scaleDown),

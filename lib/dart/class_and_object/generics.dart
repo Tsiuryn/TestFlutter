@@ -1,9 +1,8 @@
-void main (){
-
+void main() {
   Person bob = Person("324", "Jack");
-  print(bob.id.runtimeType);  // String
+  print(bob.id.runtimeType); // String
   Person sam = Person(123, "Sam");
-  print(sam.id.runtimeType);  // int
+  print(sam.id.runtimeType); // int
 
   log('Tom');
 
@@ -13,22 +12,20 @@ void main (){
   transaction.execute();
 }
 
-class Person<T>{
-  T id;   // идентификатор пользователя
+class Person<T> {
+  T id; // идентификатор пользователя
   String name; // имя пользователя
   Person(this.id, this.name);
 }
 
-void log<T>(T a){
-
+void log<T>(T a) {
   // DateTime.now() - получает текущую дату и время
   print("${DateTime.now()} a=$a");
 }
 
-class Account{
-
-  int id;     // номер счета
-  int sum;    // сумма на счете
+class Account {
+  int id; // номер счета
+  int sum; // сумма на счете
   Account(this.id, this.sum);
 }
 
@@ -36,30 +33,25 @@ class Account{
 // что используемый тип T обязательно должен быть классом Account или его наследником.
 // Благодаря подобному ограничению мы можем использовать внутри класса Transaction все объекты типа T
 // именно как объекты Account и соответственно обращаться к их полям и методам.
-class Transaction<T extends Account>{
-
-  T fromAccount;  // с какого счета перевод
-  T toAccount;    // на какой счет перевод
-  int sum;        // сумма перевода
+class Transaction<T extends Account> {
+  T fromAccount; // с какого счета перевод
+  T toAccount; // на какой счет перевод
+  int sum; // сумма перевода
   Transaction(this.fromAccount, this.toAccount, this.sum);
-  void execute(){
-
-    if (fromAccount.sum > sum){
+  void execute() {
+    if (fromAccount.sum > sum) {
       fromAccount.sum -= sum;
       toAccount.sum += sum;
-      print("Счет ${fromAccount.id}: ${fromAccount.sum}\$ \nСчет ${toAccount.id}: ${toAccount.sum}\$");
-    }
-    else
-    {
+      print(
+          "Счет ${fromAccount.id}: ${fromAccount.sum}\$ \nСчет ${toAccount.id}: ${toAccount.sum}\$");
+    } else {
       print("Недостаточно денег на счете ${fromAccount.id}");
     }
   }
 }
 
-class DemandAccount extends Account{
-
+class DemandAccount extends Account {
   int amount;
 
   DemandAccount(int id, int sum, this.amount) : super(id, sum);
-
 }

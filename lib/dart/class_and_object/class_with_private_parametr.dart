@@ -1,5 +1,5 @@
 class Phone {
-  String _companyName ;
+  String _companyName;
   String _cpu;
 
   Phone({String companyName = 'Samsung', String? cpu})
@@ -10,4 +10,3 @@ class Phone {
 
   String get companyName => _companyName;
 }
-

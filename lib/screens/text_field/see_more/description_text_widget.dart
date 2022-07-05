@@ -8,11 +8,11 @@ class DescriptionTextWidget extends StatefulWidget {
   DescriptionTextWidget({required this.text});
 
   @override
-  _DescriptionTextWidgetState createState() => new _DescriptionTextWidgetState();
+  _DescriptionTextWidgetState createState() =>
+      new _DescriptionTextWidgetState();
 }
 
 class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
-
   bool flag = true;
   double height = 100;
   int countLine = 2;
@@ -21,10 +21,14 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
 
   @override
   void initState() {
-    textWidget = Text(widget.text, overflow: TextOverflow.ellipsis, maxLines: countLine, key: globalKey,);
+    textWidget = Text(
+      widget.text,
+      overflow: TextOverflow.ellipsis,
+      maxLines: countLine,
+      key: globalKey,
+    );
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +38,9 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
       child: Column(
         children: <Widget>[
           textWidget,
-          SizedBox(height: 8,),
+          SizedBox(
+            height: 8,
+          ),
           InkWell(
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -46,18 +52,17 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
               ],
             ),
             onTap: () {
-                setState(() {
-                  if(flag){
-                    countLine = 100;
-                    height = _getWidgetSize()!.height;
-                  }else{
-                    countLine = 2;
-                    height = _getWidgetSize()!.height;
-                  }
-                  flag = !flag;
-                  height = height;
-
-                });
+              setState(() {
+                if (flag) {
+                  countLine = 100;
+                  height = _getWidgetSize()!.height;
+                } else {
+                  countLine = 2;
+                  height = _getWidgetSize()!.height;
+                }
+                flag = !flag;
+                height = height;
+              });
             },
           ),
         ],
@@ -65,8 +70,7 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
     );
   }
 
-  Size? _getWidgetSize (){
-
+  Size? _getWidgetSize() {
     return globalKey.currentContext?.size;
   }
 }

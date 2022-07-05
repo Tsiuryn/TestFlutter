@@ -15,14 +15,15 @@ class TextFieldSearch extends StatefulWidget {
   final int minStringLength;
 
   const TextFieldSearch(
-      {Key, key,
+      {Key,
+      key,
       required this.initialList,
       required this.label,
       required this.controller,
       this.textStyle,
-        required this.getSelectedValue,
+      required this.getSelectedValue,
       this.decoration,
-      this.minStringLength = 2 })
+      this.minStringLength = 2})
       : super(key: key);
 
   @override
@@ -54,9 +55,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
       // after loop is done, set the filteredList state from the tempList
       this.filteredList = tempList;
       this.loading = false;
-      itemsFound = tempList.length == 0
-          ? false
-          : true;
+      itemsFound = tempList.length == 0 ? false : true;
     });
     // mark that the overlay widget needs to be rebuilt so results can show
     _overlayEntry.markNeedsBuild();
@@ -89,7 +88,7 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
     });
   }
 
-  void _closeDropDown(){
+  void _closeDropDown() {
     this._overlayEntry.remove();
     // check to see if itemsFound is false, if it is clear the input
     // check to see if we are currently loading items when keyboard exists, and clear the input
@@ -104,8 +103,8 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
       bool textMatchesItem = false;
       if (widget.getSelectedValue != null) {
         // try to match the label against what is set on controller
-        textMatchesItem = filteredList
-            .any((item) => item.label == widget.controller.text);
+        textMatchesItem =
+            filteredList.any((item) => item.label == widget.controller.text);
       } else {
         textMatchesItem = filteredList.contains(widget.controller.text);
       }
@@ -224,19 +223,21 @@ class _TextFieldSearchState extends State<TextFieldSearch> {
       child: VisibilityDetector(
         key: Key("unique key"),
         onVisibilityChanged: (VisibilityInfo info) {
-          if(info.visibleFraction < 0.5){
+          if (info.visibleFraction < 0.5) {
             FocusScope.of(context).unfocus();
           }
         },
         child: TextField(
           controller: widget.controller,
           focusNode: _focusNode,
-          decoration: widget.decoration != null ? widget.decoration : InputDecoration(labelText: widget.label),
+          decoration: widget.decoration != null
+              ? widget.decoration
+              : InputDecoration(labelText: widget.label),
           style: widget.textStyle,
           onChanged: (String value) {
-              setState(() {
-                  updateList();
-              });
+            setState(() {
+              updateList();
+            });
           },
         ),
       ),

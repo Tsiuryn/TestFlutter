@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class MySlideTransition extends StatefulWidget {
@@ -46,21 +45,25 @@ class _MySlideTransitionState extends State<MySlideTransition>
               child: FlutterLogo(size: 150.0),
             ),
           ),
-          SizedBox(height: 40,),
-          OutlinedButton(onPressed: (){
-            // setState(() {
-              startAnimated();
-            // });
-          }, child: Text ('Start Animation'))
+          SizedBox(
+            height: 40,
+          ),
+          OutlinedButton(
+              onPressed: () {
+                // setState(() {
+                startAnimated();
+                // });
+              },
+              child: Text('Start Animation'))
         ],
       ),
     );
   }
 
-  void startAnimated (){
-    if(isStarted){
+  void startAnimated() {
+    if (isStarted) {
       _controller.animateTo(1);
-    }else{
+    } else {
       _controller.animateBack(0);
     }
     isStarted = !isStarted;

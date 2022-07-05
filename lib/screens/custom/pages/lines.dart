@@ -19,7 +19,7 @@ class _LinesState extends State<Lines> {
   }
 }
 
-class LinesShapePainter extends CustomPainter{
+class LinesShapePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
@@ -53,5 +53,4 @@ class LinesShapePainter extends CustomPainter{
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return false;
   }
-
 }

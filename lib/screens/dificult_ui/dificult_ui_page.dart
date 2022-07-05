@@ -26,6 +26,7 @@ class _DifficultUIPageState extends State<DifficultUIPage> {
     ];
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,6 @@ class _DifficultUIPageState extends State<DifficultUIPage> {
         title: Text('DifficultUIPage'),
       ),
       body: MainListWidget(
-
         listWidget: listBtn,
       ),
     );

@@ -20,7 +20,17 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
   final myOverlayKey = GlobalKey<MyOverlayWidgetState>();
 
   late String country_id;
-  List<String> country = ["America", "Brazil", "Canada", "India", "Mongalia", "USA", "China", "Russia", "Germany"];
+  List<String> country = [
+    "America",
+    "Brazil",
+    "Canada",
+    "India",
+    "Mongalia",
+    "USA",
+    "China",
+    "Russia",
+    "Germany"
+  ];
 
   List<Widget> get widCountry => country.map((e) => Text(e)).toList();
 
@@ -35,9 +45,9 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
     focusNode.addListener(() {
       // setState(() {
       //   isShow = focusNode.hasFocus;
-      if(focusNode.hasFocus){
-      key.currentState?.showMenu();
-      }else{
+      if (focusNode.hasFocus) {
+        key.currentState?.showMenu();
+      } else {
         key.currentState?.closeMenu();
       }
       // });
@@ -52,20 +62,17 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-
-    onTap: (){
-      FocusScopeNode currentFocus = FocusScope.of(context);
-      if (!currentFocus.hasPrimaryFocus &&
-          currentFocus.focusedChild != null) {
-        FocusManager.instance.primaryFocus!.unfocus();
-      }
-    },
-
-    child: SafeArea(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
+          FocusManager.instance.primaryFocus!.unfocus();
+        }
+      },
+      child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
             title: Text('TextFieldWithPopUp'),
@@ -84,9 +91,12 @@ class _TextFieldWithPopUpState extends State<TextFieldWithPopUp> {
                     controller: TextEditingController(),
                     decoration: InputDecoration(
                       label: Text('Simple List'),
-                      focusedBorder: _buildOutlineBorder(Theme.of(context).colorScheme.secondary),
-                      errorBorder: _buildOutlineBorder(Theme.of(context).errorColor),
-                      border: _buildOutlineBorder(Theme.of(context).unselectedWidgetColor),
+                      focusedBorder: _buildOutlineBorder(
+                          Theme.of(context).colorScheme.secondary),
+                      errorBorder:
+                          _buildOutlineBorder(Theme.of(context).errorColor),
+                      border: _buildOutlineBorder(
+                          Theme.of(context).unselectedWidgetColor),
                     ),
                     getSelectedValue: () {},
                   ),

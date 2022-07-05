@@ -68,12 +68,14 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
           children: <Widget>[
             RaisedButton.icon(
                 onPressed: () async {
-                  if(await _checkPermission(context)){
+                  if (await _checkPermission(context)) {
                     var tempDir;
-                    if(Platform.isIOS){
-                      tempDir = await path_provider.getApplicationDocumentsDirectory();
-                    }else{
-                      tempDir = await path_provider.getExternalStorageDirectory();
+                    if (Platform.isIOS) {
+                      tempDir = await path_provider
+                          .getApplicationDocumentsDirectory();
+                    } else {
+                      tempDir =
+                          await path_provider.getExternalStorageDirectory();
                     }
                     setState(() {
                       fullPath.clear();
@@ -84,7 +86,6 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
 
                     download2(dio, imgUrl, fullPath[0]);
                   }
-
                 },
                 icon: Icon(
                   Icons.file_download,
@@ -93,23 +94,27 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                 color: Colors.green,
                 textColor: Colors.white,
                 label: Text('Dowload Invoice')),
-            IconButton(onPressed: fullPath.isEmpty ? null :() async  {
-              final RenderBox box = context.findRenderObject() as RenderBox;
-              await Share.shareFiles( fullPath,
-                  text: 'Share file',
-                  sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
-              fullPath.clear();
-            }, icon: Icon(Icons.share)),
+            IconButton(
+                onPressed: fullPath.isEmpty
+                    ? null
+                    : () async {
+                        final RenderBox box =
+                            context.findRenderObject() as RenderBox;
+                        await Share.shareFiles(fullPath,
+                            text: 'Share file',
+                            sharePositionOrigin:
+                                box.localToGlobal(Offset.zero) & box.size);
+                        fullPath.clear();
+                      },
+                icon: Icon(Icons.share)),
             OutlinedButton(
                 onPressed: () async {
                   Navigator.pushNamed(context, DownloadFileByLibPage.id);
                 },
                 child: Text('Download by lib')),
-
           ],
         ),
       ),
-
     );
   }
 
@@ -121,7 +126,6 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
         showAlarmDialog(context);
       }
       return false;
-
     } else {
       return true;
     }
@@ -132,7 +136,8 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
         context: context,
         builder: (BuildContext context) => AlertDialog(
               title: Text('Permission'),
-              content: Text('We need to download file and write to your device'),
+              content:
+                  Text('We need to download file and write to your device'),
               actions: [
                 TextButton(
                     onPressed: () {
@@ -142,8 +147,9 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                 TextButton(
                     onPressed: () async {
                       Navigator.of(context).pop();
-                      if(await _checkPermission(context)){
-                        var tempDir = await path_provider.getExternalStorageDirectory();
+                      if (await _checkPermission(context)) {
+                        var tempDir =
+                            await path_provider.getExternalStorageDirectory();
                         String fullPath = tempDir!.path + "/boo2.pdf";
                         print('full path ${fullPath}');
 
@@ -151,10 +157,7 @@ class _DownloadFilePageState extends State<DownloadFilePage> {
                       }
                     },
                     child: Text('Ok')),
-
               ],
             ));
   }
-
-
 }

@@ -28,7 +28,9 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
           GestureDetector(
               onTap: () {
                 setState(() {
-                  _checkboxVal == true ? _checkboxVal = false : _checkboxVal = true;
+                  _checkboxVal == true
+                      ? _checkboxVal = false
+                      : _checkboxVal = true;
                 });
               },
               child: Padding(

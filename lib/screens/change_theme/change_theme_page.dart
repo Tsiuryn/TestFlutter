@@ -22,12 +22,15 @@ class _ChangeThemePageState extends State<ChangeThemePage> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(height: 150, width: 150, color: ownTheme(context).errorShade),
-          CupertinoSwitch(value: _checked, onChanged: (checked){
-              setState(() {
-                _checked = checked;
-              });
-          })
+          Container(
+              height: 150, width: 150, color: ownTheme(context).errorShade),
+          CupertinoSwitch(
+              value: _checked,
+              onChanged: (checked) {
+                setState(() {
+                  _checked = checked;
+                });
+              })
         ],
       ),
     );

@@ -33,7 +33,8 @@ class _ConstraintPageState extends State<ConstraintPage> {
                     padding: EdgeInsets.only(top: 16, left: 16),
                     child: Text(
                       'Blade Runner 2049',
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                     ),
                   ),
                   Padding(
@@ -45,11 +46,13 @@ class _ConstraintPageState extends State<ConstraintPage> {
                         Text(
                           'Director: ',
                           textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w500),
                         ),
                         Text(
                           'Denis Villeneuve',
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w300),
                         ),
                       ],
                     ),
@@ -130,7 +133,8 @@ class _ConstraintPageState extends State<ConstraintPage> {
   Widget _createDirector(String name) {
     return Container(
       padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(color: Colors.blueGrey, borderRadius: BorderRadius.circular(4)),
+      decoration: BoxDecoration(
+          color: Colors.blueGrey, borderRadius: BorderRadius.circular(4)),
       child: Text(name),
     );
   }

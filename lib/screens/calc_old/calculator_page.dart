@@ -20,32 +20,35 @@ class _CalculatorPageState extends State<CalculatorPage> {
   void setText(String text) {
     setState(() {
       int currentCursorPosition = _controller.value.selection.base.offset;
-      if(currentCursorPosition != -1){
-        String before = _text.substring(0, currentCursorPosition );
+      if (currentCursorPosition != -1) {
+        String before = _text.substring(0, currentCursorPosition);
         String after = _text.substring(currentCursorPosition, _text.length);
         print('$before $after');
         _text = '$before$text$after';
-      }else{
+      } else {
         _text = '$_text$text';
       }
       print(currentCursorPosition + 1);
       _controller.text = _text;
-      _controller.selection = TextSelection.fromPosition(TextPosition(offset: currentCursorPosition + 1));
+      _controller.selection = TextSelection.fromPosition(
+          TextPosition(offset: currentCursorPosition + 1));
     });
   }
 
-  void deleteText(){
+  void deleteText() {
     setState(() {
       int currentCursorPosition = _controller.value.selection.base.offset;
-      if(currentCursorPosition != -1) {
+      if (currentCursorPosition != -1) {
         String before = _text.substring(0, currentCursorPosition - 1);
         String after = _text.substring(currentCursorPosition, _text.length);
         _text = '$before$after';
         _controller.text = _text;
-        _controller.selection = TextSelection.fromPosition(TextPosition(offset: currentCursorPosition - 1));
+        _controller.selection = TextSelection.fromPosition(
+            TextPosition(offset: currentCursorPosition - 1));
       }
     });
   }
+
   @override
   void initState() {
     super.initState();
@@ -61,7 +64,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Calculator'),
@@ -74,7 +76,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
             autofocus: true,
             controller: _controller,
             focusNode: _focusNode,
-            onChanged: (value){
+            onChanged: (value) {
               _text = value;
             },
             maxLength: 20,
@@ -98,8 +100,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 onPressed: () {
                   setText('1');
                 },
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.0)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
                 child: Text('1'),
               ),
               MaterialButton(
@@ -119,15 +121,15 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 child: Text('3'),
               ),
               GestureDetector(
-                onLongPress:(){
+                onLongPress: () {
                   _controller.text = '';
                   _text = '';
                 },
                 child: OutlinedButton(
                   onPressed: () {
-                      deleteText();
+                    deleteText();
                   },
-                  child: Icon (
+                  child: Icon(
                     Icons.arrow_back,
                     color: Colors.black12,
                   ),

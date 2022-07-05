@@ -17,9 +17,7 @@ class _DividerExamplePageState extends State<DividerExamplePage> {
       appBar: AppBar(
         title: Text('DividerExamplePage'),
       ),
-      body: Center(
-        child: _MyColumnWithObjects()
-      ),
+      body: Center(child: _MyColumnWithObjects()),
     );
   }
 }
@@ -92,7 +90,12 @@ class _MyWidgets extends StatelessWidget {
                 ],
               ),
             ),
-            Container(child: VerticalDivider(thickness: 3, color: Colors.black,),),
+            Container(
+              child: VerticalDivider(
+                thickness: 3,
+                color: Colors.black,
+              ),
+            ),
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -109,4 +112,3 @@ class _MyWidgets extends StatelessWidget {
     );
   }
 }
-

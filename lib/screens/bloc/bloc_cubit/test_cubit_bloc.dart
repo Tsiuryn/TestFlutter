@@ -30,7 +30,11 @@ class TestCubitModel {
   }
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is TestCubitModel && runtimeType == other.runtimeType && page == other.page;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TestCubitModel &&
+          runtimeType == other.runtimeType &&
+          page == other.page;
 
   @override
   int get hashCode => page.hashCode;

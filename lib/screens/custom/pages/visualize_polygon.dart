@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'dart:math' as math;
 
@@ -86,7 +85,8 @@ class _MyPainterState extends State<VisualizePolygon>
                 animation: animation,
                 builder: (context, snapshot) {
                   return CustomPaint(
-                    painter: ShapePainter(_sides, animation2.value, animation.value),
+                    painter:
+                        ShapePainter(_sides, animation2.value, animation.value),
                     child: Container(),
                   );
                 },
@@ -136,7 +136,7 @@ class ShapePainter extends CustomPainter {
 
     Offset center = Offset(size.width / 2, size.height / 2);
     Offset startPoint =
-    Offset(radius * math.cos(radians), radius * math.sin(radians));
+        Offset(radius * math.cos(radians), radius * math.sin(radians));
 
     path.moveTo(startPoint.dx + center.dx, startPoint.dy + center.dy);
 

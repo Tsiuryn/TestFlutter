@@ -15,29 +15,24 @@ class NotificationPage extends StatefulWidget {
 }
 
 class _NotificationPageState extends State<NotificationPage> {
-
-
   @override
-  void initState()  {
+  void initState() {
     super.initState();
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text ('NotificationPage'),
+        title: Text('NotificationPage'),
       ),
       body: Center(
         child: OutlinedButton(
-          onPressed: () async{
+          onPressed: () async {
             // _showProgressNotification();
 
             NotificationApi().showNotification(1, "title", "body", 10);
             // NotificationApi().showProgressNotification();
-
-
           },
           child: Text('Show notification'),
         ),

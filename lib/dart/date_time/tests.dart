@@ -5,7 +5,6 @@ var start = DateTime(now.year, now.month, now.day);
 var end = start.add(const Duration(days: 10));
 var ownFormatter = DateFormat("yyyy-MM-ddTHH:mm:ss.SSS'Z'");
 
-
 var activeDates = [
   start.add(const Duration(days: 0)),
   start.add(const Duration(days: 2)),
@@ -17,7 +16,6 @@ var activeDates = [
 ];
 
 void main() {
-
   // print(getBlackoutList(
   //   startDate: start,
   //   endDate: end,
@@ -43,23 +41,17 @@ List<DateTime> getBlackoutList({
 }) {
   List<DateTime> blackoutDates = [];
   for (int i = 0; i <= endDate.difference(startDate).inDays; i++) {
-    var date = DateTime(
-        startDate.year,
-        startDate.month,
-        startDate.day + i);
-    if (activeDates.contains(date))
-      continue;
+    var date = DateTime(startDate.year, startDate.month, startDate.day + i);
+    if (activeDates.contains(date)) continue;
 
     blackoutDates.add(date);
   }
   return blackoutDates;
 }
 
-
-bool isEqualDates (DateTime start, DateTime end){
-  if(end.difference(start).inDays < 1){
+bool isEqualDates(DateTime start, DateTime end) {
+  if (end.difference(start).inDays < 1) {
     return true;
   }
   return false;
 }
-

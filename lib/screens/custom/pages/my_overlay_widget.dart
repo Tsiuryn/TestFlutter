@@ -40,7 +40,6 @@ class _MyOverlayWidgetState extends State<MyOverlayWidget> {
 class ShowNotificationIcon {
   final Color background;
 
-
   ShowNotificationIcon({this.background = Colors.blueAccent});
 
   OverlayEntry? overlayEntry;
@@ -78,7 +77,10 @@ class ShowNotificationIcon {
                       flex: 1,
                       child: Text(
                         '1 payment status changed',
-                        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12, color: Colors.white),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            color: Colors.white),
                       ),
                     ),
                   ],

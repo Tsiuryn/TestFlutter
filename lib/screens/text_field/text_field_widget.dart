@@ -13,7 +13,14 @@ class TextFieldWidget extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatter;
 
   const TextFieldWidget(this.placeHolder,
-      {Key? key, this.defaultValue, bool? enable, this.validator, this.onFocusChangeListener, this.keyboardType, this.inputFormatter, this.controller})
+      {Key? key,
+      this.defaultValue,
+      bool? enable,
+      this.validator,
+      this.onFocusChangeListener,
+      this.keyboardType,
+      this.inputFormatter,
+      this.controller})
       : this.enabled = enable ?? true,
         super(key: key);
 
@@ -47,20 +54,22 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       controller: widget.controller,
       focusNode: _focusNode,
       maxLines: 1,
-
-      decoration: InputDecoration(labelText: widget.placeHolder, border: OutlineInputBorder(), errorText: _errorText, focusedBorder: OutlineInputBorder()),
+      decoration: InputDecoration(
+          labelText: widget.placeHolder,
+          border: OutlineInputBorder(),
+          errorText: _errorText,
+          focusedBorder: OutlineInputBorder()),
       keyboardType: widget.keyboardType ?? TextInputType.number,
       inputFormatters: widget.inputFormatter,
       enabled: widget.enabled,
-      onChanged: (value){
+      onChanged: (value) {
         print(value);
       },
       validator: (String? value) {
         setState(() {
-          if(widget.validator != null){
+          if (widget.validator != null) {
             _errorText = widget.validator!(value);
           }
-
         });
       },
     );

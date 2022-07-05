@@ -34,7 +34,8 @@ class _ProgressPageState extends State<ProgressPage> {
             MaterialButton(
                 child: Text("Show/Hide progress bar "),
                 color: Colors.blue,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   setState(() {
                     if (_visibleProgress) {
@@ -47,7 +48,8 @@ class _ProgressPageState extends State<ProgressPage> {
             MaterialButton(
                 child: Text("Show/Hide percent indicator "),
                 color: Colors.blue,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0)),
                 onPressed: () {
                   setState(() {
                     if (_visiblePercent) {
@@ -60,28 +62,29 @@ class _ProgressPageState extends State<ProgressPage> {
           ],
         ),
         Center(
-          child: _visibleProgress ? ClipRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade200.withOpacity(0.5),
-                    borderRadius: new BorderRadius.all(Radius.circular(8))
-                ),
-                child: Center(
-                  child:CircularProgressIndicator(
+          child: _visibleProgress
+              ? ClipRect(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200.withOpacity(0.5),
+                          borderRadius:
+                              new BorderRadius.all(Radius.circular(8))),
+                      child: Center(
+                        child: CircularProgressIndicator(
                           backgroundColor: Colors.amberAccent,
                           strokeWidth: 5,
                           semanticsLabel: 'Download',
                         ),
-                ),
-              ),
-            ),
-          ) : null,
+                      ),
+                    ),
+                  ),
+                )
+              : null,
         ),
-
       ],
     ));
   }

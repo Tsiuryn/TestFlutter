@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:encrypt/encrypt.dart';
 
-const String text = 'Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world';
+const String text =
+    'Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world';
 const plainText =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, '
     'consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit';
@@ -49,5 +50,6 @@ String _decryptText({
   final key = Key.fromUtf8(hash.toString());
   final iv = IV.fromLength(16); // max: 16
 
-  return Encrypter(AES(key)).decrypt(Encrypted.fromBase64(encryptedText), iv: iv);
+  return Encrypter(AES(key))
+      .decrypt(Encrypted.fromBase64(encryptedText), iv: iv);
 }

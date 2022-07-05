@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -43,6 +42,7 @@ class _RotateWidgetPageState extends State<RotateWidgetPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: SpinningContainer(controller: _controller)));
+    return Scaffold(
+        body: Center(child: SpinningContainer(controller: _controller)));
   }
 }

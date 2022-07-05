@@ -8,14 +8,11 @@ void main() {
   print('${Own.kotlin.toString().toUpperCase()}');
 }
 
-
-bool _getmatch(String value){
+bool _getmatch(String value) {
   return swiftRegExp.hasMatch(value);
 }
 
-final swiftRegExp = RegExp('^[A-Za-z0-9]{8,11}\$'); // Полное выражение должно соответствовать регулярке
+final swiftRegExp = RegExp(
+    '^[A-Za-z0-9]{8,11}\$'); // Полное выражение должно соответствовать регулярке
 
-
-enum Own{
-  dart, kotlin, swift
-}
+enum Own { dart, kotlin, swift }

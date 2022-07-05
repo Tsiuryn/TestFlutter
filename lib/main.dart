@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -41,12 +40,12 @@ import 'app_widgets/main_button.dart';
 
 StreamController<bool> isLightTheme = StreamController();
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   NotificationApi().initNotification();
   await FlutterDownloader.initialize(
       debug: true // optional: set false to disable printing logs to console
-  );
+      );
   runApp(Start());
 }
 
@@ -64,7 +63,11 @@ class Start extends StatelessWidget {
             darkTheme: darkTheme,
             locale: provider.locale,
             supportedLocales: L10n.all,
-            localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalCupertinoLocalizations.delegate],
+            localizationsDelegates: [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate
+            ],
             routes: Routes(context).appRoutes);
       });
 }
@@ -79,7 +82,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late List<Widget> listBtn;
 
-
   @override
   void initState() {
     listBtn = <Widget>[
@@ -89,7 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Calculator layout', CalculatorPage.id),
       btn(context, 'Calculator screen', CalcScreen.id),
       btn(context, 'Localization screen', LocalizationPage.id),
-      btn(context,
+      btn(
+        context,
         'Shared app',
         ShareAppPage.id,
       ),
@@ -106,7 +109,8 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Text field page', TextFieldPage.id),
       btn(context, 'Change theme page', ChangeThemePage.id),
       btn(context, 'DropDown menu', DropdownButtonExample.id),
-      btn(context, 'Bird Calc page', BirdCalcPage.id, key: const Key('birdCalcPage')),
+      btn(context, 'Bird Calc page', BirdCalcPage.id,
+          key: const Key('birdCalcPage')),
       btn(context, 'Big Screen page', BigScreenPage.id),
       btn(context, 'Stream example', FirstStreamPage.id),
       btn(context, 'Difficult UI page', DifficultUIPage.id),
@@ -121,10 +125,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Main screen'),
       ),
       body: MainListWidget(
-
         listWidget: listBtn,
       ),
     );
   }
-
 }

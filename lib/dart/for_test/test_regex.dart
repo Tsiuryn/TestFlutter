@@ -1,8 +1,9 @@
 RegExp ibanPattern = RegExp(r'^[A-Z]{2}[0-9]{4}');
-RegExp tinPattern = RegExp(r'^(9{5}|0{9}|0{10})|(\d{8}(?<!0{8})|\d{9}|\d{10})$');
+RegExp tinPattern =
+    RegExp(r'^(9{5}|0{9}|0{10})|(\d{8}(?<!0{8})|\d{9}|\d{10})$');
 RegExp namePattern = RegExp(r'^\S[^\x00-\x1F]{0,38}$');
 
-void main(){
+void main() {
   // print(ibanPattern.hasMatch('AA12345'));
   // print(ibanPattern.stringMatch('AA12345'));
   // print(ibanPattern.allMatches('AA12345'));
@@ -12,22 +13,22 @@ void main(){
   print(_getmatch(value));
 }
 
-
-bool _getmatch(String value){
+bool _getmatch(String value) {
   return swiftRegExp.hasMatch(value);
 }
 
-final swiftRegExp = RegExp('^[A-Za-z0-9]{8,11}\$');  // весь текст должен соответствовать регулярке
+final swiftRegExp = RegExp(
+    '^[A-Za-z0-9]{8,11}\$'); // весь текст должен соответствовать регулярке
 
-extension RegExpExt on RegExp{
-  bool hasAllMatch(String value){
-    if(!hasMatch(value)) {
+extension RegExpExt on RegExp {
+  bool hasAllMatch(String value) {
+    if (!hasMatch(value)) {
       return false;
     }
     var matchText = stringMatch(value);
-    if(hasMatch(value) && value.length == matchText?.length){
+    if (hasMatch(value) && value.length == matchText?.length) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }

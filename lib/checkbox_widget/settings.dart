@@ -4,10 +4,11 @@ class Settings {
   CheckboxSettings checkboxSettings;
   ChecklistSettings checklistSettings;
 
-  Settings({CheckboxSettings? checkboxSettings , ChecklistSettings? checklistSettings }):
-      checkboxSettings = checkboxSettings ?? CheckboxSettings(),
-      checklistSettings = checklistSettings ?? ChecklistSettings();
-
+  Settings(
+      {CheckboxSettings? checkboxSettings,
+      ChecklistSettings? checklistSettings})
+      : checkboxSettings = checkboxSettings ?? CheckboxSettings(),
+        checklistSettings = checklistSettings ?? ChecklistSettings();
 }
 
 class CheckboxSettings {
@@ -17,10 +18,8 @@ class CheckboxSettings {
   CheckboxSettings({
     int? squareColor,
     int? textColor,
-  }): squareColor = squareColor ?? 7,
-        textColor = textColor ??  8;
-
-
+  })  : squareColor = squareColor ?? 7,
+        textColor = textColor ?? 8;
 }
 
 class ChecklistSettings {
@@ -30,15 +29,11 @@ class ChecklistSettings {
   ChecklistSettings({
     int? squareColor,
     int? textColor,
-  }): squareColor = squareColor ?? 4,
-        textColor = textColor ??  5;
+  })  : squareColor = squareColor ?? 4,
+        textColor = textColor ?? 5;
 }
 
 void main() {
-  Settings set = Settings(
-    checkboxSettings: CheckboxSettings(
-      textColor: 11
-    )
-  );
+  Settings set = Settings(checkboxSettings: CheckboxSettings(textColor: 11));
   print(set.checkboxSettings.squareColor);
 }

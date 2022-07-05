@@ -18,11 +18,13 @@ class _BigScreenPageState extends State<BigScreenPage> {
       appBar: AppBar(
         title: Text('BigScreenPage'),
       ),
-      body: height > width ? _buildPortraitOrient(context): _buildLandOrient(context),
+      body: height > width
+          ? _buildPortraitOrient(context)
+          : _buildLandOrient(context),
     );
   }
 
-  Widget _buildPortraitOrient(BuildContext context){
+  Widget _buildPortraitOrient(BuildContext context) {
     return Column(
       children: [
         _buildBox(),
@@ -31,7 +33,7 @@ class _BigScreenPageState extends State<BigScreenPage> {
     );
   }
 
-  Widget _buildLandOrient(BuildContext context){
+  Widget _buildLandOrient(BuildContext context) {
     return Row(
       children: [
         _buildBox(),
@@ -41,13 +43,13 @@ class _BigScreenPageState extends State<BigScreenPage> {
     );
   }
 
-  Widget _buildBox(){
+  Widget _buildBox() {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-            color: Colors.blue,
-            child: Center(child: Icon(Icons.exposure)),
+          color: Colors.blue,
+          child: Center(child: Icon(Icons.exposure)),
         ),
       ),
     );
