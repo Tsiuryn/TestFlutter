@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/screens/animation/animation_page.dart';
 import 'package:test_flutter/screens/dificult_ui/screens/divider_example_page.dart';
+import 'package:test_flutter/screens/dificult_ui/screens/sliver_tab_page.dart';
 import 'package:test_flutter/screens/dificult_ui/screens/sticky_page.dart';
 
 import '../../app_widgets/main_button.dart';
@@ -23,6 +23,7 @@ class _DifficultUIPageState extends State<DifficultUIPage> {
     listBtn = <Widget>[
       btn(context, 'Divider Example', DividerExamplePage.id),
       btn(context, 'Sticky Page', MyStickyPage.id),
+      btn(context, 'SliverTab Page', SliverTabPage.id),
     ];
     super.initState();
   }

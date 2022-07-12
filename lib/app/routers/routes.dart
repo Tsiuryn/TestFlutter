@@ -30,6 +30,7 @@ import 'package:test_flutter/screens/custom/pages/visualize_polygon.dart';
 import 'package:test_flutter/screens/custom/pages/visualizer.dart';
 import 'package:test_flutter/screens/dificult_ui/dificult_ui_page.dart';
 import 'package:test_flutter/screens/dificult_ui/screens/divider_example_page.dart';
+import 'package:test_flutter/screens/dificult_ui/screens/sliver_tab_page.dart';
 import 'package:test_flutter/screens/dificult_ui/screens/sticky_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_by_lib_page.dart';
 import 'package:test_flutter/screens/download_file/download_file_page.dart';
@@ -121,5 +122,6 @@ class Routes {
     AnimationGit.id: (context) => AnimationGit(),
     TeslaHomeScreen.id: (context) => TeslaHomeScreen(),
     AuthScreenAnimation.id: (context) => AuthScreenAnimation(),
+    SliverTabPage.id: (context) => SliverTabPage(),
   } ..addAll(allRoutes);
 }
