@@ -29,11 +29,11 @@ import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/secure/secure_page.dart';
-import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/stream/first_stream_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
 import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/web_socket_page.dart';
+import 'package:test_flutter/screens/with_lib/lib_example_page.dart';
 
 import 'app/l10n/I10n.dart';
 import 'app_widgets/main_button.dart';
@@ -91,11 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Calculator layout', CalculatorPage.id),
       btn(context, 'Calculator screen', CalcScreen.id),
       btn(context, 'Localization screen', LocalizationPage.id),
-      btn(
-        context,
-        'Shared app',
-        ShareAppPage.id,
-      ),
       btn(context, 'Progress page', ProgressPage.id),
       btn(context, 'Secure page', SecurePage.id),
       btn(context, 'Custom page', CustomPage.id),
@@ -109,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
       btn(context, 'Text field page', TextFieldPage.id),
       btn(context, 'Change theme page', ChangeThemePage.id),
       btn(context, 'DropDown menu', DropdownButtonExample.id),
+      btn(context, 'Lib example page', LibExamplePage.id),
       btn(context, 'Bird Calc page', BirdCalcPage.id,
           key: const Key('birdCalcPage')),
       btn(context, 'Big Screen page', BigScreenPage.id),

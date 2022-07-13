@@ -42,7 +42,6 @@ import 'package:test_flutter/screens/progress/progress_page.dart';
 import 'package:test_flutter/screens/scroll/scroll_view_page.dart';
 import 'package:test_flutter/screens/search_list/search_list_page.dart';
 import 'package:test_flutter/screens/secure/secure_page.dart';
-import 'package:test_flutter/screens/share_app/share_app_page.dart';
 import 'package:test_flutter/screens/stream/first_stream_page.dart';
 import 'package:test_flutter/screens/stream/second_stream_page.dart';
 import 'package:test_flutter/screens/test/test_page.dart';
@@ -53,6 +52,10 @@ import 'package:test_flutter/screens/text_field/text_field_page.dart';
 import 'package:test_flutter/screens/websocket/pages/stomp_client_page.dart';
 import 'package:test_flutter/screens/websocket/pages/web_socket_channel_page.dart';
 import 'package:test_flutter/screens/websocket/web_socket_page.dart';
+import 'package:test_flutter/screens/with_lib/lib_example_page.dart';
+import 'package:test_flutter/screens/with_lib/quill/quill_example_page.dart';
+import 'package:test_flutter/screens/with_lib/share_app/share_app_page.dart';
+import 'package:test_flutter/screens/with_lib/slidable/slidable_page.dart';
 import '../../main.dart';
 import '../../screens/animation/screen/my_positioned_transition.dart';
 import '../../screens/animation/screen/rotate_widget_page.dart';
@@ -68,7 +71,6 @@ class Routes {
     ConstraintPage.id: (context) => ConstraintPage(),
     CalculatorPage.id: (context) => CalculatorPage(),
     LocalizationPage.id: (context) => LocalizationPage(),
-    ShareAppPage.id: (context) => ShareAppPage(),
     ProgressPage.id: (context) => ProgressPage(),
     CalcScreen.id: (context) => CalcScreen(),
     CustomPage.id: (context) => CustomPage(),
@@ -123,5 +125,10 @@ class Routes {
     TeslaHomeScreen.id: (context) => TeslaHomeScreen(),
     AuthScreenAnimation.id: (context) => AuthScreenAnimation(),
     SliverTabPage.id: (context) => SliverTabPage(),
+    LibExamplePage.id: (context) => LibExamplePage(),
+    ShareAppPage.id: (context) => ShareAppPage(),
+    SlidablePage.id: (context) => SlidablePage(),
+    QuillExamplePage.id: (context) => QuillExamplePage(),
+
   } ..addAll(allRoutes);
 }

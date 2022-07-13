@@ -41,7 +41,7 @@ dependencies:
   intl: ^0.17.0-nullsafety.2
 
   share: ^2.0.4
-  image_picker: ^0.7.0-nullsafety
+  image_picker: ^0.8.5+3
 
   flutter_multi_formatter: ^2.5.1 # https://pub.dev/packages/flutter_multi_formatter/install
 
@@ -73,6 +73,9 @@ dependencies:
   flutter_slidable: ^1.1.0
 
   uuid_type: ^2.0.0
+
+  flutter_quill: ^5.0.4
+  backdrop: ^0.8.0
 
   permission_handler: ^8.1.2
   path_provider: ^2.0.5
